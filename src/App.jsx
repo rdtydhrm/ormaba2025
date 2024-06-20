@@ -5,6 +5,8 @@ import Landing from './Pages/Landing';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import { amber } from '@mui/material/colors';
+import Tasks from './Pages/Tasks';
+import Attendance from './Pages/Attendance';
 
 const theme = createTheme({
   palette: {
@@ -20,9 +22,11 @@ function App() {
         <CssBaseline>
           <HashRouter>
             <Routes>
-              <Route path='/' element={<Landing/>}/>
-              <Route path='/home' element={<Home/>}/>
+              <Route path='/landing' element={<Landing/>}/>
               <Route path='/login' element={<Login/>}/>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/tasks' element={<Tasks/>}/>
+              <Route path='/attendance' element={<Attendance/>}/>
             </Routes>
           </HashRouter>
         </CssBaseline>

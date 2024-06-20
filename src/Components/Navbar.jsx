@@ -5,7 +5,13 @@ function Navbar() {
     return (
         <>
             <Link to='/'>
-                <Button>Home</Button>
+                <Button>Tentang</Button>
+            </Link>
+            <Link to='/tasks'>
+                <Button>Tugas</Button>
+            </Link>
+            <Link to='/attendance'>
+                <Button>Presensi</Button>
             </Link>
         </>
     )
