@@ -12,24 +12,19 @@ function Login() {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-  
-    const handleMouseDownPassword = (event) => {
-      event.preventDefault();
-    };
+    const postLogin = async (loginDetails) => {
+        const response = await axios({
+            method: 'POST',
+            url: 'https://ormaba-api.vercel.app/api/login',
+            data: loginDetails
+        })
+        return response
+    }
 
     const mutation = useMutation({
-        mutationFn: (loginDetails) => {
-            return axios.post('https://ormaba-api.vercel.app/api/login', loginDetails);
-        },
-        onSuccess: (data) => {
-            // Handle successful login, e.g., redirect to home page
-            console.log('Login successful', data);
-            window.location.href = '/#/home';
-        },
-        onError: (error) => {
-            // Handle login error
-            console.error('Login failed', error);
+        mutationFn: postLogin,
+        onSuccess: () => {
+            window.location.href = '/';
         },
     });
 
@@ -37,6 +32,7 @@ function Login() {
         e.preventDefault();
         mutation.mutate({ nim, password });
     };
+
     return (
         <Container sx={{ height: '100vh' }}>
             <Box component='form' onSubmit={handleLogin} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -74,8 +70,7 @@ function Login() {
                     <InputAdornment position="end">
                         <IconButton
                         aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
+                        onClick={() => setShowPassword((show) => !show)}
                         edge="end"
                         >
                         {showPassword ? <VisibilityOff /> : <Visibility />}
@@ -87,7 +82,7 @@ function Login() {
                 </FormControl>
                 <Typography variant="overline" sx={{color: 'primary.main', mb: 3}}>Gunakan Akun SIAM  <LockIcon fontSize="inherit"/></Typography>
                 {mutation.isPending ? (
-                <CircularProgress />
+                <CircularProgress size={48}/>
                 ) : (
                 <Fab 
                     variant="extended" 
