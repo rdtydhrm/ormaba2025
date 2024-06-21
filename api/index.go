@@ -25,7 +25,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 func handler() http.HandlerFunc {
 	app := fiber.New()
 
-	app.Get("/", func (c *fiber.Ctx) error {
+	app.Get("/ig", func (c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"instagram": "kmdavidds",
 		})
