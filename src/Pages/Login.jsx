@@ -15,7 +15,8 @@ function Login() {
     const postLogin = async (loginDetails) => {
         const response = await axios({
             method: 'POST',
-            url: 'https://ormaba-api.vercel.app/api/login',
+            baseURL: window.location.origin,
+            url: '/login',
             data: loginDetails
         })
         return response
