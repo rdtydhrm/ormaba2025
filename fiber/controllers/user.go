@@ -6,8 +6,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/kmdavidds/ormaba-api/api/initializers"
-	"github.com/kmdavidds/ormaba-api/api/models"
+	"github.com/kmdavidds/ormaba-api/fiber/initializers"
+	"github.com/kmdavidds/ormaba-api/fiber/models"
 
 	u "github.com/ahmdyaasiin/ub-auth-without-notification/v2"
 )

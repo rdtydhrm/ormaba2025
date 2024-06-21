@@ -5,9 +5,9 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
-	"github.com/kmdavidds/ormaba-api/api/controllers"
-	"github.com/kmdavidds/ormaba-api/api/initializers"
-	"github.com/kmdavidds/ormaba-api/api/middleware"
+	"github.com/kmdavidds/ormaba-api/fiber/controllers"
+	"github.com/kmdavidds/ormaba-api/fiber/initializers"
+	"github.com/kmdavidds/ormaba-api/fiber/middleware"
 )
 
 // Handler is the main entry point of the application. Think of it like the main() method
