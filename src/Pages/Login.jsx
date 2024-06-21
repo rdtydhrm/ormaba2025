@@ -16,7 +16,7 @@ function Login() {
         const response = await axios({
             method: 'POST',
             baseURL: window.location.origin,
-            url: '/login',
+            url: '/api/login',
             data: loginDetails
         })
         return response
