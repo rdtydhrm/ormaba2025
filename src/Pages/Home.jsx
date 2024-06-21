@@ -9,7 +9,7 @@ function Home() {
             <Navbar />
             <Container sx={{ height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                    <Typography variant="h6" sx={{ textAlign: 'center' }}> {location.pathname} </Typography>
+                    <Typography variant="h6" sx={{ textAlign: 'center' }}> {location.hash} {window.location.origin} </Typography>
                 </Box>
             </Container>
         </>
