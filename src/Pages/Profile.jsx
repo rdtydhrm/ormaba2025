@@ -1,7 +1,31 @@
 import { Box, Container, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import CenteredLoader from "../Components/CenteredLoader";
+import { useNavigate } from "react-router-dom";
+import apiURL from "../APIURL";
 
 function Profile() {
+    const navigate = useNavigate()
+    const getUserInfo = async () => {
+        const response = await axios.get(`${apiURL}/api/info`)
+        return response.data
+    }
+
+    const {data: user, isLoading, error} = useQuery({
+        queryKey: ["getUser"],
+        queryFn: getUserInfo,
+        retry: false,
+    })
+
+    if (isLoading) {
+        return <CenteredLoader/>
+    }
+
+    if (error) {
+        navigate("/landing")
+    }
     return (
         <>
             <Navbar />

@@ -4,6 +4,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import MobileLogo from "./MobileLogo";
+import axios from "axios";
+import apiURL from "../APIURL";
 
 const pages = [{name: 'Beranda', link: "/"}, {name: 'Tugas', link: "/tasks"}, {name: 'Presensi', link: "/attendance"}];
 
@@ -32,7 +34,7 @@ function Navbar() {
   }
 
   const handleLogout = () => {
-
+    axios.get(`${apiURL}/api/logout`)
     navigate('/landing')
   }
 
@@ -80,7 +82,7 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none', width: '100%', justifyContent: 'center', alignItems: 'center' }}}>
+          <Box sx={{ display: {xs: 'flex', md: 'none'}, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
             <MobileLogo/>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 5 }}>
@@ -102,8 +104,8 @@ function Navbar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} size="large">
-                <SettingsIcon fontSize="mediun" color="primary"/>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: {md: '40px'}, height: {md: '40px'}}}>
+                <SettingsIcon size="large" color="primary"/>
               </IconButton>
             </Tooltip>
             <Menu
