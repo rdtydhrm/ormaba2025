@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <>
             <Link to='/'>
-                <Button>Tentang</Button>
+                <Button>Beranda</Button>
             </Link>
             <Link to='/tasks'>
                 <Button>Tugas</Button>

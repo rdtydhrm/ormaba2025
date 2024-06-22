@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 .vercel
+
+.env
+.air.toml
+tmp
+main.go
+.vercel

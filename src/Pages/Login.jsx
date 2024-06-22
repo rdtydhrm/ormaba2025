@@ -6,16 +6,20 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import apiURL from "../APIURL";
 
 function Login() {
     const [nim, setNim] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const postLogin = async (loginDetails) => {
         const response = await axios({
             method: 'POST',
-            url: 'https://ormaba-api.vercel.app/api/login',
+            baseURL: apiURL,
+            url: '/api/login',
             data: loginDetails
         })
         return response
@@ -24,7 +28,7 @@ function Login() {
     const mutation = useMutation({
         mutationFn: postLogin,
         onSuccess: () => {
-            window.location.href = '/';
+            navigate("/")
         },
     });
 
