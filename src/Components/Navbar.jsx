@@ -3,6 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import MobileLogo from "./MobileLogo";
 
 const pages = [{name: 'Beranda', link: "/"}, {name: 'Tugas', link: "/tasks"}, {name: 'Presensi', link: "/attendance"}];
 
@@ -42,7 +43,7 @@ function Navbar() {
           <Link to='/' >
             <Avatar src="/logosmall.png" sx={{ display: { xs: 'none', md: 'flex' }}} />
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -69,7 +70,7 @@ function Navbar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'inline', md: 'none' },
               }}
             >
               {pages.map((page) => (
@@ -79,27 +80,9 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <Link to='/' >
-            <Avatar src="/logosmall.png" sx={{ display: { xs: 'flex', md: 'none' }, mr: 1}} />
-          </Link>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'primary.main',
-              textDecoration: 'none',
-            }}
-          >
-            ORMABA
-          </Typography>
+          <Box sx={{ display: { xs: 'flex', md: 'none', width: '100%', justifyContent: 'center', alignItems: 'center' }}}>
+            <MobileLogo/>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 5 }}>
             {pages.map((page) => (
               <NavLink to={page.link} style={{textDecoration: 'none'}}>
