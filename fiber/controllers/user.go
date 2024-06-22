@@ -11,7 +11,6 @@ import (
 
 	u "github.com/ahmdyaasiin/ub-auth-without-notification/v2"
 )
-	
 
 func Login(c *fiber.Ctx) error {
 	type Body struct {
@@ -26,15 +25,15 @@ func Login(c *fiber.Ctx) error {
 	}
 
 	resp, err := u.AuthUB(body.NIM, body.Password)
-    if err != nil {
-       return fiber.NewError(fiber.StatusNotFound, "user not found")
-    }
+	if err != nil {
+		return fiber.NewError(fiber.StatusNotFound, "user not found")
+	}
 
 	user := models.User{
-		NIM: resp.NIM,
-		FullName: resp.FullName,
-		Email: resp.Email,
-		Faculty: resp.Fakultas,
+		NIM:          resp.NIM,
+		FullName:     resp.FullName,
+		Email:        resp.Email,
+		Faculty:      resp.Fakultas,
 		StudyProgram: resp.ProgramStudi,
 	}
 
@@ -55,12 +54,12 @@ func Login(c *fiber.Ctx) error {
 	}
 
 	c.Cookie(&fiber.Cookie{
-        Name:     "Authorization",
-        Value:    tokenString,
-        Expires:  time.Now().Add(24 * time.Hour),
-        HTTPOnly: true,
-        SameSite: "lax",
-    })
+		Name:     "Authorization",
+		Value:    tokenString,
+		Expires:  time.Now().Add(24 * time.Hour),
+		HTTPOnly: true,
+		SameSite: "lax",
+	})
 
 	return c.JSON(fiber.Map{
 		"message": "successfully logged in",
@@ -69,12 +68,12 @@ func Login(c *fiber.Ctx) error {
 
 func Logout(c *fiber.Ctx) error {
 	c.Cookie(&fiber.Cookie{
-        Name:     "Authorization",
-        // Set expiry date to the past
-        Expires:  time.Now().Add(-(time.Hour * 2)),
-        HTTPOnly: true,
-        SameSite: "lax",
-    })
+		Name: "Authorization",
+		// Set expiry date to the past
+		Expires:  time.Now().Add(-(time.Hour * 2)),
+		HTTPOnly: true,
+		SameSite: "lax",
+	})
 
 	return c.JSON(fiber.Map{
 		"message": "successfully logged out",
@@ -88,7 +87,7 @@ func IsAuthenticated(c *fiber.Ctx) error {
 }
 
 func GetUserInfo(c *fiber.Ctx) error {
-	userNIM := c.Get("user")
+	userNIM := c.Locals("userNIM")
 	var user models.User
 	initializers.DB.First(&user, userNIM)
 	return c.JSON(user)

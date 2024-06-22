@@ -30,10 +30,15 @@ func RequireAuth(c *fiber.Ctx) error {
 			return fiber.NewError(fiber.StatusUnauthorized, "JWT is expired")
 		}
 
-		userNIM := claims["sub"].(string)
+		userNIM, ok := claims["sub"].(string)
 
-		c.Set("user", userNIM)
-		c.Next()
-	} 
+		if !ok {
+            return c.Status(fiber.StatusUnauthorized).SendString("User ID not found in token")
+        }
+
+		c.Locals("userNIM", userNIM)
+
+		return c.Next()
+	}
 	return nil
 }
