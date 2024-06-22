@@ -31,7 +31,7 @@ function Attendance() {
             <Navbar />
             <Container sx={{ height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                    <Typography variant="h6" sx={{ textAlign: 'center' }}> This is the Attendance page.</Typography>
+                    <Typography variant="h6" sx={{ textAlign: 'center' }}> halaman presensi otw dibuat </Typography>
                 </Box>
             </Container>
         </>
