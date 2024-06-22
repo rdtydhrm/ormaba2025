@@ -54,7 +54,6 @@ function Home() {
                     <Typography variant="h2" sx={{ textAlign: 'center', mb: 2 }}>O R M A B A</Typography>
                 </Box>
             </Container>
-            <HomeDivider/>
             <Container sx={{py: 6}}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px'}}>
                     <Paper elevation={24} sx={{maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
@@ -77,7 +76,6 @@ function Home() {
                     </Paper>
                 </Box>
             </Container>
-            <HomeDivider />
             <Snackbar 
                 open={open} 
                 autoHideDuration={2000}
