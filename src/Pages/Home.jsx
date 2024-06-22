@@ -44,6 +44,7 @@ function Home() {
                 height: '100%',
                 objectFit: 'cover',
                 zIndex: -1,
+                overflow: 'hidden'
             }}>
                 <source src="/aftermovie3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
