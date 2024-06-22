@@ -28,8 +28,6 @@ function Home() {
         navigate("/landing")
     }
 
-    let isOpen = true
-
     return (
         <>
             <Navbar />

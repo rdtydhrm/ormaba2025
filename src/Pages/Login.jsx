@@ -47,7 +47,7 @@ function Login() {
                     onClose={() => mutation.reset()}
                 >
                     <Alert severity="error" sx={{ width: '100%' }}>
-                    NIM atau password salah coy
+                    NIM atau password salah.
                     </Alert>
                 </Snackbar>
                 ) : <></>}

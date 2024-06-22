@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Landing() {
     return (
-        <div>
+        <div style={{overflow: 'hidden'}}>
             <video autoPlay loop muted style={{
                 position: 'absolute',
                 top: 0,
