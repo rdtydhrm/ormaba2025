@@ -11,6 +11,7 @@ import Tasks from './Pages/Tasks';
 import Attendance from './Pages/Attendance';
 import Login from './Pages/Login';
 import axios from "axios";
+import Profile from './Pages/Profile';
 
 const theme = createTheme({
   palette: {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/attendance',
     element: <Attendance />
+  },
+  {
+    path: '/profile',
+    element: <Profile />
   }
 ])
 
