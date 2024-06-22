@@ -50,6 +50,7 @@ function Navbar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{ p: 0 }}
             >
               <MenuIcon color="primary"/>
             </IconButton>
@@ -118,8 +119,8 @@ function Navbar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <SettingsIcon fontSize="medium" color="primary"/>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} size="large">
+                <SettingsIcon fontSize="mediun" color="primary"/>
               </IconButton>
             </Tooltip>
             <Menu
