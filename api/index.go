@@ -5,15 +5,14 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
-	"github.com/kmdavidds/ormaba-api/fiber/controllers"
-	"github.com/kmdavidds/ormaba-api/fiber/initializers"
-	"github.com/kmdavidds/ormaba-api/fiber/middleware"
+	"github.com/kmdavidds/ormaba-api/server"
+	"github.com/kmdavidds/ormaba-api/server/initializers"
 )
 
 // Handler is the main entry point of the application. Think of it like the main() method
 func Handler(w http.ResponseWriter, r *http.Request) {
 	initializers.ConnectToDB()
-	// initializers.SyncDB()
+	initializers.SyncDB()
 
 	// This is needed to set the proper request path in `*fiber.Ctx`
 	r.RequestURI = r.URL.String()
@@ -33,10 +32,7 @@ func handler() http.HandlerFunc {
 
 	api := app.Group("/api")
 
-	api.Post("/login", controllers.Login)
-	api.Get("/logout", controllers.Logout)
-	api.Get("/auth", middleware.RequireAuth, controllers.IsAuthenticated)
-	api.Get("/info", middleware.RequireAuth, controllers.GetUserInfo)
+	server.MountRoutes(api)
 
 	return adaptor.FiberApp(app)
 }
