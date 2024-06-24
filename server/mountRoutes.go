@@ -11,4 +11,6 @@ func MountRoutes(api fiber.Router) {
 	api.Get("/logout", controllers.Logout)
 	api.Get("/auth", middleware.RequireAuth, controllers.IsAuthenticated)
 	api.Get("/info", middleware.RequireAuth, controllers.GetUserInfo)
+	
+	api.Post("/attend", middleware.RequireAuth, controllers.Attend)
 }

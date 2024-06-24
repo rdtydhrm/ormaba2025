@@ -13,20 +13,22 @@ import (
 )
 
 func Login(c *fiber.Ctx) error {
-	type Body struct {
-		NIM      string `json:"NIM"`
-		Password string `json:"Password"`
+	var body struct {
+		NIM      string `json:"nim"`
+		Password string `json:"password"`
 	}
 
-	body := new(Body)
-
-	if err := c.BodyParser(body); err != nil {
-		return fiber.NewError(fiber.StatusBadRequest, "failed to parse body")
+	if err := c.BodyParser(&body); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": err.Error(),
+		})
 	}
 
 	resp, err := u.AuthUB(body.NIM, body.Password)
 	if err != nil {
-		return fiber.NewError(fiber.StatusNotFound, "user not found")
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
 	}
 
 	user := models.User{
@@ -50,7 +52,9 @@ func Login(c *fiber.Ctx) error {
 	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
 
 	if err != nil {
-		return fiber.NewError(fiber.StatusInternalServerError, "failed to create JWT")
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
 	}
 
 	c.Cookie(&fiber.Cookie{
@@ -89,6 +93,43 @@ func IsAuthenticated(c *fiber.Ctx) error {
 func GetUserInfo(c *fiber.Ctx) error {
 	userNIM := c.Locals("userNIM")
 	var user models.User
-	initializers.DB.First(&user, userNIM)
+	if err := initializers.DB.First(&user, userNIM).Error; err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err,
+		})
+	}
 	return c.JSON(user)
+}
+
+func Attend(c *fiber.Ctx) error {
+	var body struct {
+		Code      string `json:"code"`
+	}
+
+	if err := c.BodyParser(&body); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	attendanceToken := models.AttendanceToken{
+		Code: body.Code,
+	}
+
+	err := initializers.DB.First(&attendanceToken).Error
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	if attendanceToken.Status != "open" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "the attendance token is closed",
+		})
+	}
+	
+	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
+		"message": "successfully attendded " + attendanceToken.Code,
+	})
 }
