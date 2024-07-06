@@ -100,36 +100,3 @@ func GetUserInfo(c *fiber.Ctx) error {
 	}
 	return c.JSON(user)
 }
-
-func Attend(c *fiber.Ctx) error {
-	var body struct {
-		Code      string `json:"code"`
-	}
-
-	if err := c.BodyParser(&body); err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	attendanceToken := models.AttendanceToken{
-		Code: body.Code,
-	}
-
-	err := initializers.DB.First(&attendanceToken).Error
-	if err != nil {
-		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	if attendanceToken.Status != "open" {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "the attendance token is closed",
-		})
-	}
-	
-	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
-		"message": "successfully attendded " + attendanceToken.Code,
-	})
-}
