@@ -8,5 +8,12 @@ type User struct {
 	Email        string
 	Faculty      string
 	StudyProgram string
+	LineID       string
+	Instagram    string
+	PhoneNumber  string
+	FoodAlergies string
+	Sickness     string
+	Group        string
+	Mentor       string
 	CreatedAt    time.Time
 }
