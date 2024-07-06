@@ -1,38 +1,7 @@
 import { Alert, Box, Button, CircularProgress, Container, Paper, Snackbar, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import apiURL from "../APIURL";
-import CenteredLoader from "../Components/CenteredLoader";
-import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
-import HomeDivider from "../Components/HomeDivider";
-import Footer from "../Components/Footer";
 
 function Home() {
-    const navigate = useNavigate()
-    const myRef = useRef(null)
-    const [open, setOpen] = useState(true);
-
-    const getUserInfo = async () => {
-        const response = await axios.get(`${apiURL}/api/info`)
-        return response.data
-    }
-
-    const {data: user, isLoading, error} = useQuery({
-        queryKey: ["getUser"],
-        queryFn: getUserInfo,
-        retry: false,
-    })
-
-    if (isLoading) {
-        return <CenteredLoader/>
-    }
-
-    if (error) {
-        navigate("/landing")
-    }
-
     return (
         <>
             <Navbar />
@@ -76,15 +45,6 @@ function Home() {
                     </Paper>
                 </Box>
             </Container>
-            <Snackbar 
-                open={open} 
-                autoHideDuration={2000}
-                onClose={() => setOpen(false)}
-            >
-                <Alert severity="success" sx={{ width: '100%' }}>
-                {`Halo ${user.FullName}!`}
-                </Alert>
-            </Snackbar>
         </>
     )
 }

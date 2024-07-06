@@ -8,10 +8,10 @@ import Landing from './Pages/Landing';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { amber } from '@mui/material/colors';
 import Tasks from './Pages/Tasks';
-import Attendance from './Pages/Attendance';
 import Login from './Pages/Login';
 import axios from "axios";
 import Profile from './Pages/Profile';
+import Announcements from './Pages/Announcements';
 
 const theme = createTheme({
   palette: {
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
     element: <Tasks />
   },
   {
-    path: '/attendance',
-    element: <Attendance />
+    path: '/announcements',
+    element: <Announcements />
   },
   {
     path: '/profile',

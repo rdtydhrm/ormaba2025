@@ -24,7 +24,7 @@ function Tasks() {
     }
 
     if (error) {
-        navigate("/landing")
+        navigate("/login")
     }
     return (
         <>

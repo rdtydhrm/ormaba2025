@@ -6,13 +6,25 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import MobileLogo from "./MobileLogo";
 import axios from "axios";
 import apiURL from "../APIURL";
+import { useQuery } from "@tanstack/react-query";
 
-const pages = [{name: 'Beranda', link: "/"}, {name: 'Tugas', link: "/tasks"}, {name: 'Presensi', link: "/attendance"}];
+const pages = [{name: 'Beranda', link: "/"}, {name: 'Pengumuman', link: "/announcements"}, {name: 'Penugasan', link: "/tasks"}];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate()
+
+  const getUserInfo = async () => {
+    const response = await axios.get(`${apiURL}/api/info`)
+    return response.data
+  }
+
+  const {data: user} = useQuery({
+      queryKey: ["getUser"],
+      queryFn: getUserInfo,
+      retry: false,
+  })
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,7 +47,7 @@ function Navbar() {
 
   const handleLogout = () => {
     axios.get(`${apiURL}/api/logout`)
-    navigate('/landing')
+    window.location.href = "/"
   }
 
   return (
@@ -93,7 +105,7 @@ function Navbar() {
                     key={page.name}
                     onClick={handleCloseNavMenu}
                     variant={isActive ? "contained" : "text"}
-                    sx={{ my: 2, display: 'block', width: '100px'}}
+                    sx={{ my: 2, display: 'block', width: '169px'}}
                 >
                     {page.name}
                 </Button>
@@ -124,12 +136,20 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem key="profile" onClick={handleProfile}>
-                <Typography textAlign="center">Profil</Typography>
-              </MenuItem>
-              <MenuItem key="logout" onClick={handleLogout}>
-                <Typography textAlign="center">Logout</Typography>
-              </MenuItem>
+              {user !== undefined ? 
+                <div>
+                  <MenuItem key="profile" onClick={handleProfile}>
+                    <Typography textAlign="center">Profil</Typography>
+                  </MenuItem>
+                  <MenuItem key="logout" onClick={handleLogout}>
+                    <Typography textAlign="center">Logout</Typography>
+                  </MenuItem>
+                </div>
+              : 
+                <MenuItem key="login" onClick={() => navigate("/login")}>
+                  <Typography textAlign="center">Login</Typography>
+                </MenuItem>
+              }
             </Menu>
           </Box>
         </Toolbar>
