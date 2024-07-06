@@ -95,8 +95,47 @@ func GetUserInfo(c *fiber.Ctx) error {
 	var user models.User
 	if err := initializers.DB.First(&user, userNIM).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"error": err,
+			"error": err.Error(),
 		})
 	}
 	return c.JSON(user)
+}
+
+func UpdateUserInfo(c *fiber.Ctx) error {
+	var body struct {
+		LineID       string `json:"lineid"`
+		Instagram    string `json:"instagram"`
+		PhoneNumber  string `json:"phonenumber"`
+		FoodAlergies string `json:"foodalergies"`
+		Sickness     string `json:"sickness"`
+	}
+
+	if err := c.BodyParser(&body); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	userNIM := c.Locals("userNIM")
+
+	user := models.User{
+		NIM: userNIM.(string),
+	}
+
+	err := initializers.DB.Model(&user).Select("line_id", "instagram", "phone_number", "food_alergies", "sickness").Updates(models.User{
+		LineID: body.LineID,
+		Instagram: body.Instagram,
+		PhoneNumber: body.PhoneNumber,
+		FoodAlergies: body.FoodAlergies,
+		Sickness: body.Sickness,
+	}).Error
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "sini",
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"message": "successfully updated user info",
+	})
 }
