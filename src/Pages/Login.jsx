@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
+import GradientBackground from "../Components/GradientBackground";
 
 function Login() {
     const [nim, setNim] = useState('');
@@ -38,6 +39,7 @@ function Login() {
     };
 
     return (
+        <>
         <Container sx={{ height: '100vh' }}>
             <Box component='form' onSubmit={handleLogin} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 {mutation.isError ? (
@@ -99,6 +101,7 @@ function Login() {
                 )}
             </Box>
         </Container>
+        </>
     )
 }
 

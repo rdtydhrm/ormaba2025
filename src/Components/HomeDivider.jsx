@@ -1,12 +1,12 @@
 export default function HomeDivider() {
     return (
         <div style={{
-            width: '100%',
-            height: '3rem',
-            backgroundColor: '#b28704',
-            border: 'solid rgba(0, 0, 0, .15)',
-            borderWidth: '1px 0',
-            boxShadow: 'inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15)'
+            height: "10px;",
+            zIndex: '4',
+            background: "linear-gradient(45deg, #8d0c55, #efbb07);",
+            margin: "20px 0;",
+            borderRadius: "5px;",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2);",
         }}>
         </div>
     )
