@@ -51,7 +51,7 @@ function Navbar() {
   }
 
   return (
-    <AppBar position="sticky" style={{backgroundColor: ''}}>
+    <AppBar position="sticky" style={{backgroundColor: 'transparent'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to='/' >
@@ -97,7 +97,7 @@ function Navbar() {
           <Box sx={{ display: {xs: 'flex', md: 'none'}, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
             <MobileLogo/>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 5 }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 10 }}>
             {pages.map((page) => (
               <NavLink to={page.link} style={{textDecoration: 'none'}}>
                 {({ isActive }) => (

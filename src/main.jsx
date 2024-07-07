@@ -18,14 +18,14 @@ const theme = createTheme({
     mode: 'dark',
     primary: {
       // light: '#757ce8',
-      main: '#f0bc0d',
+      main: '#efbb07',
       // dark: '#002884',
       // contrastText: '#fff',
     },
     secondary: {
-      // light: '#ff7961',
+      light: '#e2145f',
       main: '#481852',
-      // dark: '#ba000d',
+      dark: '#8d0c55',
       // contrastText: '#000',
     },
   },

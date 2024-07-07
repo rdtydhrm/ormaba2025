@@ -4,6 +4,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
+import GradientBackground from "../Components/GradientBackground";
 
 function Announcements() {
     const getAnnouncements = async () => {
@@ -28,6 +29,7 @@ function Announcements() {
     return (
         <>
             <Navbar />
+            <GradientBackground pageHeight={'200vh'}/>
             <Container sx={{ height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 {announcements.map((item) => (

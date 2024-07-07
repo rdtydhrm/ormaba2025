@@ -5,6 +5,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
+import GradientBackground from "../Components/GradientBackground";
 
 function Tasks() {
     const navigate = useNavigate()
@@ -29,6 +30,7 @@ function Tasks() {
     return (
         <>
             <Navbar />
+            <GradientBackground pageHeight={'200vh'}/>
             <Container sx={{ height: '100vh' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                     <Typography variant="h6" sx={{ textAlign: 'center' }}> halaman tugas otw dibuat</Typography>
