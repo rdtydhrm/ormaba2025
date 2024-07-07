@@ -16,7 +16,18 @@ import Announcements from './Pages/Announcements';
 const theme = createTheme({
   palette: {
     mode: 'dark',
-    primary: amber
+    primary: {
+      // light: '#757ce8',
+      main: '#f0bc0d',
+      // dark: '#002884',
+      // contrastText: '#fff',
+    },
+    secondary: {
+      // light: '#ff7961',
+      main: '#481852',
+      // dark: '#ba000d',
+      // contrastText: '#000',
+    },
   },
 });
 
