@@ -142,23 +142,23 @@ function Profile() {
                         <Button variant="outlined" size="large" sx={{mb: 6}} type="submit">Simpan Data</Button>
                     </Paper>
                 </Box>
-                    <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
-                        <Paper sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
-                            <Typography variant="h4" textAlign={'center'}>Informasi</Typography>
-                        </Paper>
-                        <TextField
-                            disabled
-                            label="Kelompok"
-                            defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group }
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
-                        />
-                        <TextField
-                            disabled
-                            label="Mentor"
-                            defaultValue={user === undefined ? " " : user.Mentor === "" ? "Belum mendapatkan mentor" : user.Mentor }
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
-                        />
+                <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
+                    <Paper sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
+                        <Typography variant="h4" textAlign={'center'}>Informasi</Typography>
                     </Paper>
+                    <TextField
+                        disabled
+                        label="Kelompok"
+                        defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group }
+                        sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
+                    />
+                    <TextField
+                        disabled
+                        label="Mentor"
+                        defaultValue={user === undefined ? " " : user.Mentor === "" ? "Belum mendapatkan mentor" : user.Mentor }
+                        sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                    />
+                </Paper>
             </Container>
         </>
     )
