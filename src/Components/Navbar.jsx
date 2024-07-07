@@ -47,7 +47,13 @@ function Navbar() {
 
   const handleLogout = () => {
     axios.get(`${apiURL}/api/logout`)
-    window.location.href = "/"
+    axios.get(`${apiURL}/api/logout`)
+    axios.get(`${apiURL}/api/logout`)
+    axios.get(`${apiURL}/api/logout`)
+    axios.get(`${apiURL}/api/logout`)
+    setTimeout(() => {
+      window.location.href = "/"
+    }, 3000);
   }
 
   return (

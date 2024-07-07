@@ -69,7 +69,7 @@ function Profile() {
     return (
         <>
             <Navbar />
-            <GradientBackground pageHeight={'245vh'}/>
+            <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/>
             <Container sx={{py: 0}}>
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>
                     <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
@@ -144,7 +144,7 @@ function Profile() {
                 </Box>
                     <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                         <Paper sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
-                            <Typography variant="h4" textAlign={'center'}>Informasi Tambahan</Typography>
+                            <Typography variant="h4" textAlign={'center'}>Informasi</Typography>
                         </Paper>
                         <TextField
                             disabled
