@@ -61,7 +61,7 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to='/' >
-            <Avatar src="/logosmall.png" sx={{ display: { xs: 'none', md: 'flex' }}} />
+            <Box component='img' src="/logosmall.png" sx={{ display: { xs: 'none', md: 'flex' }, height: '3em'}} />
           </Link>
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

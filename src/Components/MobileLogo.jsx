@@ -1,11 +1,12 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function MobileLogo() {
     return (
         <>
-            <Link to='/' >
-              <Avatar src="/logosmall.png" sx={{mr: 1, ml: 2}} />
+          <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <Link to='/' style={{height: '2em'}}>
+              <Box component='img' src="/logosmall.png" sx={{mr: 1, ml: 2, height: '2em'}} />
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}>
               <Typography
@@ -26,6 +27,7 @@ export default function MobileLogo() {
                 ORMABA
               </Typography>
             </Link>
+            </Box>
         </>
     )
 }
