@@ -152,6 +152,7 @@ function Profile() {
                         <Button variant="outlined" size="large" sx={{mb: 6}} type="submit">Simpan Data</Button>
                     </Paper>
                 </Box>
+                <Box sx={{display: 'flex', justifyContent: 'center'}}>
                 <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                     <Paper sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
                         <Typography variant="h4" textAlign={'center'}>Informasi</Typography>
@@ -169,6 +170,7 @@ function Profile() {
                         sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
                     />
                 </Paper>
+                </Box>
             </Container>
             </Box>
         </>

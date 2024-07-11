@@ -46,12 +46,13 @@ function Announcements() {
                         <Typography variant="h4" textAlign={'center'}>Pengumuman</Typography>
                     </Paper>
                 </Box>
+                <Box sx={{display: 'flex', justifyContent: 'center'}}>
                 <Paper elevation={1} sx={{borderRadius: 5, bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                     {announcements.map((item) => (
                         <AnnouItem annou={item}/>
                     ))}
-                    
                 </Paper>
+                </Box>
             </Container>
             </Box>
         </>
