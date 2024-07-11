@@ -69,8 +69,18 @@ function Profile() {
     return (
         <>
             <Navbar />
-            <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/>
-            <Container sx={{py: 0}}>
+            {/* <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/> */}
+            <Box sx={{
+                position: 'absolute',
+                backgroundColor: '#000000', 
+                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
+                // filter: 'brightness(17%)', 
+                width: '100vw',
+                zIndex: '-1',
+                top: 0,
+                left: 0,
+            }}>
+            <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', my: 8}}>
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>
                     <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                         <Paper sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
@@ -110,21 +120,21 @@ function Profile() {
                             label="ID Line"
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.LineID === "" ? " " : user.LineID }
-                            helperText="contoh: @kmdavidds"
+                            helperText="contoh: @ormaba.unikahidha"
                             onChange={(e) => setLineId(e.target.value)} 
                         />
                         <TextField
                             label="Instagram"
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.Instagram === "" ? " " : user.Instagram }
-                            helperText="contoh: @kmdavidds"
+                            helperText="contoh: @ormaba.unikahidha"
                             onChange={(e) => setInstagram(e.target.value)} 
                         />
                         <TextField
                             label="Nomor Telepon"
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.PhoneNumber === "" ? " " : user.PhoneNumber }
-                            helperText="contoh: 081222333444"
+                            helperText="contoh: 08814830918"
                             onChange={(e) => setPhoneNumber(e.target.value)} 
                         />
                         <TextField
@@ -160,6 +170,7 @@ function Profile() {
                     />
                 </Paper>
             </Container>
+            </Box>
         </>
     )
 }

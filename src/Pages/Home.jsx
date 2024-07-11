@@ -9,7 +9,17 @@ function Home() {
     return (
         <>
             <Navbar />
-            <GradientBackground pageHeight={'200vh'}/>
+            <Box sx={{
+                position: 'absolute',
+                backgroundColor: '#000000', 
+                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
+                // filter: 'brightness(17%)', 
+                width: '100vw',
+                zIndex: '-1',
+                top: 0,
+                left: 0,
+            }}>
+            {/* <GradientBackground pageHeight={'200vh'}/> */}
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
@@ -57,6 +67,7 @@ function Home() {
                     </Box>
                 </section>
             </Container>
+            </Box>
         </>
     )
 }

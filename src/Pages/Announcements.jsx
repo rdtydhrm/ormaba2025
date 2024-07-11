@@ -30,8 +30,17 @@ function Announcements() {
     return (
         <>
             <Navbar />
-            <GradientBackground pageHeight={'200vh'}/>
-            <Container>
+            <Box sx={{
+                position: 'absolute',
+                backgroundColor: '#000000', 
+                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
+                // filter: 'brightness(17%)', 
+                width: '100vw',
+                zIndex: '-1',
+                top: 0,
+                left: 0,
+            }}>
+            <Container sx={{height: '100vh', display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Paper elevation={4} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', my: 6}}>
                         <Typography variant="h4" textAlign={'center'}>Pengumuman</Typography>
@@ -44,6 +53,7 @@ function Announcements() {
                     
                 </Paper>
             </Container>
+            </Box>
         </>
     )
 }
