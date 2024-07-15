@@ -31,21 +31,25 @@ export default function StudentsTable() {
     }
 
     const columns = [
-        { id: 'name', label: 'Nama'},
+        { id: 'name', label: 'Nama', minWidth: 260},
+        { id: 'nim', label: 'NIM'},
+        { id: 'email', label: 'Email'},
         { id: 'faculty', label: 'Fakultas'},
         { id: 'studyProgram', label: 'Program Studi'},
         { id: 'lineID', label: 'ID Line'},
         { id: 'instagram', label: 'Instagram'},
         { id: 'phoneNumber', label: 'Nomor Telepon'},
+        { id: 'foodAlergies', label: 'Alergi Makanan'},
+        { id: 'sickness', label: 'Riwayat Penyakit'},
     ];
 
-    function createData(name, faculty, studyProgram, lineID, instagram, phoneNumber) {
-        return { name, faculty, studyProgram, lineID, instagram, phoneNumber};
+    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness) {
+        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness };
     }
 
     const rows = [];
-    students?.map(({FullName, Faculty, StudyProgram, LineID, Instagram, PhoneNumber}) => 
-        (rows.push(createData(FullName, Faculty, StudyProgram, LineID, Instagram, PhoneNumber))))
+    students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness}) => 
+        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness))))
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
