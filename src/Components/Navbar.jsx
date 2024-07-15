@@ -6,7 +6,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import MobileLogo from "./MobileLogo";
 import axios from "axios";
 import apiURL from "../APIURL";
-import { useQuery } from "@tanstack/react-query";
 
 const pages = [{name: 'Beranda', link: "/"}, {name: 'Pengumuman', link: "/announcements"}, {name: 'Penugasan', link: "/tasks"}];
 
@@ -15,16 +14,9 @@ function Navbar() {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate()
 
-  const getUserInfo = async () => {
-    const response = await axios.get(`${apiURL}/api/info`)
-    return response.data
-  }
+  let cook = document.cookie
 
-  const {data: user} = useQuery({
-      queryKey: ["getUser"],
-      queryFn: getUserInfo,
-      retry: false,
-  })
+  console.log(cook)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -47,13 +39,8 @@ function Navbar() {
 
   const handleLogout = () => {
     axios.get(`${apiURL}/api/logout`)
-    axios.get(`${apiURL}/api/logout`)
-    axios.get(`${apiURL}/api/logout`)
-    axios.get(`${apiURL}/api/logout`)
-    axios.get(`${apiURL}/api/logout`)
-    setTimeout(() => {
-      window.location.href = "/"
-    }, 3000);
+    document.cookie = "yes=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = "/"
   }
 
   return (
@@ -142,7 +129,7 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {user !== undefined ? 
+              {cook ? 
                 <div>
                   <MenuItem key="profile" onClick={handleProfile}>
                     <Typography textAlign="center">Profil</Typography>

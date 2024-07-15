@@ -12,6 +12,7 @@ import Login from './Pages/Login';
 import axios from "axios";
 import Profile from './Pages/Profile';
 import Announcements from './Pages/Announcements';
+import { CookiesProvider } from 'react-cookie';
 
 const theme = createTheme({
   palette: {

@@ -8,7 +8,6 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
-import GradientBackground from "../Components/GradientBackground";
 
 function Login() {
     const [nim, setNim] = useState('');
@@ -29,6 +28,7 @@ function Login() {
     const mutation = useMutation({
         mutationFn: postLogin,
         onSuccess: () => {
+            document.cookie = "yes=Yes";
             navigate("/")
         },
     });
