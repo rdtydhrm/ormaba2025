@@ -31,12 +31,12 @@ export default function StudentsTable() {
     }
 
     const columns = [
-        { id: 'name', label: 'Nama', minWidth: 170 },
-        { id: 'faculty', label: 'Fakultas', minWidth: 100 },
-        { id: 'studyProgram', label: 'Program Studi', minWidth: 100 },
-        { id: 'lineID', label: 'ID Line', minWidth: 100 },
-        { id: 'instagram', label: 'Instagram', minWidth: 100 },
-        { id: 'phoneNumber', label: 'Nomor Telepon', minWidth: 100 },
+        { id: 'name', label: 'Nama'},
+        { id: 'faculty', label: 'Fakultas'},
+        { id: 'studyProgram', label: 'Program Studi'},
+        { id: 'lineID', label: 'ID Line'},
+        { id: 'instagram', label: 'Instagram'},
+        { id: 'phoneNumber', label: 'Nomor Telepon'},
     ];
 
     function createData(name, faculty, studyProgram, lineID, instagram, phoneNumber) {

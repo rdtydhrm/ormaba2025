@@ -13,10 +13,10 @@ export default function Students() {
             <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
                     height: '100vh', width: '100vw'}}>
                 <Button variant="contained" size="small" sx={{ m: 2 }}
-                        onClick={() => navigate("/admin/students/all")}>Semua Siswa</Button>
+                        onClick={() => (window.location.href = `/admin/students/all`)}>Semua Siswa</Button>
                 {groups.map((group) => (
                     <Button variant="contained" size="small" sx={{ m: 2 }}
-                            onClick={() => navigate(`/admin/students/Kelompok%20${group}`)}>Kelompok {group}</Button>
+                            onClick={() => (window.location.href = `/admin/students/Kelompok%20${group}`)}>Kelompok {group}</Button>
                 ))}
             </Box>
         </>
