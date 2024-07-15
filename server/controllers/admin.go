@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"net/url"
 	"os"
 	"time"
 
@@ -55,11 +56,34 @@ func LoginAdmin(c *fiber.Ctx) error {
 }
 
 func GetAllStudents(c *fiber.Ctx) error {
-	var user []models.User
-	if err := initializers.DB.Find(&user).Error; err != nil {
+	var users []models.User
+	if err := initializers.DB.Find(&users).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
 	}
-	return c.JSON(user)
+	return c.JSON(users)
+}
+
+func GetFilteredStudents(c *fiber.Ctx) error {
+	var users []models.User
+	if err := initializers.DB.Find(&users).Error; err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	query, err := url.QueryUnescape(c.Params("query"))
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	var filteredUsers []models.User
+	for _, user := range users {
+		if user.Group == query {
+			filteredUsers = append(filteredUsers, user)
+		}
+	}
+	return c.JSON(filteredUsers)
 }

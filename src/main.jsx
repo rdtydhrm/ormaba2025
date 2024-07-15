@@ -13,6 +13,10 @@ import axios from "axios";
 import Profile from './Pages/Profile';
 import Announcements from './Pages/Announcements';
 import { CookiesProvider } from 'react-cookie';
+import AdminLogin from './Pages/AdminLogin';
+import AdminDashboard from './Pages/AdminDashboard';
+import Students from './Pages/Students';
+import StudentsTable from './Pages/StudentsTable';
 
 const theme = createTheme({
   palette: {
@@ -56,7 +60,27 @@ const router = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />
-  }
+  },
+  {
+    path: '/access',
+    element: <AdminLogin />
+  },
+  {
+    path: '/admin/dashboard',
+    element: <AdminDashboard />
+  },
+  {
+    path: '/admin/students',
+    element: <Students />
+  },
+  {
+    path: '/admin/students/:query',
+    element: <StudentsTable />
+  },
+  {
+    path: '/admin/tasks',
+    element: <AdminDashboard />
+  },
 ])
 
 axios.defaults.withCredentials = true;

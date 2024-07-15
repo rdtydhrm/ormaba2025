@@ -1,0 +1,117 @@
+import { Box, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import CenteredLoader from "../Components/CenteredLoader";
+import axios from "axios";
+import apiURL from "../APIURL";
+import { useState } from "react";
+
+export default function StudentsTable() {
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const params = useParams()
+    const navigate = useNavigate()
+
+    const getStudents = async () => {
+        const response = await axios.get(`${apiURL}/api/admin/students/${params.query}`)
+        return response.data
+    }
+
+    const {data: students, isLoading, error} = useQuery({
+        queryKey: ["students"],
+        queryFn: getStudents,
+    })
+
+    if (isLoading) {
+        return <CenteredLoader/>
+    }
+
+    if (error) {
+        console.log(error)
+    }
+
+    const columns = [
+        { id: 'name', label: 'Nama', minWidth: 170 },
+        { id: 'faculty', label: 'Fakultas', minWidth: 100 },
+        { id: 'studyProgram', label: 'Program Studi', minWidth: 100 },
+        { id: 'lineID', label: 'ID Line', minWidth: 100 },
+        { id: 'instagram', label: 'Instagram', minWidth: 100 },
+        { id: 'phoneNumber', label: 'Nomor Telepon', minWidth: 100 },
+    ];
+
+    function createData(name, faculty, studyProgram, lineID, instagram, phoneNumber) {
+        return { name, faculty, studyProgram, lineID, instagram, phoneNumber};
+    }
+
+    const rows = [];
+    students?.map(({FullName, Faculty, StudyProgram, LineID, Instagram, PhoneNumber}) => 
+        (rows.push(createData(FullName, Faculty, StudyProgram, LineID, Instagram, PhoneNumber))))
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+    
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(+event.target.value);
+        setPage(0);
+    };
+
+    return (
+        <Box>
+            <Box  sx={{ m: 4, position: 'absolute' }}>
+                <Button variant="contained" size="medium"
+                        onClick={() => navigate("/admin/students")}>Back</Button>
+            </Box>
+            <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw'}}>
+                <Box>
+                    <TableContainer sx={{ maxHeight: '100vh', maxWidth: '80vw' }}>
+                        <Table stickyHeader aria-label="sticky table">
+                        <TableHead>
+                            <TableRow>
+                            {columns.map((column) => (
+                                <TableCell
+                                key={column.id}
+                                align={column.align}
+                                style={{ minWidth: column.minWidth }}
+                                >
+                                {column.label}
+                                </TableCell>
+                            ))}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows
+                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            .map((row) => {
+                                return (
+                                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                                    {columns.map((column) => {
+                                    const value = row[column.id];
+                                    return (
+                                        <TableCell key={column.id} align={column.align}>
+                                        {column.format && typeof value === 'number'
+                                            ? column.format(value)
+                                            : value}
+                                        </TableCell>
+                                    );
+                                    })}
+                                </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[10, 25, 100]}
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onPageChange={handleChangePage}
+                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
+                </Box>
+            </Box>
+        </Box>
+    )
+}

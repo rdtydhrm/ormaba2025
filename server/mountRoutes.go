@@ -16,5 +16,6 @@ func MountRoutes(api fiber.Router) {
 	api.Get("/announcements", controllers.GetAnnouncements)
 
 	api.Post("/admin", controllers.LoginAdmin)
-	api.Get("/admin/students", middleware.RequireAdmin, controllers.GetAllStudents)
+	api.Get("/admin/students/all", middleware.RequireAdmin, controllers.GetAllStudents)
+	api.Get("/admin/students/:query", middleware.RequireAdmin, controllers.GetFilteredStudents)
 }
