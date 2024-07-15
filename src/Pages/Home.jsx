@@ -22,7 +22,7 @@ function Home() {
             {/* <GradientBackground pageHeight={'200vh'}/> */}
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
-                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '90vh'}}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
                         <Typography variant="h2" sx={{ textAlign: 'center', pb: 2 }}>O R M A B A</Typography>
                         <Button variant="outlined" size="medium" sx={{ color: 'primary.main' }}
                                 onClick={() => learnRef.current.scrollIntoView({behavior: 'smooth'})}>learn</Button>

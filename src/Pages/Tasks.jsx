@@ -16,7 +16,6 @@ function Tasks() {
     const {data: user, isLoading, error} = useQuery({
         queryKey: ["getUser"],
         queryFn: getUserInfo,
-        retry: false,
     })
 
     if (isLoading) {
