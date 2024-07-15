@@ -58,13 +58,13 @@ export default function StudentsTable() {
 
     return (
         <Box>
-            <Box  sx={{ m: 4, position: 'absolute' }}>
+            <Box  sx={{ m: 4, position: 'absolute', display: { xs: 'none', md: 'inline' } }}>
                 <Button variant="contained" size="medium"
                         onClick={() => navigate("/admin/students")}>Back</Button>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw'}}>
                 <Box>
-                    <TableContainer sx={{ maxHeight: '100vh', maxWidth: '80vw' }}>
+                    <TableContainer sx={{ maxHeight: '100vh', maxWidth: { xs: '100vw', md: '80vw' } }}>
                         <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
