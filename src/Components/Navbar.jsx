@@ -16,8 +16,6 @@ function Navbar() {
 
   let cook = document.cookie
 
-  console.log(cook)
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
