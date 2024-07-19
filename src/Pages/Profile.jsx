@@ -129,6 +129,13 @@ function Profile() {
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                         />
                         <TextField
+                            label="Asal Daerah"
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            defaultValue={user === undefined ? " " : user.Origin === "" ? " " : user.Origin }
+                            helperText="contoh: Malang, Jawa Timur"
+                            onChange={(e) => setOrigin(e.target.value)} 
+                        />
+                        <TextField
                             label="ID Line"
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.LineID === "" ? " " : user.LineID }
@@ -160,13 +167,6 @@ function Profile() {
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.Sickness === "" ? " " : user.Sickness }
                             onChange={(e) => setSickness(e.target.value)} 
-                        />
-                        <TextField
-                            label="Asal Daerah"
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
-                            defaultValue={user === undefined ? " " : user.Origin === "" ? " " : user.Origin }
-                            helperText="contoh: Malang, Jawa Timur"
-                            onChange={(e) => setOrigin(e.target.value)} 
                         />
                         <Button variant="outlined" size="large" sx={{mb: 6}} type="submit">Simpan Data</Button>
                     </Paper>

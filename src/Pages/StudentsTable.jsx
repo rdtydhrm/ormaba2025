@@ -36,12 +36,12 @@ export default function StudentsTable() {
         { id: 'email', label: 'Email'},
         { id: 'faculty', label: 'Fakultas'},
         { id: 'studyProgram', label: 'Program Studi'},
+        { id: 'origin', label: 'Asal Daerah'},
         { id: 'lineID', label: 'ID Line'},
         { id: 'instagram', label: 'Instagram'},
         { id: 'phoneNumber', label: 'Nomor Telepon'},
         { id: 'foodAlergies', label: 'Alergi Makanan'},
         { id: 'sickness', label: 'Riwayat Penyakit'},
-        { id: 'origin', label: 'Asal Daerah'},
     ];
 
     function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin) {
