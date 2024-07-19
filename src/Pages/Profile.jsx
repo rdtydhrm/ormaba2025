@@ -6,6 +6,7 @@ import CenteredLoader from "../Components/CenteredLoader";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
 import { useEffect, useState } from "react";
+import background from "/background6.png"
 import GradientBackground from "../Components/GradientBackground";
 import { purple } from "@mui/material/colors";
 
@@ -72,15 +73,24 @@ function Profile() {
             
             {/* <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/> */}
             <Box sx={{
-                position: 'absolute',
-                backgroundColor: '#000000', 
-                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
-                // filter: 'brightness(17%)', 
                 width: '100vw',
-                zIndex: '-1',
+                height: '500vh',
+                backgroundImage: `url(${background})`,
+                backgroundSize: {xs: '400vw', md: '100vw'},
+                backgroundPosition: 'center',
+                position: 'absolute',
+                zIndex:  -1,
+            }}>
+            <Box sx={{
+                position: 'absolute',
                 top: 0,
                 left: 0,
-            }}>
+                right: 0,
+                bottom: 0,
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                zIndex: -1
+            }}/>
             <Navbar />
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', my: 8}}>
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import AnnouItem from "../Components/AnnouItem";
+import background from "/background6.png"
 
 function Announcements() {
     const getAnnouncements = async () => {
@@ -28,15 +29,26 @@ function Announcements() {
     return (
         <>
             <Box sx={{
-                position: 'absolute',
-                backgroundColor: '#000000', 
-                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
-                // filter: 'brightness(17%)', 
                 width: '100vw',
-                zIndex: '-1',
+                height: '500vh',
+                backgroundImage: `url(${background})`,
+                backgroundSize: {xs: '400vw', md: '100vw'},
+                backgroundPosition: 'center',
+                position: 'absolute',
                 top: 0,
                 left: 0,
+                zIndex:  -1,
             }}>
+            <Box sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                zIndex: -1
+            }}/>
             <Navbar />
             <Container sx={{height: '100vh', display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>

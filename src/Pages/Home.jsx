@@ -1,6 +1,7 @@
 import { Alert, Box, Button, Chip, CircularProgress, Container, Divider, Paper, Snackbar, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
 import GradientBackground from "../Components/GradientBackground";
+import background from "/background6.png"
 import { useRef } from "react";
 import { essence, essenceShort, whatIsORMABA, whatIsORMABAshort } from "../contents";
 
@@ -9,15 +10,26 @@ function Home() {
     return (
         <>
             <Box sx={{
-                position: 'absolute',
-                backgroundColor: '#000000', 
-                backgroundImage: 'linear-gradient(19deg, #000000 0%, #371c4b 100%)',
-                // filter: 'brightness(17%)', 
                 width: '100vw',
-                zIndex: '-1',
+                height: '500vh',
+                backgroundImage: `url(${background})`,
+                backgroundSize: {xs: '400vw', md: '100vw'},
+                backgroundPosition: 'center',
+                position: 'absolute',
                 top: 0,
                 left: 0,
+                zIndex:  -1,
             }}>
+            <Box sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                zIndex: -1
+            }}/>
             <Navbar />
             {/* <GradientBackground pageHeight={'200vh'}/> */}
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
