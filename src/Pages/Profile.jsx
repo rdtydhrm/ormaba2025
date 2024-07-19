@@ -130,7 +130,7 @@ function Profile() {
                         />
                         <TextField
                             label="Asal Daerah"
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.Origin === "" ? " " : user.Origin }
                             helperText="contoh: Malang, Jawa Timur"
                             onChange={(e) => setOrigin(e.target.value)} 
@@ -164,7 +164,7 @@ function Profile() {
                         />
                         <TextField
                             label="Riwayat Penyakit"
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
                             defaultValue={user === undefined ? " " : user.Sickness === "" ? " " : user.Sickness }
                             onChange={(e) => setSickness(e.target.value)} 
                         />
