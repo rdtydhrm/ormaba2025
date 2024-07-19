@@ -108,6 +108,7 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 		PhoneNumber  string `json:"phonenumber"`
 		FoodAlergies string `json:"foodalergies"`
 		Sickness     string `json:"sickness"`
+		Origin       string `json:"origin"`
 	}
 
 	if err := c.BodyParser(&body); err != nil {
@@ -122,12 +123,13 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 		NIM: userNIM.(string),
 	}
 
-	err := initializers.DB.Model(&user).Select("line_id", "instagram", "phone_number", "food_alergies", "sickness").Updates(models.User{
-		LineID: body.LineID,
-		Instagram: body.Instagram,
-		PhoneNumber: body.PhoneNumber,
+	err := initializers.DB.Model(&user).Select("line_id", "instagram", "phone_number", "food_alergies", "sickness", "origin").Updates(models.User{
+		LineID:       body.LineID,
+		Instagram:    body.Instagram,
+		PhoneNumber:  body.PhoneNumber,
 		FoodAlergies: body.FoodAlergies,
-		Sickness: body.Sickness,
+		Sickness:     body.Sickness,
+		Origin:       body.Origin,
 	}).Error
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{

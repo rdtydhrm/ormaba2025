@@ -15,5 +15,6 @@ type User struct {
 	Sickness     string
 	Group        string
 	Mentor       string
+	Origin       string
 	CreatedAt    time.Time
 }

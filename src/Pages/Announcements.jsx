@@ -15,7 +15,6 @@ function Announcements() {
     const {data: announcements, isLoading, error} = useQuery({
         queryKey: ["getAnnouncements"],
         queryFn: getAnnouncements,
-        retry: false,
     })
 
     if (isLoading) {
@@ -28,7 +27,6 @@ function Announcements() {
 
     return (
         <>
-            <Navbar />
             <Box sx={{
                 position: 'absolute',
                 backgroundColor: '#000000', 
@@ -39,6 +37,7 @@ function Announcements() {
                 top: 0,
                 left: 0,
             }}>
+            <Navbar />
             <Container sx={{height: '100vh', display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Paper elevation={4} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', my: 6}}>

@@ -41,15 +41,16 @@ export default function StudentsTable() {
         { id: 'phoneNumber', label: 'Nomor Telepon'},
         { id: 'foodAlergies', label: 'Alergi Makanan'},
         { id: 'sickness', label: 'Riwayat Penyakit'},
+        { id: 'origin', label: 'Asal Daerah'},
     ];
 
-    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness) {
-        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness };
+    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin) {
+        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin };
     }
 
     const rows = [];
-    students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness}) => 
-        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness))))
+    students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin}) => 
+        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin))))
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -68,7 +69,7 @@ export default function StudentsTable() {
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw'}}>
                 <Box>
-                    <TableContainer sx={{ maxHeight: '100vh', maxWidth: { xs: '100vw', md: '80vw' } }}>
+                    <TableContainer sx={{ maxHeight: '90vh', maxWidth: { xs: '100vw', md: '80vw' } }}>
                         <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>

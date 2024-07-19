@@ -16,6 +16,7 @@ function Profile() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [foodAlergies, setFoodAlergies] = useState('');
     const [sickness, setSickness] = useState('');
+    const [origin, setOrigin] = useState('');
 
     const patchProfile = async (profileDetails) => {
         const response = await axios({
@@ -34,7 +35,7 @@ function Profile() {
 
     const handlePatch = (e) => {
         e.preventDefault();
-        mutation.mutate({ lineId, instagram, phoneNumber, foodAlergies, sickness});
+        mutation.mutate({ lineId, instagram, phoneNumber, foodAlergies, sickness, origin});
     };
     
     const getUserInfo = async () => {
@@ -45,7 +46,6 @@ function Profile() {
     const {data: user, isLoading, error} = useQuery({
         queryKey: ["getUser"],
         queryFn: getUserInfo,
-        retry: false,
     })
 
     useEffect(() => {
@@ -55,6 +55,7 @@ function Profile() {
             setPhoneNumber(user.PhoneNumber || '');
             setFoodAlergies(user.FoodAlergies || '');
             setSickness(user.Sickness || '');
+            setOrigin(user.Origin || '');
         }
     }, [user]);
 
@@ -68,7 +69,7 @@ function Profile() {
 
     return (
         <>
-            <Navbar />
+            
             {/* <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/> */}
             <Box sx={{
                 position: 'absolute',
@@ -80,6 +81,7 @@ function Profile() {
                 top: 0,
                 left: 0,
             }}>
+            <Navbar />
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', my: 8}}>
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>
                     <Paper elevation={1} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
@@ -145,9 +147,16 @@ function Profile() {
                         />
                         <TextField
                             label="Riwayat Penyakit"
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.Sickness === "" ? " " : user.Sickness }
                             onChange={(e) => setSickness(e.target.value)} 
+                        />
+                        <TextField
+                            label="Asal Daerah"
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            defaultValue={user === undefined ? " " : user.Origin === "" ? " " : user.Origin }
+                            helperText="contoh: Malang, Jawa Timur"
+                            onChange={(e) => setOrigin(e.target.value)} 
                         />
                         <Button variant="outlined" size="large" sx={{mb: 6}} type="submit">Simpan Data</Button>
                     </Paper>

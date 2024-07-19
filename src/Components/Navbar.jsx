@@ -42,7 +42,7 @@ function Navbar() {
   }
 
   return (
-    <AppBar position="sticky" style={{backgroundColor: 'transparent'}}>
+    <AppBar position="fixed" style={{backgroundColor: 'transparent', backdropFilter: 'blur(5px)'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to='/' >

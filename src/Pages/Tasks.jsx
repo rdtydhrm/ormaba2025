@@ -27,7 +27,7 @@ function Tasks() {
     }
     return (
         <>
-            <Navbar />
+            
             {/* <GradientBackground pageHeight={'100vh'}/> */}
             <Box sx={{
                 position: 'absolute',
@@ -39,6 +39,7 @@ function Tasks() {
                 top: 0,
                 left: 0,
             }}>
+                <Navbar />
                 <Box sx={{height: '100vh'}}/>
             </Box>
         </>

@@ -8,7 +8,6 @@ function Home() {
     const learnRef = useRef(null);
     return (
         <>
-            <Navbar />
             <Box sx={{
                 position: 'absolute',
                 backgroundColor: '#000000', 
@@ -19,6 +18,7 @@ function Home() {
                 top: 0,
                 left: 0,
             }}>
+            <Navbar />
             {/* <GradientBackground pageHeight={'200vh'}/> */}
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
