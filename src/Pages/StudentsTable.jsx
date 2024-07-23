@@ -37,20 +37,23 @@ export default function StudentsTable() {
         { id: 'faculty', label: 'Fakultas'},
         { id: 'studyProgram', label: 'Program Studi'},
         { id: 'origin', label: 'Asal Daerah'},
+        { id: 'pdob', label: 'Tempat, Tanggal Lahir', minWidth: 210},
         { id: 'lineID', label: 'ID Line'},
         { id: 'instagram', label: 'Instagram'},
         { id: 'phoneNumber', label: 'Nomor Telepon'},
+        { id: 'hobby', label: 'Hobi'},
         { id: 'foodAlergies', label: 'Alergi Makanan'},
         { id: 'sickness', label: 'Riwayat Penyakit'},
+        { id: 'motto', label: 'Motto Hidup'},
     ];
 
-    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin) {
-        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin };
+    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin, hobby, pdob, motto) {
+        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin, hobby, pdob, motto };
     }
 
     const rows = [];
-    students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin}) => 
-        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin))))
+    students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) => 
+        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto))))
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);

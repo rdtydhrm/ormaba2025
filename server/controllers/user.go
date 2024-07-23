@@ -128,7 +128,7 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 		NIM: userNIM.(string),
 	}
 
-	err := initializers.DB.Model(&user).Select("line_id", "instagram", "phone_number", "food_alergies", "sickness", "origin").Updates(models.User{
+	err := initializers.DB.Model(&user).Select("line_id", "instagram", "phone_number", "food_alergies", "sickness", "origin", "hobby", "pdob", "motto").Updates(models.User{
 		LineID:       body.LineID,
 		Instagram:    body.Instagram,
 		PhoneNumber:  body.PhoneNumber,
