@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"fmt"
+	"net/url"
 	"os"
 	"time"
 
@@ -109,6 +111,9 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 		FoodAlergies string `json:"foodalergies"`
 		Sickness     string `json:"sickness"`
 		Origin       string `json:"origin"`
+		Hobby        string `json:"hobby"`
+		PDOB         string `json:"pdob"`
+		Motto        string `json:"motto"`
 	}
 
 	if err := c.BodyParser(&body); err != nil {
@@ -130,6 +135,9 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 		FoodAlergies: body.FoodAlergies,
 		Sickness:     body.Sickness,
 		Origin:       body.Origin,
+		Hobby:        body.Hobby,
+		PDOB:         body.PDOB,
+		Motto:        body.Motto,
 	}).Error
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -140,4 +148,24 @@ func UpdateUserInfo(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{
 		"message": "successfully updated user info",
 	})
+}
+
+func GetUsersNamesByGroup(c *fiber.Ctx) error {
+	query, err := url.QueryUnescape(c.Params("query"))
+	if err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	var users []models.User
+	if err := initializers.DB.Select("full_name").Where("\"group\" = ?", query).Order("NIM asc").Find(&users).Error; err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	var usersNames []string
+	for i, user := range users {
+		usersNames = append(usersNames, fmt.Sprintf("%d. %s", i+1, user.FullName))
+	}
+	return c.JSON(usersNames)
 }

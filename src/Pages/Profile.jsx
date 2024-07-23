@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 import background from "/background6.png"
 import GradientBackground from "../Components/GradientBackground";
 import { purple } from "@mui/material/colors";
+import getMentor from "../mentor";
+import MentorDialog from "../Components/MentorDialog";
+import GroupDialog from "../Components/GroupDialog";
 
 function Profile() {
     const navigate = useNavigate()
@@ -18,6 +21,26 @@ function Profile() {
     const [foodAlergies, setFoodAlergies] = useState('');
     const [sickness, setSickness] = useState('');
     const [origin, setOrigin] = useState('');
+    const [hobby, setHobby] = useState('');
+    const [pdob, setPDOB] = useState('');
+    const [motto, setMotto] = useState('');
+
+    const [openGroup, setOpenGroup] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpenGroup = () => {
+        setOpenGroup(true);
+    };
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    
+    const handleCloseGroup = () => {
+        setOpenGroup(false);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const patchProfile = async (profileDetails) => {
         const response = await axios({
@@ -36,7 +59,7 @@ function Profile() {
 
     const handlePatch = (e) => {
         e.preventDefault();
-        mutation.mutate({ lineId, instagram, phoneNumber, foodAlergies, sickness, origin});
+        mutation.mutate({ lineId, instagram, phoneNumber, foodAlergies, sickness, origin, hobby, pdob, motto });
     };
     
     const getUserInfo = async () => {
@@ -57,6 +80,9 @@ function Profile() {
             setFoodAlergies(user.FoodAlergies || '');
             setSickness(user.Sickness || '');
             setOrigin(user.Origin || '');
+            setHobby(user.Hobby || '');
+            setPDOB(user.PDOB || '');
+            setMotto(user.Motto || '');
         }
     }, [user]);
 
@@ -96,7 +122,7 @@ function Profile() {
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>
                     <Paper elevation={24} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                         <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
-                            <Typography variant="h4" textAlign={'center'}>Identitas Diri</Typography>
+                            <Typography variant="h4" textAlign={'center'} fontWeight={'bold'}>IDENTITAS DIRI</Typography>
                         </Paper>
                         <TextField
                             disabled
@@ -134,6 +160,15 @@ function Profile() {
                             defaultValue={user === undefined ? " " : user.Origin === "" ? " " : user.Origin }
                             helperText="contoh: Malang, Jawa Timur"
                             onChange={(e) => setOrigin(e.target.value)} 
+                            spellCheck={false}
+                        />
+                        <TextField
+                            label="Tempat, Tanggal Lahir"
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
+                            defaultValue={user === undefined ? " " : user.PDOB === "" ? " " : user.PDOB }
+                            helperText="contoh: Singaraja, 11 September 2001"
+                            onChange={(e) => setPDOB(e.target.value)}
+                            spellCheck={false}
                         />
                         <TextField
                             label="ID Line"
@@ -141,6 +176,7 @@ function Profile() {
                             defaultValue={user === undefined ? " " : user.LineID === "" ? " " : user.LineID }
                             helperText="contoh: @ormaba.unikahidha"
                             onChange={(e) => setLineId(e.target.value)} 
+                            spellCheck={false}
                         />
                         <TextField
                             label="Instagram"
@@ -148,6 +184,7 @@ function Profile() {
                             defaultValue={user === undefined ? " " : user.Instagram === "" ? " " : user.Instagram }
                             helperText="contoh: @ormaba.unikahidha"
                             onChange={(e) => setInstagram(e.target.value)} 
+                            spellCheck={false}  
                         />
                         <TextField
                             label="Nomor Telepon"
@@ -155,18 +192,35 @@ function Profile() {
                             defaultValue={user === undefined ? " " : user.PhoneNumber === "" ? " " : user.PhoneNumber }
                             helperText="contoh: 08814830918"
                             onChange={(e) => setPhoneNumber(e.target.value)} 
+                            spellCheck={false}  
+                        />
+                        <TextField
+                            label="Hobi"
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
+                            defaultValue={user === undefined ? " " : user.Hobby === "" ? " " : user.Hobby }
+                            onChange={(e) => setHobby(e.target.value)}
+                            spellCheck={false}
                         />
                         <TextField
                             label="Alergi Makanan"
                             sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.FoodAlergies === "" ? " " : user.FoodAlergies }
                             onChange={(e) => setFoodAlergies(e.target.value)} 
+                            spellCheck={false}
                         />
                         <TextField
                             label="Riwayat Penyakit"
-                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                             defaultValue={user === undefined ? " " : user.Sickness === "" ? " " : user.Sickness }
                             onChange={(e) => setSickness(e.target.value)} 
+                            spellCheck={false}
+                        />
+                        <TextField
+                            label="Motto Hidup"
+                            sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                            defaultValue={user === undefined ? " " : user.Motto === "" ? " " : user.Motto }
+                            onChange={(e) => setMotto(e.target.value)}
+                            spellCheck={false}
                         />
                         <Button variant="outlined" size="large" sx={{mb: 6}} type="submit">Simpan Data</Button>
                     </Paper>
@@ -174,24 +228,42 @@ function Profile() {
                 <Box sx={{display: 'flex', justifyContent: 'center'}}>
                 <Paper elevation={24} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
                     <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
-                        <Typography variant="h4" textAlign={'center'}>Informasi</Typography>
+                        <Typography variant="h4" textAlign={'center'} fontWeight={'bold'}>INFORMASI</Typography>
                     </Paper>
                     <TextField
-                        disabled
                         label="Kelompok"
                         defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group }
                         sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
+                        onClick={handleClickOpenGroup}
+                        spellCheck={false}
+                        InputProps={{
+                            readOnly: true,
+                        }}
                     />
                     <TextField
-                        disabled
                         label="Mentor"
-                        defaultValue={user === undefined ? " " : user.Mentor === "" ? "Belum mendapatkan mentor" : user.Mentor }
+                        defaultValue={getMentor(user.Group).nama}
                         sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 6}}
+                        onClick={handleClickOpen}
+                        spellCheck={false}
+                        InputProps={{
+                            readOnly: true,
+                        }}
                     />
                 </Paper>
                 </Box>
             </Container>
             </Box>
+            <GroupDialog
+                group={user.Group.substring(9)}
+                open={openGroup}
+                onClose={handleCloseGroup}
+            />
+            <MentorDialog
+                mentor={getMentor(user.Group)}
+                open={open}
+                onClose={handleClose}
+            />
         </>
     )
 }

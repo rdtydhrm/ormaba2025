@@ -66,24 +66,18 @@ func GetAllStudents(c *fiber.Ctx) error {
 }
 
 func GetFilteredStudents(c *fiber.Ctx) error {
-	var users []models.User
-	if err := initializers.DB.Find(&users).Error; err != nil {
-		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
 	query, err := url.QueryUnescape(c.Params("query"))
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
 	}
-	var filteredUsers []models.User
-	for _, user := range users {
-		if user.Group == query {
-			filteredUsers = append(filteredUsers, user)
-		}
+	var users []models.User
+	if err := initializers.DB.Where("\"group\" = ?", query).Find(&users).Error; err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": err.Error(),
+		})
 	}
-	return c.JSON(filteredUsers)
+
+	return c.JSON(users)
 }

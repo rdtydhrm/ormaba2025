@@ -16,5 +16,8 @@ type User struct {
 	Group        string
 	Mentor       string
 	Origin       string
+	Hobby        string
+	PDOB         string
+	Motto        string
 	CreatedAt    time.Time
 }
