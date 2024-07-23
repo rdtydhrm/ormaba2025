@@ -2,6 +2,7 @@ import { Box, Dialog, DialogTitle, List, ListItemText, TextField, Typography } f
 import apiURL from "../APIURL";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import CenteredLoader from "./CenteredLoader";
 
 export default function GroupDialog(props) {
     const { onClose, group, open} = props;
@@ -15,10 +16,14 @@ export default function GroupDialog(props) {
         return response.data
     }
 
-    const {data: friends} = useQuery({
+    const {data: friends, isLoading} = useQuery({
         queryKey: ["friends"],
         queryFn: getFriends,
     })
+
+    if (isLoading) {
+        return <CenteredLoader/>
+    }
   
     return (
         <Dialog onClose={handleClose} open={open} fullWidth={true} maxWidth={'md'}>
@@ -26,7 +31,14 @@ export default function GroupDialog(props) {
             <Box sx={{mx: 4, mb: 2}}>
                 <List>
                     {friends?.map((name) => (
-                        <Typography variant="subtitle1">{name}</Typography>
+                        <TextField
+                            defaultValue={name}
+                            sx={{width: '100%'}}
+                            spellCheck={false}
+                            InputProps={{
+                                readOnly: true,
+                            }}
+                        />
                     ))}
                 </List>
             </Box>
