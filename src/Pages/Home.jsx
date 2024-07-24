@@ -1,7 +1,7 @@
 import { Alert, Box, Button, Chip, CircularProgress, Container, Divider, Paper, Snackbar, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
 import GradientBackground from "../Components/GradientBackground";
-import background from "/background6.png"
+import background from "/background7.png"
 import { useRef } from "react";
 import { essence, essenceShort, whatIsORMABA, whatIsORMABAshort } from "../contents";
 
@@ -11,7 +11,6 @@ function Home() {
         <>
             <Box sx={{
                 width: '100vw',
-                height: '500vh',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
                 backgroundPosition: 'center',
@@ -31,12 +30,11 @@ function Home() {
                 zIndex: -1
             }}/>
             <Navbar />
-            {/* <GradientBackground pageHeight={'200vh'}/> */}
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
                         <Typography variant="h2" sx={{ textAlign: 'center', pb: 2, fontWeight: 'bold' }}>O R M A B A</Typography>
-                        <Button variant="outlined" size="medium" sx={{ color: 'primary.main' }}
+                        <Button variant="outlined" size="medium" sx={{ color: 'primary.main', fontWeight: 'bold'}}
                                 onClick={() => learnRef.current.scrollIntoView({behavior: 'smooth'})}>learn</Button>
                     </Box>
                 </section>
@@ -48,7 +46,7 @@ function Home() {
                             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline', color: 'secondary.light', fontStyle: 'italic', mr: 2}}>What</Typography>
                                 <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline', mr: 4}}>is ORMABA?</Typography>
-                                <span ><hr style={{display: 'inline-flex', width: '44vw'}} /></span>
+                                <span><hr style={{display: 'inline-flex', width: '44vw'}} /></span>
                             </Box>
                             <Typography variant="body1" sx={{ textAlign: 'justify', mt: 5, pb: 5, width: '75vw'}}>{whatIsORMABA}</Typography>
                         </Box>

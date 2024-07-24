@@ -96,7 +96,7 @@ function Navbar() {
                     key={page.name}
                     onClick={handleCloseNavMenu}
                     variant={isActive ? "contained" : "text"}
-                    sx={{ my: 2, display: 'block', width: '169px'}}
+                    sx={{ my: 2, display: 'block', width: '169px', fontWeight: 'bold'}}
                 >
                     {page.name}
                 </Button>

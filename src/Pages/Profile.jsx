@@ -6,7 +6,7 @@ import CenteredLoader from "../Components/CenteredLoader";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
 import { useEffect, useState } from "react";
-import background from "/background6.png"
+import background from "/background7.png"
 import GradientBackground from "../Components/GradientBackground";
 import { purple } from "@mui/material/colors";
 import getMentor from "../mentor";
@@ -100,7 +100,6 @@ function Profile() {
             {/* <GradientBackground pageHeight={{md: '245vh', xs: '230vh'}}/> */}
             <Box sx={{
                 width: '100vw',
-                height: '500vh',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
                 backgroundPosition: 'center',

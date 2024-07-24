@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import AnnouItem from "../Components/AnnouItem";
-import background from "/background6.png"
+import background from "/background7.png"
 
 function Announcements() {
     const getAnnouncements = async () => {
