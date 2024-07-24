@@ -93,11 +93,11 @@ function Home() {
                     {/* desktop version */}
                     <Box sx={{display: {xs: 'none', md: 'inherit'}}}>
                         <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
-                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '40vw',}}>
+                            <Box sx={{p: 4, width: '40vw',}}>
                                 <Box>
-                                    <Typography variant="h3" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
+                                    <Typography variant="h3" sx={{textAlign: 'center'}}><b>Rangkaian Kegiatan</b></Typography>
                                 </Box>
-                            </Paper>
+                            </Box>
                         </Box>
                         <Box sx={{ mt: 8, width: '75vw' }}>
                             <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, display: 'flex'}}>
@@ -134,11 +134,11 @@ function Home() {
                     {/* mobile version */}
                     <Box sx={{display: {xs: 'inherit', md: 'none'}}}>
                         <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
-                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '80vw',}}>
+                            <Box sx={{p: 4, width: '80vw',}}>
                                 <Box>
-                                    <Typography variant="h4" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
+                                    <Typography variant="h4" sx={{textAlign: 'center'}}><b>Rangkaian Kegiatan</b></Typography>
                                 </Box>
-                            </Paper>
+                            </Box>
                         </Box>
                         <Box sx={{ mt: 8, width: '80vw' }}>
                             <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, display: 'flex', flexDirection: {xs: 'column', md: 'row'}}}>
@@ -147,10 +147,10 @@ function Home() {
                                 </Box>
                                 <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                                     <Box>
-                                        <Typography variant="h3" sx={{color: 'secondary.light', mb: 4, textAlign: 'center'}}><b>Dharma Asrama 1</b></Typography>
+                                        <Typography variant="h6" sx={{color: 'secondary.light', mb: 4, textAlign: 'center'}}><b>Dharma Asrama 1</b></Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="body1" sx={{textAlign: 'center', mb: 2}}>Pada DA I berfokus untuk mengenalkan UNIKAHIDHA serta menanamkan nilai-nilai kerohanian kepada mahasiswa  baru. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 1 hari.</Typography>
+                                        <Typography variant="body2" sx={{textAlign: 'center', mb: 2}}>Pada DA I berfokus untuk mengenalkan UNIKAHIDHA serta menanamkan nilai-nilai kerohanian kepada mahasiswa  baru. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 1 hari.</Typography>
                                     </Box>
                                 </Box>
                             </Paper>
@@ -162,10 +162,10 @@ function Home() {
                                 </Box>
                                 <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                                     <Box>
-                                        <Typography variant="h3" sx={{color: 'secondary.light', mb: 4, textAlign: 'center'}}><b>Dharma Asrama 2</b></Typography>
+                                        <Typography variant="h6" sx={{color: 'secondary.light', mb: 4, textAlign: 'center'}}><b>Dharma Asrama 2</b></Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="body1" sx={{textAlign: 'center', mb: 2}}>Pada DA II berfokus untuk menanamkan nilai kekeluargaan dan kepemimpinan. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 2 hari 1 malam.</Typography>
+                                        <Typography variant="body2" sx={{textAlign: 'center', mb: 2}}>Pada DA II berfokus untuk menanamkan nilai kekeluargaan dan kepemimpinan. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 2 hari 1 malam.</Typography>
                                     </Box>
                                 </Box>
                             </Paper>
@@ -214,14 +214,7 @@ function Home() {
                 </section>
 
                 <section id="gallery-section">
-                    <Box sx={{ mt: 30, display: 'flex', justifyContent: 'center'}}>
-                        <Paper elevation={8} sx={{bgcolor: 'transparent', p: 2, width: {xs: '50vw', md: '15vw'},}}>
-                            <Box>
-                                <Typography variant="h3" sx={{textAlign: 'center'}}>Galeri</Typography>
-                            </Box>
-                        </Paper>
-                    </Box>
-                    <Box sx={{mt: 8, width: '64vw', mb: 30}}>
+                    <Box sx={{mt: 32, width: '80vw', mb: 30}}>
                         <GalleryCarousel/>
                     </Box>
                 </section>

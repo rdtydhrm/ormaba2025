@@ -4,7 +4,7 @@ export default function GalleryItem({image})
 {
     return (
         <Card>
-            <CardMedia image={image} sx={{height: '36vw', width: '64vw'}} />
+            <CardMedia image={image} sx={{height: '45vw', width: '80vw'}} />
         </Card>
     )
 }
