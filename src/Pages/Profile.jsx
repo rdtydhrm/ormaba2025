@@ -15,6 +15,11 @@ import GroupDialog from "../Components/GroupDialog";
 
 function Profile() {
     const navigate = useNavigate()
+    useEffect(() => {
+        if (document.cookie.match(/^(.*;)?\s*yes\s*=\s*[^;]+(.*)?$/) === null) {    
+            navigate("/login")
+        }
+    }, []);
     const [lineId, setLineId] = useState('');
     const [instagram, setInstagram] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');

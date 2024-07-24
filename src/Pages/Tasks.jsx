@@ -6,9 +6,15 @@ import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import { Box } from "@mui/material";
 import background from "/background7.png"
+import { useEffect } from "react";
 
 function Tasks() {
     const navigate = useNavigate()
+    useEffect(() => {
+        if (document.cookie.match(/^(.*;)?\s*yes\s*=\s*[^;]+(.*)?$/) === null) {    
+            navigate("/login")
+        }
+    }, []);
     const getUserInfo = async () => {
         const response = await axios.get(`${apiURL}/api/info`)
         return response.data
