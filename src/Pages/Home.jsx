@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Chip, CircularProgress, Container, Divider, Link, Paper, Snackbar, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardMedia, Chip, CircularProgress, Container, Divider, Link, Paper, Snackbar, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
 import GradientBackground from "../Components/GradientBackground";
 import background from "/background7.png"
@@ -32,6 +32,18 @@ function Home() {
                 zIndex: -1
             }}/>
             <Navbar />
+            <Box>
+            <video autoPlay loop muted style={{
+                position: 'absolute',
+                width: '100vw',
+                top: 0,
+                left: 0,
+                zIndex: -1,
+            }}>
+                <source src="/ormaba1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            </Box>
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
@@ -41,7 +53,7 @@ function Home() {
                     </Box>
                 </section>
                 
-                <section id="what-section" ref={learnRef}>
+            <section id="what-section" ref={learnRef} style={{marginTop: '10em'}}>
                     <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                         {/* desktop version */}
                         <Box sx={{mt: 16, width: '100%', display: {xs: 'none', md: 'flex'}, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', mb: 10}}>
@@ -93,11 +105,11 @@ function Home() {
                     {/* desktop version */}
                     <Box sx={{display: {xs: 'none', md: 'inherit'}}}>
                         <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
-                            <Box sx={{p: 4, width: '40vw',}}>
+                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '40vw',}}>
                                 <Box>
-                                    <Typography variant="h3" sx={{textAlign: 'center'}}><b>Rangkaian Kegiatan</b></Typography>
+                                    <Typography variant="h3" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
                                 </Box>
-                            </Box>
+                            </Paper>
                         </Box>
                         <Box sx={{ mt: 8, width: '75vw' }}>
                             <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, display: 'flex'}}>
@@ -134,11 +146,11 @@ function Home() {
                     {/* mobile version */}
                     <Box sx={{display: {xs: 'inherit', md: 'none'}}}>
                         <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
-                            <Box sx={{p: 4, width: '80vw',}}>
+                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '80vw',}}>
                                 <Box>
-                                    <Typography variant="h4" sx={{textAlign: 'center'}}><b>Rangkaian Kegiatan</b></Typography>
+                                    <Typography variant="h5" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
                                 </Box>
-                            </Box>
+                            </Paper>
                         </Box>
                         <Box sx={{ mt: 8, width: '80vw' }}>
                             <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, display: 'flex', flexDirection: {xs: 'column', md: 'row'}}}>
