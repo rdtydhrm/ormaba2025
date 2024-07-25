@@ -32,18 +32,6 @@ function Home() {
                 zIndex: -1
             }}/>
             <Navbar />
-            <video autoPlay loop muted style={{
-                zIndex: -1, 
-                position: 'absolute', 
-                objectFit: 'cover',
-                width: '100vw',
-                height: '100vh',
-                top: 0,
-                left: 0,
-            }}>
-                <source src="/ormaba1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
 
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
