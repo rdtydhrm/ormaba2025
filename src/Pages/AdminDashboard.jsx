@@ -13,7 +13,7 @@ export default function AdminDashboard() {
                 <Button variant="contained" size="large" sx={{ m: 4 }}
                         onClick={() => navigate("/admin/students")}>Data Siswa</Button>
                 <Button variant="contained" size="large" sx={{ m: 4 }}
-                        onClick={() => navigate("/admin/dashboard")}>Data Tugas</Button>
+                        onClick={() => navigate("/admin/submissions")}>Data Tugas</Button>
             </Box>
         </>
     )

@@ -8,7 +8,7 @@ import (
 
 func GetAnnouncements(c *fiber.Ctx) error {
 	announcements := []models.Announcement{}
-	if err := initializers.DB.Find(&announcements).Error; err != nil {
+	if err := initializers.DB.Order("id desc").Find(&announcements).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})

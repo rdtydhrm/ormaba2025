@@ -6,25 +6,20 @@ import axios from "axios";
 import apiURL from "../APIURL";
 import { useState } from "react";
 
-export default function StudentsTable() {
+export default function SubmissionsTable() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const params = useParams()
     const navigate = useNavigate()
 
-    const getStudents = async () => {
-        if (params.group === "all") {
-            const response = await axios.get(`${apiURL}/api/admin/students/all`)
-            return response.data
-        } else {
-            const response = await axios.get(`${apiURL}/api/admin/students`)
-        }
+    const getSubmissions = async () => {
+        const response = await axios.get(`${apiURL}/api/admin/submissions`)
         return response.data
     }
 
-    const {data: students, isLoading, error} = useQuery({
-        queryKey: ["students"],
-        queryFn: getStudents,
+    const {data: submissions, isLoading, error} = useQuery({
+        queryKey: ["submissions"],
+        queryFn: getSubmissions,
     })
 
     if (isLoading) {
@@ -37,34 +32,19 @@ export default function StudentsTable() {
 
     const columns = [
         { id: 'name', label: 'Nama', minWidth: 260},
-        { id: 'nim', label: 'NIM'},
-        { id: 'email', label: 'Email'},
-        { id: 'faculty', label: 'Fakultas'},
-        { id: 'studyProgram', label: 'Program Studi'},
-        { id: 'origin', label: 'Asal Daerah'},
-        { id: 'pdob', label: 'Tempat, Tanggal Lahir', minWidth: 210},
-        { id: 'lineID', label: 'ID Line'},
-        { id: 'instagram', label: 'Instagram'},
-        { id: 'phoneNumber', label: 'Nomor Telepon'},
-        { id: 'hobby', label: 'Hobi'},
-        { id: 'foodAlergies', label: 'Alergi Makanan'},
-        { id: 'sickness', label: 'Riwayat Penyakit'},
-        { id: 'motto', label: 'Motto Hidup'},
+        { id: 'url', label: 'URL'},
+        { id: 'status', label: 'Status'},
     ];
 
-    function createData(name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin, hobby, pdob, motto) {
-        return { name, nim, email, faculty, studyProgram, lineID, instagram, phoneNumber, foodAlergies, sickness, origin, hobby, pdob, motto };
+    function createData(name, url, status) {
+        return { name, url, status };
     }
 
     const rows = [];
-    if (params.group === "all") {
-        students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) => 
-        (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto))))
-    } else {
-        students?.filter((student) => student.Group === params.group)
-            .map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) =>
-            (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto))))
-    }
+    submissions?.filter((submission) => submission.taskID === params.taskID && submission.user.Group === params.group)
+        .map(({user, url, status}) => 
+        (rows.push(createData(user.FullName, url, status))))
+
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -78,7 +58,7 @@ export default function StudentsTable() {
         <Box>
             <Box  sx={{ m: 4, position: 'absolute', display: { xs: 'none', md: 'inline' } }}>
                 <Button variant="contained" size="medium"
-                        onClick={() => navigate("/admin/students")}>Back</Button>
+                        onClick={() => navigate(`/admin/submissions/${params.taskID}`)}>Back</Button>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw'}}>
                 <Box>

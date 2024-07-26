@@ -16,6 +16,7 @@ function Announcements() {
     const {data: announcements, isLoading, error} = useQuery({
         queryKey: ["getAnnouncements"],
         queryFn: getAnnouncements,
+        staleTime: 1000 * 60 * 5 // 5 minutes
     })
 
     if (isLoading) {
@@ -29,8 +30,8 @@ function Announcements() {
     return (
         <>
             <Box sx={{
+                minHeight: '100vh',
                 width: '100vw',
-                height: '500vh',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
                 backgroundPosition: 'center',
@@ -50,14 +51,14 @@ function Announcements() {
                 zIndex: -1
             }}/>
             <Navbar />
-            <Container sx={{height: '100vh', display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <Container sx={{display:'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <Paper elevation={4} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', my: 6}}>
-                        <Typography variant="h4" textAlign={'center'}>Pengumuman</Typography>
+                    <Paper elevation={24} sx={{bgcolor: 'transparent', maxWidth: {md: '30vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6, mt: 16, py: {md: 6, xs: 0}}}>
+                        <Typography variant="h4" textAlign={'center'}><b>PENGUMUMAN</b></Typography>
                     </Paper>
                 </Box>
                 <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                <Paper elevation={1} sx={{borderRadius: 5, bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
+                <Paper elevation={24} sx={{borderRadius: 5, bgcolor: 'transparent', width: {xs: '92vw', md: '50vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 12}}>
                     {announcements.map((item) => (
                         <AnnouItem annou={item}/>
                     ))}

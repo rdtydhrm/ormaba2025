@@ -88,7 +88,7 @@ function Navbar() {
           <Box sx={{ display: {xs: 'flex', md: 'none'}, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
             <MobileLogo/>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 10 }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 20 }}>
             {pages.map((page) => (
               <NavLink to={page.link} style={{textDecoration: 'none'}}>
                 {({ isActive }) => (
@@ -107,7 +107,7 @@ function Navbar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: {md: '40px'}, height: {md: '40px'}}}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, width: {md: '40px'}, height: {md: '40px'}, ml: {xs: 0, md: 2}}}>
                 <SettingsIcon size="large" color="primary"/>
               </IconButton>
             </Tooltip>

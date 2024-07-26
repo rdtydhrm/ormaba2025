@@ -1,4 +1,4 @@
-import { Alert, Box, CircularProgress, Container, Fab, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Snackbar, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, CircularProgress, Container, Fab, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Snackbar, TextField, Typography } from "@mui/material";
 import LockIcon from '@mui/icons-material/Lock';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -40,6 +40,10 @@ function Login() {
 
     return (
         <>
+        <Box  sx={{ m: 4, position: 'absolute', display: { xs: 'none', md: 'inline' }, top: 2 }}>
+            <Button variant="contained" size="medium"
+                    onClick={() => navigate("/announcements")}>Back</Button>
+        </Box>
         <Container sx={{ height: '100vh' }}>
             <Box component='form' onSubmit={handleLogin} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 {mutation.isError ? (

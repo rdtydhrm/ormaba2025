@@ -125,7 +125,7 @@ function Profile() {
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', my: 8}}>
                 <Box component='form' onSubmit={handlePatch} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6, mb: 6}}>
                     <Paper elevation={24} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
-                        <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
+                        <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6, py: {md: 6, xs: 0}}}>
                             <Typography variant="h4" textAlign={'center'} fontWeight={'bold'}>IDENTITAS DIRI</Typography>
                         </Paper>
                         <TextField
@@ -231,12 +231,12 @@ function Profile() {
                 </Box>
                 <Box sx={{display: 'flex', justifyContent: 'center'}}>
                 <Paper elevation={24} sx={{bgcolor: 'transparent', width: {xs: '92vw', md: '75vw'}, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', pt: 6}}>
-                    <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6}}>
+                    <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", height: '4em', mb: 6, py: {md: 6, xs: 0}}}>
                         <Typography variant="h4" textAlign={'center'} fontWeight={'bold'}>INFORMASI</Typography>
                     </Paper>
                     <TextField
                         label="Kelompok"
-                        defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group }
+                        defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group.replace("_", " ") }
                         sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                         onClick={handleClickOpenGroup}
                         spellCheck={false}
@@ -259,12 +259,12 @@ function Profile() {
             </Container>
             </Box>
             <GroupDialog
-                group={user.Group.substring(9)}
+                group={user.Group.replace("_", " ")}
                 open={openGroup}
                 onClose={handleCloseGroup}
             />
             <MentorDialog
-                mentor={getMentor(user.Group)}
+                mentor={getMentor(user.Group.replace("_", " "))}
                 open={open}
                 onClose={handleClose}
             />

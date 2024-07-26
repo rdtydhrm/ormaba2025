@@ -12,7 +12,7 @@ export default function GroupDialog(props) {
     };
 
     const getFriends = async () => {
-        const response = await axios.get(`${apiURL}/api/friends/Kelompok%20${group}`)
+        const response = await axios.get(`${apiURL}/api/friends/${group}`)
         return response.data
     }
 

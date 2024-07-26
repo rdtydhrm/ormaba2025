@@ -15,8 +15,16 @@ func MountRoutes(api fiber.Router) {
 	api.Get("/friends/:query", middleware.RequireAuth, controllers.GetUsersNamesByGroup)
 	
 	api.Get("/announcements", controllers.GetAnnouncements)
-
+	
+	api.Get("/submissions", middleware.RequireAuth, controllers.GetAllUserSubmissions)
+	api.Patch("/submissions/:id", middleware.RequireAuth, controllers.UpdateUserSubmission)
+	
 	api.Post("/admin", controllers.LoginAdmin)
 	api.Get("/admin/students/all", middleware.RequireAdmin, controllers.GetAllStudents)
 	api.Get("/admin/students/:query", middleware.RequireAdmin, controllers.GetFilteredStudents)
+	
+	api.Post("/admin/tasks", middleware.RequireAdmin, controllers.CreateTask)
+	api.Get("/admin/tasks", middleware.RequireAdmin, controllers.GetAllTasks)
+	api.Get("/admin/submissions", middleware.RequireAdmin, controllers.GetAllSubmissions)
+	// api.Get("/admin/submissions/:query", middleware.RequireAdmin, controllers.GetFilteredSubmissions)
 }

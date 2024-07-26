@@ -1,24 +1,24 @@
-// TODO: SWITCH 1 7
 export default function getMentor(group) {
+    // "Mulawarman", "Purnawarman", "Ratu_Shima", "Jayabaya", "Kertanegara", "Hayam_Wuruk", "Gajayana", "Udayana"
     switch (group) {
-        case "Kelompok 7":
+        case "Mulawarman":
             return mentor1
-        case "Kelompok 2":
+        case "Purnawarman":
             return mentor2
-        case "Kelompok 3":
+        case "Ratu_Shima":
             return mentor3
-        case "Kelompok 4":
+        case "Jayabaya":
             return mentor4
-        case "Kelompok 5":
+        case "Kertanegara":
             return mentor5
-        case "Kelompok 6":
+        case "Hayam_Wuruk":
             return mentor6
-        case "Kelompok 1":
+        case "Gajayana":
             return mentor7
-        case "Kelompok 8":
+        case "Udayana":
             return mentor8
         default:
-            return "error"
+            return "Kosong"
     }
 }
 

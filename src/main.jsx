@@ -17,6 +17,11 @@ import AdminLogin from './Pages/AdminLogin';
 import AdminDashboard from './Pages/AdminDashboard';
 import Students from './Pages/Students';
 import StudentsTable from './Pages/StudentsTable';
+import Submissions from './Pages/Submissions';
+import SubmissionsGroup from './Pages/SubmissionsGroup';
+import SubmissionsTable from './Pages/SubmissionTable';
+import AnnouncementDetail from './Pages/AnnouncementsDetail';
+import SubmissionDetail from './Pages/SubmissionDetail';
 
 const theme = createTheme({
   palette: {
@@ -54,8 +59,16 @@ const router = createBrowserRouter([
     element: <Tasks />
   },
   {
+    path: '/submissions/:id',
+    element: <SubmissionDetail />
+  },
+  {
     path: '/announcements',
     element: <Announcements />
+  },
+  {
+    path: '/announcements/:id',
+    element: <AnnouncementDetail />
   },
   {
     path: '/profile',
@@ -74,12 +87,20 @@ const router = createBrowserRouter([
     element: <Students />
   },
   {
-    path: '/admin/students/:query',
+    path: '/admin/students/:group',
     element: <StudentsTable />
   },
   {
-    path: '/admin/tasks',
-    element: <AdminDashboard />
+    path: '/admin/submissions',
+    element: <Submissions />
+  },
+  {
+    path: '/admin/submissions/:taskID',
+    element: <SubmissionsGroup />
+  },
+  {
+    path: '/admin/submissions/:taskID/:group',
+    element: <SubmissionsTable />
   },
 ])
 
