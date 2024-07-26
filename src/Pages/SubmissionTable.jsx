@@ -12,6 +12,14 @@ export default function SubmissionsTable() {
     const params = useParams()
     const navigate = useNavigate()
 
+    const sanitizeURL = (url) => {
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+            return url
+        } else {
+            return `http://${url}`
+        }
+    }
+
     const getSubmissions = async () => {
         const response = await axios.get(`${apiURL}/api/admin/submissions`)
         return response.data
@@ -86,10 +94,11 @@ export default function SubmissionsTable() {
                                     {columns.map((column) => {
                                     const value = row[column.id];
                                     return (
-                                        <TableCell key={column.id} align={column.align}>
-                                        {column.format && typeof value === 'number'
-                                            ? column.format(value)
-                                            : value}
+                                        // if url then make it a link
+                                        <TableCell key={column.id}>
+                                        {column.id === 'url'
+                                        ? <a href={sanitizeURL(value)} target="_blank" rel="noreferrer">{value}</a>
+                                        : value}
                                         </TableCell>
                                     );
                                     })}
