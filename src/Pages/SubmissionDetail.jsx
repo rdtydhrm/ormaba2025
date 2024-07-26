@@ -110,6 +110,7 @@ export default function SubmissionDetail() {
                                 <TextField
                                     label="Link"
                                     variant={"standard"}
+                                    defaultValue={submission.url}
                                     sx={{maxWidth: {md: '30vw'}, width: '60vw', pb: 4}}
                                     onChange={(e) => setLink(e.target.value)}
                                     spellCheck={false}
