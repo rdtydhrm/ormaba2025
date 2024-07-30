@@ -1,21 +1,21 @@
 export default function getMentor(group) {
-    // "Mulawarman", "Purnawarman", "Ratu_Shima", "Jayabaya", "Kertanegara", "Hayam_Wuruk", "Gajayana", "Udayana"
+    // "Adipati", "Bimantara", "Cakrabhuwana", "Devendra", "Mahesvara", "Nishkala", "Osha", "Prabhu"
     switch (group) {
-        case "Mulawarman":
-            return mentor1
-        case "Purnawarman":
+        case "Adipati":
             return mentor2
-        case "Ratu_Shima":
+        case "Bimantara":
+            return mentor1
+        case "Cakrabhuwana":
             return mentor3
-        case "Jayabaya":
+        case "Devendra":
             return mentor4
-        case "Kertanegara":
+        case "Mahesvara":
             return mentor5
-        case "Hayam_Wuruk":
+        case "Nishkala":
             return mentor6
-        case "Gajayana":
+        case "Osha":
             return mentor7
-        case "Udayana":
+        case "Prabhu":
             return mentor8
         default:
             return "Kosong"

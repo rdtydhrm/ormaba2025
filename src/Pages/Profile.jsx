@@ -236,7 +236,7 @@ function Profile() {
                     </Paper>
                     <TextField
                         label="Kelompok"
-                        defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group.replace("_", " ") }
+                        defaultValue={user === undefined ? " " : user.Group === "" ? "Belum mendapatkan kelompok" : user.Group}
                         sx={{maxWidth: {md: '50vw'}, width: '75vw', pb: 4}}
                         onClick={handleClickOpenGroup}
                         spellCheck={false}
@@ -259,12 +259,12 @@ function Profile() {
             </Container>
             </Box>
             <GroupDialog
-                group={user.Group.replace("_", " ")}
+                group={user.Group}
                 open={openGroup}
                 onClose={handleCloseGroup}
             />
             <MentorDialog
-                mentor={getMentor(user.Group.replace("_", " "))}
+                mentor={getMentor(user.Group)}
                 open={open}
                 onClose={handleClose}
             />

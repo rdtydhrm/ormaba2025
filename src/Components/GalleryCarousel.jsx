@@ -3,7 +3,7 @@ import GalleryItem from "./GalleryItem"
 
 export default function GalleryCarousel(props)
 {
-    var images = ['/gallery1.png', '/gallery2.png', '/gallery3.png']
+    var images = ['/landscape1.png', '/landscape2.png', '/landscape3.png', '/landscape4.png', '/landscape5.png']
 
     return (
         <Carousel>
