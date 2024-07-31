@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import { Box, Container, Paper, Typography } from "@mui/material";
-import background from "/background7.png"
+import background from "/background7.jpg"
 import { useEffect } from "react";
 import SubmissionItem from "../Components/SubmissionItem";
 

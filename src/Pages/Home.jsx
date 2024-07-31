@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardMedia, Chip, CircularProgress, Container, Divider, Link, Paper, Snackbar, Typography } from "@mui/material";
 import Navbar from "../Components/Navbar";
 import GradientBackground from "../Components/GradientBackground";
-import background from "/background7.png"
+import background from "/background7.jpg"
 import { useRef } from "react";
 import { essence, essenceShort, whatIsORMABA1, whatIsORMABA2, whatIsORMABAshort } from "../contents";
 import GalleryCarousel from "../Components/GalleryCarousel";

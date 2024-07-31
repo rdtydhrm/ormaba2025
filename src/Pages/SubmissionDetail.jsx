@@ -5,7 +5,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import { Box, Button, Container, Paper, TextField, Typography } from "@mui/material";
-import background from "/background7.png"
+import background from "/background7.jpg"
 import { useEffect, useState } from "react";
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
