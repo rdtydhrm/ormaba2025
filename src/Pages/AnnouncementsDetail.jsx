@@ -31,6 +31,7 @@ export default function AnnouncementDetail() {
 
     if (error) {
         console.log(error)
+        navigate('/')
     }
 
     return (
@@ -76,7 +77,7 @@ export default function AnnouncementDetail() {
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Paper elevation={24} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", mb: 6, p: 4}}>
-                        <Typography variant="h6" textAlign={'left'}><b>{announcement.Contents}</b></Typography>
+                        <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'}><b>{announcement.Contents}</b></Typography>
                     </Paper>
                 </Box>
             </Container>

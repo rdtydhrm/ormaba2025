@@ -105,7 +105,7 @@ export default function SubmissionDetail() {
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Paper elevation={24} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", mb: 6, p: 4}}>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                            <Typography variant="h6" textAlign={'left'} sx={{mb: 4}}><b>{submission.task.description}</b></Typography>
+                            <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'} sx={{mb: 4}}><b>{submission.task.description}</b></Typography>
                             <Box component={'form'} onSubmit={handlePatch} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center"}}>
                                 <TextField
                                     label="Link"

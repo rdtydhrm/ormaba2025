@@ -6,8 +6,11 @@ import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import AnnouItem from "../Components/AnnouItem";
 import background from "/background7.jpg"
+import { useNavigate } from "react-router-dom";
 
 function Announcements() {
+    const navigate = useNavigate()
+
     const getAnnouncements = async () => {
         const response = await axios.get(`${apiURL}/api/announcements`)
         return response.data
@@ -25,6 +28,7 @@ function Announcements() {
 
     if (error) {
         console.log(error)
+        navigate('/')
     }
 
     return (
