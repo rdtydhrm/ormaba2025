@@ -3,6 +3,9 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import { Link } from "react-router-dom";
 
 export default function AnnouItem({annou}) {
+    const date = new Date(annou.CreatedAt.substring(0, 10));
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('id-ID', options);
     return (
         <>
             <Link style={{textDecoration: 'none'}} to={`/announcements/${annou.ID}`}>
@@ -12,8 +15,8 @@ export default function AnnouItem({annou}) {
                             <CampaignIcon fontSize="large" sx={{color: 'primary.main'}}/>
                         </Box>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start', py: 2}}>
-                            <Typography variant="h5" sx={{color: 'primary.main'}}><b>{annou.Title}</b></Typography>
-                            <Typography variant="subtitle1" ><i>{annou.CreatedAt.substring(0, 10)}</i></Typography>
+                            <Typography variant="h5" sx={{color: 'primary.main', fontSize: {xs: '1.2em', md: '1.6em'}}}><b>{annou.Title}</b></Typography>
+                            <Typography variant="subtitle1" >{formattedDate}</Typography>
                         </Box>
                     </Box>
                 </Paper>

@@ -6,7 +6,7 @@ import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import AnnouItem from "../Components/AnnouItem";
 import background from "/background7.jpg"
-import { useNavigate } from "react-router-dom";
+import { ScrollRestoration, useNavigate } from "react-router-dom";
 
 function Announcements() {
     const navigate = useNavigate()
@@ -33,6 +33,7 @@ function Announcements() {
 
     return (
         <>
+            <ScrollRestoration />
             <Box sx={{
                 minHeight: '100vh',
                 width: '100vw',

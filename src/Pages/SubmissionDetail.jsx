@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import { useNavigate, useParams } from "react-router-dom";
+import { ScrollRestoration, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
@@ -63,6 +63,7 @@ export default function SubmissionDetail() {
     }
     return (
         <>
+            <ScrollRestoration />
             <Box sx={{
                 minHeight: '100vh',
                 width: '100vw',

@@ -6,11 +6,14 @@ import { useRef } from "react";
 import { essence, essenceShort, whatIsORMABA1, whatIsORMABA2, whatIsORMABAshort } from "../contents";
 import GalleryCarousel from "../Components/GalleryCarousel";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { ScrollRestoration } from "react-router-dom";
+import { questions, answers } from "../contents.js";
 
 function Home() {
     const learnRef = useRef(null);
     return (
         <>
+            <ScrollRestoration />
             <Box sx={{
                 width: '100vw',
                 backgroundImage: `url(${background})`,
@@ -32,7 +35,18 @@ function Home() {
                 zIndex: -1
             }}/>
             <Navbar />
-
+            <video autoPlay loop muted style={{
+                zIndex: -1, 
+                position: 'absolute', 
+                objectFit: 'cover',
+                width: '100vw',
+                height: '100vh',
+                top: 0,
+                left: 0,
+            }}>
+                <source src="/ormaba5.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <Container sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <section id="top-section">
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
@@ -183,34 +197,21 @@ function Home() {
                             </Paper>
                     </Box>
                     <Box>
-                        <Accordion elevation={8} sx={{bgcolor: 'transparent'}}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel1-content"
-                                id="panel1-header"
-                                sx={{color: 'secondary.light'}}
-                            >
-                            <b>Apakah perlu motor untuk mengikuti ORMABA?</b>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                Tidak perlu. ORMABA akan dilaksanakan di luar kampus, tetapi akan disediakan transportasi dari panitia.
-                            </AccordionDetails>
-                        </Accordion>
-                        <Accordion elevation={8} sx={{bgcolor: 'transparent'}}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2-content"
-                                id="panel2-header"
-                                sx={{color: 'secondary.light'}}
-                            >
-                            <b>Kapan ORMABA dilaksanakan?</b>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                Jadwal pelaksanaan ORMABA akan diumumkan lebih lanjut oleh panitia.
-                                ORMABA akan dilaksanakan sesuai dengan jadwal dari masing-masing fakultas
-                                agar tidak tabrakan dengan ospek fakultas.
-                            </AccordionDetails>
-                        </Accordion>
+                        {questions.map((question, index) => (
+                            <Accordion elevation={8} sx={{bgcolor: 'transparent'}}>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls={`panel${index}-content`}
+                                    id={`panel${index}-header`}
+                                    sx={{color: 'secondary.light'}}
+                                >
+                                <b>{question}</b>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    {answers[index]}
+                                </AccordionDetails>
+                            </Accordion>
+                        ))}
                     </Box>
                 </section>
 

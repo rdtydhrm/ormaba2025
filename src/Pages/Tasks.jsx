@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { ScrollRestoration, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
@@ -37,6 +37,7 @@ function Tasks() {
     }
     return (
         <>
+            <ScrollRestoration />
             <Box sx={{
                 minHeight: '100vh',
                 width: '100vw',
