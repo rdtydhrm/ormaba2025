@@ -108,6 +108,7 @@ export default function SubmissionDetail() {
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                             <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'} sx={{mb: 4}}><b>{submission.task.description}</b></Typography>
                             <Box component={'form'} onSubmit={handlePatch} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center"}}>
+                                {submission?.task.category === "Link" ?
                                 <TextField
                                     label="Link"
                                     variant={"standard"}
@@ -116,6 +117,7 @@ export default function SubmissionDetail() {
                                     onChange={(e) => setLink(e.target.value)}
                                     spellCheck={false}
                                 />
+                                : <></>}
                                 <Button variant="contained" size="large" sx={{mb: 2, width: '10em'}} type="submit">submit</Button>
                             </Box>
                         </Box>
