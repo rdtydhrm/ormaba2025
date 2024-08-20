@@ -58,7 +58,7 @@ function Home() {
                 
             <section id="what-section" ref={learnRef} style={{marginTop: '10em'}}>
                     <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        {/* desktop version wedanta */}
+                        {/* desktop version */}
                         <Box sx={{mt: 16, width: '100%', display: {xs: 'none', md: 'flex'}, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', mb: 10}}>
                             
                                 <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
