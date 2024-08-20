@@ -158,7 +158,7 @@ func GetUsersNamesByGroup(c *fiber.Ctx) error {
 		})
 	}
 	var users []models.User
-	if err := initializers.DB.Select("full_name", "faculty").Where("\"group\" = ?", query).Order("NIM asc").Find(&users).Error; err != nil {
+	if err := initializers.DB.Select("full_name", "faculty", "nim").Where("\"group\" = ?", query).Order("NIM asc").Find(&users).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
@@ -168,6 +168,7 @@ func GetUsersNamesByGroup(c *fiber.Ctx) error {
 		friends = append(friends, dtos.Friend{
 			Name:    user.FullName,
 			Faculty: user.Faculty,
+			NIM:     user.NIM,
 		})
 	}
 	return c.JSON(friends)

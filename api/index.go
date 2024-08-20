@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
-	"github.com/kmdavidds/ormaba-api/server"
 	"github.com/kmdavidds/ormaba-api/server/initializers"
+	"github.com/kmdavidds/ormaba-api/server/routes"
 )
 
 // Handler is the main entry point of the application. Think of it like the main() method
@@ -32,7 +32,7 @@ func handler() http.HandlerFunc {
 
 	api := app.Group("/api")
 
-	server.MountRoutes(api)
+	routes.MountRoutes(api)
 
 	return adaptor.FiberApp(app)
 }

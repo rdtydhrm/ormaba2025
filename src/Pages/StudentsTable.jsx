@@ -58,10 +58,10 @@ export default function StudentsTable() {
 
     const rows = [];
     if (params.group === "all") {
-        students?.map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) => 
+        students?.filter((student) => student.NIM.startsWith("24")).map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) => 
         (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto))))
     } else {
-        students?.filter((student) => student.Group === params.group)
+        students?.filter((student) => student.Group === params.group && student.NIM.startsWith("24"))
             .map(({FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto}) =>
             (rows.push(createData(FullName, NIM, Email, Faculty, StudyProgram, LineID, Instagram, PhoneNumber, FoodAlergies, Sickness, Origin, Hobby, PDOB, Motto))))
     }

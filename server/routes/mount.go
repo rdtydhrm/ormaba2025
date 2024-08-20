@@ -1,4 +1,4 @@
-package server
+package routes
 
 import (
 	"github.com/gofiber/fiber/v2"
@@ -27,4 +27,6 @@ func MountRoutes(api fiber.Router) {
 	api.Get("/admin/tasks", middleware.RequireAdmin, controllers.GetAllTasks)
 	api.Get("/admin/submissions", middleware.RequireAdmin, controllers.GetAllSubmissions)
 	// api.Get("/admin/submissions/:query", middleware.RequireAdmin, controllers.GetFilteredSubmissions)
+
+	api.Post("/mentor", controllers.LoginMentor)
 }

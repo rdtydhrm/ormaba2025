@@ -1,4 +1,4 @@
-import { Alert, Box, Button, CircularProgress, Container, Fab, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Snackbar, TextField, Typography } from "@mui/material";
+import { Alert, Box, CircularProgress, Container, Fab, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Snackbar, TextField, Typography } from "@mui/material";
 import LockIcon from '@mui/icons-material/Lock';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -9,8 +9,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
 
-function Login() {
-    const [nim, setNim] = useState('');
+export default function MentorLogin() {
+    const [id, setID] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Login() {
         const response = await axios({
             method: 'POST',
             baseURL: apiURL,
-            url: '/api/login',
+            url: '/api/mentor',
             data: loginDetails
         })
         return response
@@ -35,15 +35,11 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        mutation.mutate({ nim, password });
+        mutation.mutate({ id, password });
     };
 
     return (
         <>
-        <Box  sx={{ m: 4, position: 'absolute', display: { xs: 'none', md: 'inline' }, top: 2 }}>
-            <Button variant="contained" size="medium"
-                    onClick={() => navigate("/")}>Back</Button>
-        </Box>
         <Container sx={{ height: '100vh' }}>
             <Box component='form' onSubmit={handleLogin} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 {mutation.isError ? (
@@ -53,16 +49,16 @@ function Login() {
                     onClose={() => mutation.reset()}
                 >
                     <Alert severity="error" sx={{ width: '100%' }}>
-                    NIM atau password salah.
+                    salah.
                     </Alert>
                 </Snackbar>
                 ) : <></>}
-                <Typography variant="h3">Login</Typography>
+                <Typography variant="h3">Mentor</Typography>
                 <TextField
                     required 
-                    label='NIM'
-                    value={nim}
-                    onChange={(e) => setNim(e.target.value)} 
+                    label='ID'
+                    value={id}
+                    onChange={(e) => setID(e.target.value)} 
                     sx={{my: 3, width: '25ch'}}
                 />
                 <FormControl 
@@ -108,5 +104,3 @@ function Login() {
         </>
     )
 }
-
-export default Login

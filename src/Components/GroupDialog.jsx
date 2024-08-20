@@ -27,7 +27,7 @@ export default function GroupDialog(props) {
     }
 
     const rows = []
-    friends?.map(({name, faculty}) => rows.push(createData(name, faculty)))
+    friends?.filter((student) => student.nim.startsWith("24")).map(({name, faculty}) => rows.push(createData(name, faculty)))
 
     if (isLoading) {
         return <CenteredLoader/>

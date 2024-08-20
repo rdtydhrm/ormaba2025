@@ -22,6 +22,7 @@ import SubmissionsGroup from './Pages/SubmissionsGroup';
 import SubmissionsTable from './Pages/SubmissionTable';
 import AnnouncementDetail from './Pages/AnnouncementsDetail';
 import SubmissionDetail from './Pages/SubmissionDetail';
+import MentorLogin from './Pages/MentorLogin';
 
 const theme = createTheme({
   palette: {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
   {
     path: '/admin/submissions/:taskID/:group',
     element: <SubmissionsTable />
+  },
+  {
+    path: '/mentor',
+    element: <MentorLogin />
   },
 ])
 
