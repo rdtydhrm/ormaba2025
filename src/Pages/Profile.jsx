@@ -260,6 +260,7 @@ function Profile() {
             </Box>
             <GroupDialog
                 group={user.Group}
+                whatsapp={getMentor(user.Group).groupLink}
                 open={openGroup}
                 onClose={handleCloseGroup}
             />

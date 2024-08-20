@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"fmt"
 	"net/url"
 	"os"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/kmdavidds/ormaba-api/server/dtos"
 	"github.com/kmdavidds/ormaba-api/server/initializers"
 	"github.com/kmdavidds/ormaba-api/server/models"
 
@@ -158,14 +158,17 @@ func GetUsersNamesByGroup(c *fiber.Ctx) error {
 		})
 	}
 	var users []models.User
-	if err := initializers.DB.Select("full_name").Where("\"group\" = ?", query).Order("NIM asc").Find(&users).Error; err != nil {
+	if err := initializers.DB.Select("full_name", "faculty").Where("\"group\" = ?", query).Order("NIM asc").Find(&users).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
 	}
-	var usersNames []string
-	for i, user := range users {
-		usersNames = append(usersNames, fmt.Sprintf("%d. %s", i+1, user.FullName))
+	var friends []dtos.Friend
+	for _, user := range users {
+		friends = append(friends, dtos.Friend{
+			Name:    user.FullName,
+			Faculty: user.Faculty,
+		})
 	}
-	return c.JSON(usersNames)
+	return c.JSON(friends)
 }

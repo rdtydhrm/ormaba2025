@@ -29,6 +29,7 @@ const mentor7 = {
     nomor: '083134560608',
     instagram: '@ayu.swra',
     image: '/mentor7.jpg',
+    groupLink: 'https://chat.whatsapp.com/GpPS9OSfsjhCo7iHUY3yUB',
 }
 
 const mentor4 = {
@@ -38,6 +39,7 @@ const mentor4 = {
     nomor: '081399965115',
     instagram: '@putz.sh',
     image: '/mentor4.jpg',
+    groupLink: 'https://chat.whatsapp.com/LHy6aafFuOuDDwFbARFMYH',
 }
 
 const mentor3 = {
@@ -47,6 +49,7 @@ const mentor3 = {
     nomor: '085258161555',
     instagram: '@dealaurrennt_',
     image: '/mentor3.jpg',
+    groupLink: 'https://chat.whatsapp.com/HupTUONIVVeHrrdKfyQrsb',
 }
 
 const mentor1 = {
@@ -56,6 +59,7 @@ const mentor1 = {
     nomor: '081999112478',
     instagram: '@dayuwulanm',
     image: '/mentor1.jpg',
+    groupLink: 'https://chat.whatsapp.com/IpqbNH6aCNz3njnHpqP8Z8',
 }
 
 const mentor5 = {
@@ -65,6 +69,7 @@ const mentor5 = {
     nomor: '08873570269',
     instagram: '@sariiinadiii_',
     image: '/mentor5.jpg',
+    groupLink: 'https://chat.whatsapp.com/GTPRsalu8s4H3lE6lIN3pb',
 }
 
 const mentor6 = {
@@ -74,6 +79,7 @@ const mentor6 = {
     nomor: '082113167442',
     instagram: '@adhi_darsana19',
     image: '/mentor6.jpg',
+    groupLink: 'https://chat.whatsapp.com/IhhxBr4LUtGGJfLHYgoD40',
 }
 
 const mentor8 = {
@@ -83,6 +89,7 @@ const mentor8 = {
     nomor: '087861685666',
     instagram: '@bagus_kusumayudha',
     image: '/mentor8.jpg',
+    groupLink: 'https://chat.whatsapp.com/EGLWnjf3b7RHEgaIhHzB6r',
 }
 
 const mentor2 = {
@@ -92,5 +99,6 @@ const mentor2 = {
     nomor: '085287237377',
     instagram: '@kardiantamber',
     image: '/mentor2.jpg',
+    groupLink: 'https://chat.whatsapp.com/FIZ6aBO00Q08uGjKMPW2Vt',
 }
 
