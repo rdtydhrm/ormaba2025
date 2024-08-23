@@ -107,7 +107,7 @@ function Profile() {
                 width: '100vw',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
-                backgroundPosition: 'center',
+                backgroundPosition: 'top center',
                 position: 'absolute',
                 zIndex:  -1,
             }}>

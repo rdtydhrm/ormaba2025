@@ -18,7 +18,7 @@ function Home() {
                 width: '100vw',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
-                backgroundPosition: 'center',
+                backgroundPosition: 'top center',
                 position: 'absolute',
                 top: 0,
                 left: 0,

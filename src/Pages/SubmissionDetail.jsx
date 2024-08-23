@@ -4,7 +4,7 @@ import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
-import { Box, Button, Container, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Container, Link, Paper, TextField, Typography } from "@mui/material";
 import background from "/background7.jpg"
 import { useEffect, useState } from "react";
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -54,6 +54,9 @@ export default function SubmissionDetail() {
 
     const submission = submissions?.find((sub) => sub.id == params.id)
 
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = submission.task.description.split(urlRegex);
+
     if (isLoading) {
         return <CenteredLoader/>
     }
@@ -69,7 +72,7 @@ export default function SubmissionDetail() {
                 width: '100vw',
                 backgroundImage: `url(${background})`,
                 backgroundSize: {xs: '400vw', md: '100vw'},
-                backgroundPosition: 'center',
+                backgroundPosition: 'top center',
                 position: 'absolute',
                 top: 0,
                 left: 0,
@@ -106,7 +109,15 @@ export default function SubmissionDetail() {
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <Paper elevation={24} sx={{bgcolor: 'transparent', maxWidth: {md: '50vw'}, display: 'flex', justifyContent: 'center', alignItems: 'center', width: "75vw", mb: 6, p: 4}}>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                            <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'} sx={{mb: 4}}><b>{submission.task.description}</b></Typography>
+                            <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'} sx={{mb: 4}}>{parts.map((part, index) =>
+                            urlRegex.test(part) ? (
+                                <Link key={index} href={part} target="_blank" rel="noopener noreferrer">
+                                {part}
+                                </Link>
+                            ) : (
+                                part
+                            )
+                            )}</Typography>
                             <Box component={'form'} onSubmit={handlePatch} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center"}}>
                                 {submission?.task.category === "Link" ?
                                 <TextField
