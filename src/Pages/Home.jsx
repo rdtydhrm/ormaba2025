@@ -23,6 +23,7 @@ function Home() {
                 top: 0,
                 left: 0,
                 zIndex:  -1,
+                pb: 2,
             }}>
             <Box sx={{
                 position: 'absolute',
@@ -54,37 +55,51 @@ function Home() {
                         <Button variant="outlined" size="medium" sx={{ color: 'primary.main', fontWeight: 'bold'}}
                                 onClick={() => learnRef.current.scrollIntoView({behavior: 'smooth'})}>learn</Button>
                     </Box>
+                    <Box sx={{mt: 16, display: {xs: 'none', md: 'block'}}}>
+                        <img src="wide1.png" alt="" style={{width: '55vw', height: 'auto'}}/>
+                    </Box>
                 </section>
                 
-            <section id="what-section" ref={learnRef} style={{marginTop: '10em'}}>
+            <section id="what-section" ref={learnRef}>
                     <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                         {/* desktop version */}
                         <Box sx={{mt: 16, width: '100%', display: {xs: 'none', md: 'flex'}, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', mb: 10}}>
-                            
                                 <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                    <Paper elevation={8} sx={{bgcolor: 'transparent', pl: 4, py: 2}}>
+                                    <Paper elevation={8} sx={{bgcolor: 'transparent', pl: 4, py: 2, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                        <Box sx={{mr: 1}}>
+                                            <img src="/wing.png" height={'50px'}/>
+                                        </Box>
                                         <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline', color: 'secondary.light', fontStyle: 'italic', mr: 2}}>What</Typography>
-                                        <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline', mr: 4}}>is ORMABA?</Typography>
+                                        <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline'}}>is ORMABA?</Typography>
+                                        <Box sx={{transform: 'scaleX(-1)', ml: 1, mr: 4}}>
+                                            <img src="/wing.png" height={'50px'}/>
+                                        </Box>
                                     </Paper>
-                                    <span><hr style={{display: 'inline-flex', width: '44vw'}} /></span>
+                                    <span><hr style={{display: 'inline-flex', width: '28vw'}} /></span>
                                 </Box>
                             
-                            <Typography variant="body1" sx={{ textAlign: 'justify', mt: 5, pb: 5, width: '75vw'}}>{whatIsORMABA1} <b>Kerohanian</b>, <b>Kepemimpinan</b>, dan <b>Kekeluargaan</b>. {whatIsORMABA2}</Typography>
+                            <Typography variant="body1" sx={{ textAlign: 'justify', mt: 5, width: '75vw'}}>{whatIsORMABA1} <b>Kerohanian</b>, <b>Kepemimpinan</b>, dan <b>Kekeluargaan</b>. {whatIsORMABA2}</Typography>
                         </Box>
                         <Box sx={{width: '100%', display: {xs: 'none', md: 'flex'}, justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <span ><hr style={{display: 'inline-flex', width: '40vw'}} /></span>
-                                <Paper elevation={8} sx={{bgcolor: 'transparent', pr: 4, py: 2}}>
-                                    <Typography variant="h3" sx={{ pl: 4,textAlign: 'left', display: 'inline', color: 'secondary.light', fontStyle: 'italic', mr: 2}}>Essence</Typography>
+                                <span ><hr style={{display: 'inline-flex', width: '28vw'}} /></span>
+                                <Paper elevation={8} sx={{bgcolor: 'transparent', pr: 4, py: 2, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                    <Box sx={{mr: 1, ml: 4}}>
+                                        <img src="/wing.png" height={'50px'}/>
+                                    </Box>
+                                    <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline', color: 'secondary.light', fontStyle: 'italic', mr: 2}}>Essence</Typography>
                                     <Typography variant="h3" sx={{ textAlign: 'left', display: 'inline'}}>of ORMABA</Typography>
+                                    <Box sx={{ml: 1, transform: 'scaleX(-1)'}}>
+                                        <img src="/wing.png" height={'50px'}/>
+                                    </Box>
                                 </Paper>
                             </Box>
-                            <Typography variant="body1" sx={{ textAlign: 'justify', mt: 5, pb: 5, width: '75vw'}}>{essence}</Typography>
+                            <Typography variant="body1" sx={{ textAlign: 'justify', mt: 5, pb: 20, width: '75vw'}}>{essence}</Typography>
                         </Box>
 
                         {/* mobile version */}
                         <Box sx={{mt: 8, width: '100%', display: {xs: 'flex', md: 'none'}, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', mb: 4}}>
-                        <Paper elevation={8} sx={{bgcolor: 'transparent', p: 2}}>
+                        <Paper elevation={8} sx={{bgcolor: 'transparent', p: 2, mt: 8}}>
                             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', alignContent: 'center' }}>
                                 <Typography variant="h5" sx={{ textAlign: 'left', display: 'inline', color: 'secondary.light', fontStyle: 'italic', mr: 1}}>What</Typography>
                                 <Typography variant="h5" sx={{ textAlign: 'left', display: 'inline'}}>is ORMABA?</Typography>
@@ -107,10 +122,24 @@ function Home() {
                 <section id="days-section">
                     {/* desktop version */}
                     <Box sx={{display: {xs: 'none', md: 'inherit'}}}>
-                        <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
-                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '40vw',}}>
-                                <Box>
+                        <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+                            <Box sx={{display:'flex', justifyContent:'center', position: 'relative', left: '-139px'}}>
+                                <img src="/cloud.png" alt="" height='169px'/>
+                            </Box>
+                            <Box sx={{display:'flex', justifyContent:'center', transform: 'scaleX(-1)', position: 'relative', right: '-139px'}}>
+                                <img src="/cloud.png" alt="" height='169px'/>
+                            </Box>
+                        </Box>
+                        <Box sx={{ mt: 0, display: 'flex', justifyContent: 'center'}}>
+                            <Paper elevation={8} sx={{bgcolor: 'transparent', px: 4, py: 2 ,width: '45vw',}}>
+                                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                    <Box sx={{mr: 3}}>
+                                        <img src="/wing.png" height={'60px'}/>
+                                    </Box>
                                     <Typography variant="h3" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
+                                    <Box sx={{transform: 'scaleX(-1)', ml: 3}}>
+                                        <img src="/wing.png" height={'60px'}/>
+                                    </Box>
                                 </Box>
                             </Paper>
                         </Box>
@@ -124,7 +153,7 @@ function Home() {
                                         <Typography variant="h3" sx={{color: 'secondary.light', mb: 2}}><b><i>Dharma Asrama 1</i></b></Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="h6" sx={{textAlign: 'left'}}>Pada DA I berfokus untuk mengenalkan UNIKAHIDHA serta menanamkan nilai-nilai kerohanian kepada mahasiswa  baru. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 1 hari.</Typography>
+                                        <Typography variant="h6" sx={{textAlign: 'left'}}>Kegiatan perkenalan UNIKHAHIDHA secara keseluruhan (struktur kepengurusan dan program kerja), megibung, dan study case group. Untuk pelaksanaannya akan diadakan pada bulan September.</Typography>
                                     </Box>
                                 </Box>
                             </Paper>
@@ -136,7 +165,7 @@ function Home() {
                                         <Typography variant="h3" sx={{color: 'secondary.light', mb: 2, textAlign: 'right'}}><b><i>Dharma Asrama 2</i></b></Typography>
                                     </Box>
                                     <Box>
-                                        <Typography variant="h6" sx={{textAlign: 'right'}}>Pada DA II berfokus untuk menanamkan nilai kekeluargaan dan kepemimpinan. Kegiatan ini akan dilaksanakan secara offline di salah satu pura di Malang dan selama 2 hari 1 malam.</Typography>
+                                        <Typography variant="h6" sx={{textAlign: 'right'}}>Kegiatan upacara sisya upanayana, orasi calon ketua angkatan, penampilan kelompok, outbond dan malam api unggun. Untuk pelaksanaannya akan diadakan pada bulan Oktober.</Typography>
                                     </Box>
                                 </Box>
                                 <Box sx={{ml: 4, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -148,7 +177,7 @@ function Home() {
 
                     {/* mobile version */}
                     <Box sx={{display: {xs: 'inherit', md: 'none'}}}>
-                        <Box sx={{ mt: 24, display: 'flex', justifyContent: 'center'}}>
+                        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center'}}>
                             <Paper elevation={8} sx={{bgcolor: 'transparent', p: 4, width: '80vw',}}>
                                 <Box>
                                     <Typography variant="h5" sx={{textAlign: 'center'}}>Rangkaian Kegiatan</Typography>
@@ -189,12 +218,28 @@ function Home() {
                 </section>
 
                 <section id="faq-section">
-                    <Box sx={{ mt: 30, display: 'flex', justifyContent: 'center'}}>
-                            <Paper elevation={8} sx={{bgcolor: 'transparent', p: 2, width: {xs: '50vw', md: '15vw'}, mb: 8}}>
-                                <Box>
-                                    <Typography variant="h3" sx={{textAlign: 'center'}}>FAQ</Typography>
+                    <Box sx={{display: {md: 'flex', xs: 'none'}, justifyContent: 'space-between', mt: 16}}>
+                        <Box sx={{display:'flex', justifyContent:'center', position: 'relative', left: '-139px'}}>
+                            <img src="/cloud.png" alt="" height='169px'/>
+                        </Box>
+                        <Box sx={{display:'flex', justifyContent:'center', transform: 'scaleX(-1)', position: 'relative', right: '-139px'}}>
+                            <img src="/cloud.png" alt="" height='169px'/>
+                        </Box>
+                    </Box>
+                    <Box sx={{ mt: {md: 0, xs: 16}, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Paper elevation={8} sx={{bgcolor: 'transparent', p: 2, width: {xs: '50vw', md: '22vw'}, mb: 8, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <Box sx={{mr: 3, display: {md: 'flex', xs: 'none'}}}>
+                                    <img src="/wing.png" height={'60px'}/>
                                 </Box>
-                            </Paper>
+                                
+                                <Typography variant="h3" sx={{textAlign: 'center', width: '2em'}}>FAQ</Typography>
+                                
+                                <Box sx={{transform: 'scaleX(-1)', ml: 3, display: {md: 'flex', xs: 'none'}}}>
+                                    <img src="/wing.png" height={'60px'}/>
+                                </Box>
+                            </Box>
+                        </Paper>
                     </Box>
                     <Box>
                         {questions.map((question, index) => (
@@ -216,15 +261,37 @@ function Home() {
                 </section>
 
                 <section id="gallery-section">
-                    <Box sx={{mt: 32, width: '80vw', mb: 30}}>
+                    <Box sx={{display: {md: 'flex', xs: 'none'}, justifyContent: 'center', mt: 16}}>
+                        <img src="/wide2.png" alt="" />
+                    </Box>
+                    <Box sx={{display: {md: 'flex', xs: 'none'}, justifyContent: 'space-between'}}>
+                        <Box sx={{display:'flex', justifyContent:'center', position: 'relative', left: '-120px'}}>
+                            <img src="/line.png" alt="" height='100px'/>
+                        </Box>
+                        <Box sx={{display:'flex', justifyContent:'center', transform: 'scaleX(-1)', position: 'relative', right: '-120px'}}>
+                            <img src="/line.png" alt="" height='100px'/>
+                        </Box>
+                    </Box>
+                    <Box sx={{width: '80vw', mt: {md: 0, xs: 16}, mb: {md: 0, xs: 16}}}>
                         <GalleryCarousel/>
+                    </Box>
+                    <Box sx={{display: {md: 'flex', xs: 'none'}, justifyContent: 'space-between', mt: -4}}>
+                        <Box sx={{display:'flex', justifyContent:'center', transform: 'scaleY(-1)', position: 'relative', left: '-120px'}}>
+                            <img src="/line.png" alt="" height='100px'/>
+                        </Box>
+                        <Box sx={{display:'flex', justifyContent:'center', transform: 'scaleX(-1) scaleY(-1)', position: 'relative', right: '-120px'}}>
+                            <img src="/line.png" alt="" height='100px'/>
+                        </Box>
+                    </Box>
+                    <Box sx={{display: {md: 'flex', xs: 'none'}, justifyContent: 'center', transform: 'scaleY(-1)', mb: 10}}>
+                        <img src="/wide1.png" alt="" style={{width: '55vw', height: 'auto'}}/>
                     </Box>
                 </section>
 
                 <section id="contact-section">
-                    <Box sx={{mb: 12}}>
-                        <Paper elevation={8} sx={{bgcolor: 'transparent', display: 'flex', p: 1}}>
-                            <Link sx={{display: 'flex', textDecoration: 'none'}} href='https://www.instagram.com/ormaba.unikahidha/' target='_blank'>
+                    <Box sx={{zIndex: 3, display: 'flex', justifyContent: 'center', alignItems: 'center', pb: 12}}>
+                        <Paper elevation={8} sx={{bgcolor: 'transparent', display: 'flex', justifyContent: 'center', alignItems: 'center', p: 1}}>
+                            <Link sx={{display: 'flex', textDecoration: 'none', zIndex: 10}} href='https://www.instagram.com/ormaba.unikahidha/' target='_blank'>
                                 <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mr: 1}}>
                                     <img src="/ig.webp" alt="" height='50px'/>
                                 </Box>
@@ -235,8 +302,25 @@ function Home() {
                                 </Box>
                             </Link>
                         </Paper>
+                        {/* copyright */}
+                        <Box sx={{position: 'absolute', bottom: 10, right: 0, left: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: 'transparent', color: 'secondary.light', p: 1, flexDirection: 'column'}}>
+                            <hr style={{display: 'inline-flex', width: '90vw'}}></hr>
+                            <Typography variant="body2">Copyright © 2024 | By DDTM ORMABA UNIKAHIDA</Typography>
+                        </Box>
                     </Box>
                 </section>
+                <Paper elevation={4} sx={{
+                    bgcolor: 'transparent',
+                    position: 'absolute',
+                    bottom: 0,
+                    width: '100vw', 
+                    height: '4.2em',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}>
+                </Paper>
             </Container>
             </Box>
         </>
