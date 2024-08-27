@@ -72,6 +72,10 @@ const router = createBrowserRouter([
     element: <AnnouncementDetail />
   },
   {
+    path: '/profile/:isSaved',
+    element: <Profile />
+  },
+  {
     path: '/profile',
     element: <Profile />
   },
