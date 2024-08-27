@@ -91,7 +91,6 @@ function Login() {
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             zIndex: -1,
-            overflow: 'hidden',
           }}
         />
         <Container sx={{ height: "100vh" }}>
@@ -121,7 +120,7 @@ function Login() {
             )}
             <Box
               sx={{
-                display: "flex",
+                display: {md:"flex", xs:'none'},
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,
@@ -194,7 +193,7 @@ function Login() {
             )}
             <Box
               sx={{
-                display: "flex",
+                display: {md:"flex", xs:'none'},
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,
