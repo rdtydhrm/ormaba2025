@@ -49,7 +49,7 @@ export default function SubmissionsTable() {
     }
 
     const rows = [];
-    submissions?.filter((submission) => submission.taskID === params.taskID && submission.user.Group === params.group)
+    submissions?.filter((submission) => submission.taskID === params.taskID && submission.user.Group === params.group && submission.user.NIM.startsWith("24"))
         .map(({user, url, status}) => 
         (rows.push(createData(user.FullName, url, status))))
 
