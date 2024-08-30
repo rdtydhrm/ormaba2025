@@ -14,7 +14,7 @@ func SeedNewStudents() {
 		return
 	}
 
-	file, err := os.Open("server/initializers/data/mabahindu2024.csv")
+	file, err := os.Open("server/initializers/data/mabahindu2024_2.csv")
 
 	if err != nil {
 		fmt.Println("failed to open file")

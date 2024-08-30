@@ -23,6 +23,8 @@ import SubmissionsTable from './Pages/SubmissionTable';
 import AnnouncementDetail from './Pages/AnnouncementsDetail';
 import SubmissionDetail from './Pages/SubmissionDetail';
 import MentorLogin from './Pages/MentorLogin';
+import NotFound from './Pages/NotFound';
+import ErrorBoundary from './Pages/ErrorBoundary';
 
 const theme = createTheme({
   palette: {
@@ -45,71 +47,92 @@ const theme = createTheme({
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/landing',
-    element: <Landing />
+    element: <Landing />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/login',
-    element: <Login />
+    element: <Login />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/tasks',
-    element: <Tasks />
+    element: <Tasks />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/submissions/:id',
-    element: <SubmissionDetail />
+    element: <SubmissionDetail />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/announcements',
-    element: <Announcements />
+    element: <Announcements />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/announcements/:id',
-    element: <AnnouncementDetail />
+    element: <AnnouncementDetail />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/profile/:isSaved',
-    element: <Profile />
+    element: <Profile />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/profile',
-    element: <Profile />
+    element: <Profile />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/access',
-    element: <AdminLogin />
+    element: <AdminLogin />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/dashboard',
-    element: <AdminDashboard />
+    element: <AdminDashboard />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/students',
-    element: <Students />
+    element: <Students />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/students/:group',
-    element: <StudentsTable />
+    element: <StudentsTable />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/submissions',
-    element: <Submissions />
+    element: <Submissions />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/submissions/:taskID',
-    element: <SubmissionsGroup />
+    element: <SubmissionsGroup />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/admin/submissions/:taskID/:group',
-    element: <SubmissionsTable />
+    element: <SubmissionsTable />,
+    errorElement: <ErrorBoundary />
   },
   {
     path: '/mentor',
-    element: <MentorLogin />
+    element: <MentorLogin />,
+    errorElement: <ErrorBoundary />
+  },
+  {
+    path: '/*',
+    element: <NotFound />
   },
 ])
 
