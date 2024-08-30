@@ -9,5 +9,21 @@ export const essence = 'ORMABA 2024 bertema "Nayikeya Shakti Parivartan" yang be
 
 export const essenceShort = 'ORMABA 2024 bertema "Nayikeya Shakti Parivartan" yang berarti Transformasi Kekuatan Kepemimpinan Menuju Era Modern. Tema ini menekankan peran mahasiswa baru sebagai pemimpin masa depan yang berkarakter dan berintegritas untuk membawa perubahan positif di era modern.'
 
-export const questions = ["Apakah semua rangkaian wajib diikuti?", "Apakah disediakan obat-obatan?", "Apakah boleh mewarnai rambut?", "Bagaimana jika tidak dapat hadir pada rangkaian acara?", "Apakah boleh membawa makanan dan minuman sendiri?", "Kalau rambut yang perempuan tidak bisa diikat bagaimana?", "Kalau belum ada kendaraan di Malang bagaimana?"]
-export const answers = ["Iya wajib, karena akan berpengaruh pada sertifikat dan nilai mata kuliah agama hindu.", "Untuk obat standar seperti maag, batuk, atau pusing akan disediakan ya. Namun, jika dari teman-teman membutuhkan obat khusus boleh dibawa masing-masing.", "Bebas ya tidak ada ketentuan khusus untuk warna rambut.", "Dapat melakukan perizinan melalui pendamping kelompok masing-masing.", "Dipersilakan untuk membawa makanan ringan dan minum secukupnya.", "Boleh menggunakan jepit agar tetap rapi.", "Dapat disampaikan melalui pendamping kelompok masing-masing dan menunggu info lebih lanjut."]
+export const questions = [
+    "Apakah semua rangkaian wajib diikuti?", 
+    "Apakah disediakan obat-obatan?", 
+    "Apakah boleh mewarnai rambut?", 
+    "Bagaimana jika tidak dapat hadir pada rangkaian acara?", 
+    "Apakah boleh membawa makanan dan minuman sendiri?", 
+    "Kalau rambut yang perempuan tidak bisa diikat bagaimana?", 
+    "Kalau belum ada kendaraan di Malang bagaimana?"
+]
+export const answers = [
+    "Seluruh rangkaian ORMABA wajib diikuti ya teman-teman, karena seluruh rangkaian kegiatan akan memengaruhi penilaian pada kelas Agama Hindu dan sertifikat kalian!", 
+    "Untuk obat sakit ringan seperti maag, batuk, atau sakit kepala masih disediakan kok. Namun, untuk teman-teman yang memiliki sakit khusus bisa bawa obat pribadi ya!", 
+    "Ga ada pembatasan ya teman-teman, kalian boleh mewarnai rambut sebebasnya.", 
+    "Untuk ini teman-teman boleh langsung izin ke kakak pendamping masing-masing ya, jangan lupa bukti dan alasan izinnya!", 
+    "Boleh banget! Teman-teman bisa bawa makanan dan minuman ringan secukupnya.",
+    "Rambutnya boleh dijepit kok, biar tetep rapi selama mengikuti rangkaian kegiatan.", 
+    "Teman-teman bisa bilang ke kakak pendamping masing-masing ya, selanjutnya bakal diinfo lebih lanjut untuk teknis transportasinya~",
+]

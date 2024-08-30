@@ -12,7 +12,7 @@ export default function SubmissionItem({submission}) {
             <Link style={{textDecoration: 'none'}} to={`/submissions/${submission.id}`}>
                 <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '40vw'}, display: 'flex', flexDirection: 'column', width: "75vw", mb: 6}}>
                     <Box sx={{display: 'flex'}}>
-                        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 3 }}>
+                        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 2 }}>
                             <AssignmentIcon fontSize="large" sx={{color: 'secondary.light'}}/>
                         </Box>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start', py: 2}}>

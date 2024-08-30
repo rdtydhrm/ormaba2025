@@ -48,6 +48,7 @@ function Home() {
           left: 0,
           zIndex: -1,
           pb: 2,
+          overflow: "hidden",
         }}
       >
         <Box
@@ -120,6 +121,20 @@ function Home() {
                 src="wide1.png"
                 alt=""
                 style={{ width: "55vw", height: "auto" }}
+              />
+            </Box>
+            <Box
+              sx={{
+                mt: 4,
+                mb: -4,
+                display: { xs: "flex", md: "none" },
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src="wide1.png"
+                alt=""
+                style={{ width: "95vw", height: "auto" }}
               />
             </Box>
           </section>
@@ -268,7 +283,7 @@ function Home() {
               {/* mobile version */}
               <Box
                 sx={{
-                  mt: 8,
+                  mt: 0,
                   width: "100%",
                   display: { xs: "flex", md: "none" },
                   justifyContent: "center",
@@ -289,6 +304,9 @@ function Home() {
                       alignContent: "center",
                     }}
                   >
+                    <Box sx={{ mr: 1 }}>
+                      <img src="/wing.png" style={{ width: "2em" }} />
+                    </Box>
                     <Typography
                       variant="h5"
                       sx={{
@@ -307,6 +325,12 @@ function Home() {
                     >
                       is ORMABA?
                     </Typography>
+                    <Box sx={{ ml: 1 }}>
+                      <img
+                        src="/wing.png"
+                        style={{ width: "2em", transform: "scaleX(-1)" }}
+                      />
+                    </Box>
                   </Box>
                 </Paper>
                 <Typography
@@ -334,6 +358,9 @@ function Home() {
                       alignContent: "center",
                     }}
                   >
+                    <Box sx={{ mr: 1 }}>
+                      <img src="/wing.png" style={{ width: "2em" }} />
+                    </Box>
                     <Typography
                       variant="h5"
                       sx={{
@@ -341,6 +368,7 @@ function Home() {
                         display: "inline",
                         color: "secondary.light",
                         fontStyle: "italic",
+                        fontSize: '20px',
                         mr: 1,
                       }}
                     >
@@ -348,10 +376,16 @@ function Home() {
                     </Typography>
                     <Typography
                       variant="h5"
-                      sx={{ textAlign: "left", display: "inline" }}
+                      sx={{ textAlign: "left", display: "inline", fontSize: '20px' }}
                     >
                       of ORMABA
                     </Typography>
+                    <Box sx={{ ml: 1 }}>
+                      <img
+                        src="/wing.png"
+                        style={{ width: "2em", transform: "scaleX(-1)" }}
+                      />
+                    </Box>
                   </Box>
                 </Paper>
                 <Typography
@@ -453,7 +487,9 @@ function Home() {
                     </Box>
                     <Box>
                       <Typography variant="h6" sx={{ textAlign: "left" }}>
-                      Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai kerohanian.
+                        Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
+                        UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
+                        kerohanian.
                       </Typography>
                     </Box>
                   </Box>
@@ -487,7 +523,10 @@ function Home() {
                     </Box>
                     <Box>
                       <Typography variant="h6" sx={{ textAlign: "right" }}>
-                      Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan skill diri sebagai cakupan nilai kepemimpinan, dan bonding angkatan sebagai cakupan dari nilai kekeluargaan.
+                        Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
+                        skill diri sebagai cakupan nilai kepemimpinan, dan
+                        bonding angkatan sebagai cakupan dari
+                        nilai kekeluargaan.
                       </Typography>
                     </Box>
                   </Box>
@@ -511,16 +550,59 @@ function Home() {
             </Box>
 
             {/* mobile version */}
+            <Box
+              sx={{ display: {xs:"flex", md:"none"}, justifyContent: "space-between", mt: 8 }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  position: "relative",
+                  left: "-20px",
+                }}
+              >
+                <img src="/cloud.png" alt="" width="120em" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  transform: "scaleX(-1)",
+                  position: "relative",
+                  right: "-20px",
+                }}
+              >
+                <img src="/cloud.png" alt="" width="120em" />
+              </Box>
+            </Box>
             <Box sx={{ display: { xs: "inherit", md: "none" } }}>
-              <Box sx={{ mt: 8, display: "flex", justifyContent: "center" }}>
+              <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
                 <Paper
                   elevation={8}
-                  sx={{ bgcolor: "transparent", p: 4, width: "80vw" }}
+                  sx={{ bgcolor: "transparent", py: 2, width: "80vw" }}
                 >
-                  <Box>
-                    <Typography variant="h5" sx={{ textAlign: "center" }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box sx={{ ml: 2 }}>
+                      <img src="/wing.png" style={{ width: "2em" }} />
+                    </Box>
+                    <Typography
+                      variant="h5"
+                      sx={{ textAlign: "center", width: "20em", fontSize: '20px' }}
+                    >
                       Rangkaian Kegiatan
                     </Typography>
+                    <Box sx={{ mr: 2 }}>
+                      <img
+                        src="/wing.png"
+                        style={{ width: "2em", transform: "scaleX(-1)" }}
+                      />
+                    </Box>
                   </Box>
                 </Paper>
               </Box>
@@ -574,7 +656,9 @@ function Home() {
                         variant="body2"
                         sx={{ textAlign: "center", mb: 2 }}
                       >
-                        Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai kerohanian.
+                        Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
+                        UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
+                        kerohanian.
                       </Typography>
                     </Box>
                   </Box>
@@ -630,7 +714,10 @@ function Home() {
                         variant="body2"
                         sx={{ textAlign: "center", mb: 2 }}
                       >
-                        Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan skill diri sebagai cakupan nilai kepemimpinan, dan bonding angkatan sebagai cakupan dari nilai kekeluargaan.
+                        Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
+                        skill diri sebagai cakupan nilai kepemimpinan, dan
+                        bonding angkatan sebagai cakupan dari
+                        nilai kekeluargaan.
                       </Typography>
                     </Box>
                   </Box>
@@ -640,6 +727,36 @@ function Home() {
           </section>
 
           <section id="faq-section">
+            <Box
+              sx={{
+                display: {xs: "flex", md: "none"},
+                justifyContent: "space-between",
+                mt: 8,
+                mb: -12,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  position: "relative",
+                  left: "-0px",
+                }}
+              >
+                <img src="/cloud.png" alt="" width="120em" />
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  transform: "scaleX(-1)",
+                  position: "relative",
+                  right: "-0px",
+                }}
+              >
+                <img src="/cloud.png" alt="" width="120em" />
+              </Box>
+            </Box>
             <Box
               sx={{
                 display: { md: "flex", xs: "none" },
@@ -682,7 +799,7 @@ function Home() {
                 sx={{
                   bgcolor: "transparent",
                   p: 2,
-                  width: { xs: "50vw", md: "22vw" },
+                  width: { xs: "69vw", md: "22vw" },
                   mb: 8,
                   display: "flex",
                   justifyContent: "center",
@@ -698,6 +815,9 @@ function Home() {
                 >
                   <Box sx={{ mr: 3, display: { md: "flex", xs: "none" } }}>
                     <img src="/wing.png" height={"60px"} />
+                  </Box>
+                  <Box sx={{ mr: 2, display: { md: "none", xs: "flex" } }}>
+                    <img src="/wing.png" height={"40em"} />
                   </Box>
 
                   <Typography
@@ -715,6 +835,15 @@ function Home() {
                     }}
                   >
                     <img src="/wing.png" height={"60px"} />
+                  </Box>
+                  <Box
+                    sx={{
+                      transform: "scaleX(-1)",
+                      ml: 2,
+                      display: { md: "none", xs: "flex" },
+                    }}
+                  >
+                    <img src="/wing.png" height={"40em"} />
                   </Box>
                 </Box>
               </Paper>
@@ -737,94 +866,178 @@ function Home() {
           </section>
 
           <section id="gallery-section">
-            <Box
-              sx={{
-                display: { md: "flex", xs: "none" },
-                justifyContent: "center",
-                mt: 16,
-              }}
-            >
-              <img src="/wide2.png" alt="" />
-            </Box>
-            <Box
-              sx={{
-                display: { md: "flex", xs: "none" },
-                justifyContent: "space-between",
-              }}
-            >
+            <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
               <Box
                 sx={{
-                  display: "flex",
+                  display: { md: "flex", xs: "none" },
                   justifyContent: "center",
-                  position: "relative",
-                  left: "-120px",
+                  mt: 16,
                 }}
               >
-                <img src="/line.png" alt="" height="100px" />
+                <img src="/wide2.png" alt="" />
               </Box>
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  transform: "scaleX(-1)",
-                  position: "relative",
-                  right: "-120px",
+                  display: { md: "flex", xs: "none" },
+                  justifyContent: "space-between",
                 }}
               >
-                <img src="/line.png" alt="" height="100px" />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                    left: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="100px" />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    transform: "scaleX(-1)",
+                    position: "relative",
+                    right: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="100px" />
+                </Box>
               </Box>
-            </Box>
-            <Box
-              sx={{
-                width: "80vw",
-                mt: { md: 0, xs: 16 },
-                mb: { md: 0, xs: 16 },
-              }}
-            >
-              <GalleryCarousel />
-            </Box>
-            <Box
-              sx={{
-                display: { md: "flex", xs: "none" },
-                justifyContent: "space-between",
-                mt: -4,
-              }}
-            >
               <Box
                 sx={{
-                  display: "flex",
+                  display: { md: "none", xs: "flex" },
+                  justifyContent: "center",
+                  mt: 8,
+                }}
+              >
+                <img src="/wide2.png" alt="" style={{ width: "20em" }} />
+              </Box>
+              <Box
+                sx={{
+                  display: { md: "none", xs: "flex" },
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                    left: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="25em" />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    transform: "scaleX(-1)",
+                    position: "relative",
+                    right: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="25em" />
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: "80vw",
+                  mt: { md: 0, xs: 0 },
+                  mb: { md: 0, xs: 0 },
+                }}
+              >
+                <GalleryCarousel />
+              </Box>
+              <Box
+                sx={{
+                  display: { md: "flex", xs: "none" },
+                  justifyContent: "space-between",
+                  mt: -4,
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    transform: "scaleY(-1)",
+                    position: "relative",
+                    left: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="100px" />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    transform: "scaleX(-1) scaleY(-1)",
+                    position: "relative",
+                    right: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="100px" />
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  display: { md: "flex", xs: "none" },
                   justifyContent: "center",
                   transform: "scaleY(-1)",
-                  position: "relative",
-                  left: "-120px",
+                  mb: 10,
                 }}
               >
-                <img src="/line.png" alt="" height="100px" />
+                <img
+                  src="/wide1.png"
+                  alt=""
+                  style={{ width: "55vw", height: "auto" }}
+                />
               </Box>
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  transform: "scaleX(-1) scaleY(-1)",
-                  position: "relative",
-                  right: "-120px",
+                  display: { md: "none", xs: "flex" },
+                  justifyContent: "space-between",
+                  mt: -4,
+                  transform: "scaleY(-1)",
                 }}
               >
-                <img src="/line.png" alt="" height="100px" />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                    left: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="25em" />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    transform: "scaleX(-1)",
+                    position: "relative",
+                    right: "-34vw",
+                  }}
+                >
+                  <img src="/line.png" alt="" height="25em" />
+                </Box>
               </Box>
             </Box>
             <Box
               sx={{
-                display: { md: "flex", xs: "none" },
+                mt: 4,
+                mb: 4,
+                display: { xs: "flex", md: "none" },
                 justifyContent: "center",
                 transform: "scaleY(-1)",
-                mb: 10,
               }}
             >
               <img
-                src="/wide1.png"
+                src="wide1.png"
                 alt=""
-                style={{ width: "55vw", height: "auto" }}
+                style={{ width: "95vw", height: "auto" }}
               />
             </Box>
           </section>
@@ -900,7 +1113,7 @@ function Home() {
               >
                 <hr style={{ display: "inline-flex", width: "90vw" }}></hr>
                 <Typography variant="body2">
-                  Copyright © 2024 | By DDTM ORMABA UNIKAHIDA
+                  Copyright © 2024 | By DDTM ORMABA UNIKAHIDHA
                 </Typography>
               </Box>
             </Box>

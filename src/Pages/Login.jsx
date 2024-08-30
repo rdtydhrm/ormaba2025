@@ -79,6 +79,7 @@ function Login() {
           left: 0,
           zIndex: -1,
           pb: 2,
+          overflow: "hidden",
         }}
       >
         <Box
@@ -128,6 +129,17 @@ function Login() {
               }}
             >
               <img src="/wide2.png" alt="" height="90vw" />
+            </Box>
+            <Box
+              sx={{
+                display: {md:"none", xs:'flex'},
+                justifyContent: "center",
+                alignItems: "center",
+                pt: 4,
+                transform: "scaleY(-1)",
+              }}
+            >
+              <img src="/wide2.png" alt="" height="38vw" />
             </Box>
             <Box sx={{ display: "flex" }}>
               <Box sx={{ mr: 4, display: "flex" }}>
@@ -200,6 +212,16 @@ function Login() {
               }}
             >
               <img src="/wide2.png" alt="" height="90vw" />
+            </Box>
+            <Box
+              sx={{
+                display: {md:"none", xs:'flex'},
+                justifyContent: "center",
+                alignItems: "center",
+                pt: 4,
+              }}
+            >
+              <img src="/wide2.png" alt="" height="38vw" />
             </Box>
           </Box>
         </Container>

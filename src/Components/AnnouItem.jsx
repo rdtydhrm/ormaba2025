@@ -11,7 +11,7 @@ export default function AnnouItem({annou}) {
             <Link style={{textDecoration: 'none'}} to={`/announcements/${annou.ID}`}>
                 <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '40vw'}, display: 'flex', flexDirection: 'column', width: "75vw", mb: 6}}>
                     <Box sx={{display: 'flex'}}>
-                        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 3 }}>
+                        <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 2 }}>
                             <CampaignIcon fontSize="large" sx={{color: 'primary.main'}}/>
                         </Box>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start', py: 2}}>
