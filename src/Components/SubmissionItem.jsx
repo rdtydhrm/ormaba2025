@@ -16,7 +16,7 @@ export default function SubmissionItem({submission}) {
                             <AssignmentIcon fontSize="large" sx={{color: 'secondary.light'}}/>
                         </Box>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start', py: 2}}>
-                            <Typography variant="h5" sx={{color: 'secondary.light', fontSize: {xs: '1.5em', md: '2em'}}}><b>{submission.task.title} ({submission.task.category})</b></Typography>
+                            <Typography variant="h5" sx={{color: 'secondary.light', fontSize: {xs: '1.5em', md: '2em'}}}><b>{submission.task.title}</b></Typography>
                             <Typography variant="subtitle1" ><i>Deadline: {formattedDate}</i></Typography>
                             <Typography variant="subtitle1" ><i>Status: <Box component={'span'} sx={{color: `${statusColor}`}}><b>{submission.status}</b></Box></i></Typography>
                         </Box>
