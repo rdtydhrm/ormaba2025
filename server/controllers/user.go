@@ -10,8 +10,6 @@ import (
 	"github.com/kmdavidds/ormaba-api/server/dtos"
 	"github.com/kmdavidds/ormaba-api/server/initializers"
 	"github.com/kmdavidds/ormaba-api/server/models"
-
-	u "github.com/ahmdyaasiin/ub-auth-without-notification/v2"
 )
 
 func Login(c *fiber.Ctx) error {
@@ -26,7 +24,7 @@ func Login(c *fiber.Ctx) error {
 		})
 	}
 
-	resp, err := u.AuthUB(body.NIM, body.Password)
+	resp, err := AuthUBNoEmail(body.NIM, body.Password)
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
