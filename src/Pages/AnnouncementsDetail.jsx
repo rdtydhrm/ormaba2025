@@ -84,7 +84,7 @@ export default function AnnouncementDetail() {
                         <Typography variant="h6" whiteSpace={'pre-line'} sx={{fontSize: {xs: "1em"}}}>
                         {parts.map((part, index) =>
                             urlRegex.test(part) ? (
-                                <Link key={index} href={part} target="_blank" rel="noopener noreferrer">
+                                <Link key={index} href={part} target="_blank" rel="noopener noreferrer" sx={{wordBreak: 'break-all', overflowWrap:'break-word'}}>
                                 {part}
                                 </Link>
                             ) : (
