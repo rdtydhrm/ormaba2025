@@ -13,7 +13,7 @@ import (
 func GetAllUserSubmissions(c *fiber.Ctx) error {
 	userNIM := c.Locals("userNIM")
 	var submissions []models.Submission
-	if err := initializers.DB.Where("user_nim = ?", userNIM).Preload("Task").Order("created_at asc").Find(&submissions).Error; err != nil {
+	if err := initializers.DB.Where("user_nim = ?", userNIM).Preload("Task").Order("created_at desc").Find(&submissions).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
