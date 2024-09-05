@@ -79,7 +79,7 @@ func CreateTask(c *fiber.Ctx) error {
 
 func GetAllTasks(c *fiber.Ctx) error {
 	var tasks []models.Task
-	if err := initializers.DB.Find(&tasks).Error; err != nil {
+	if err := initializers.DB.Order("created_at desc").Find(&tasks).Error; err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 			"error": err.Error(),
 		})
