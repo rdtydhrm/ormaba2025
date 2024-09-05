@@ -111,7 +111,7 @@ export default function SubmissionDetail() {
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                             <Typography variant="h6" textAlign={'left'} whiteSpace={'pre-wrap'} sx={{mb: 4}}>{parts.map((part, index) =>
                             urlRegex.test(part) ? (
-                                <Link key={index} href={part} target="_blank" rel="noopener noreferrer">
+                                <Link key={index} href={part} target="_blank" rel="noopener noreferrer" sx={{wordBreak: 'break-all', overflowWrap:'break-word'}}>
                                 {part}
                                 </Link>
                             ) : (
