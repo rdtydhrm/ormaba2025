@@ -23,7 +23,7 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
-import background from "/background7.jpg"
+import background from "/background7.jpg";
 
 function Login() {
   const [nim, setNim] = useState("");
@@ -121,7 +121,7 @@ function Login() {
             )}
             <Box
               sx={{
-                display: {md:"flex", xs:'none'},
+                display: { md: "flex", xs: "none" },
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,
@@ -132,7 +132,7 @@ function Login() {
             </Box>
             <Box
               sx={{
-                display: {md:"none", xs:'flex'},
+                display: { md: "none", xs: "flex" },
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,
@@ -205,7 +205,7 @@ function Login() {
             )}
             <Box
               sx={{
-                display: {md:"flex", xs:'none'},
+                display: { md: "flex", xs: "none" },
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,
@@ -215,7 +215,7 @@ function Login() {
             </Box>
             <Box
               sx={{
-                display: {md:"none", xs:'flex'},
+                display: { md: "none", xs: "flex" },
                 justifyContent: "center",
                 alignItems: "center",
                 pt: 4,

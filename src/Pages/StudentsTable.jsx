@@ -17,9 +17,9 @@ export default function StudentsTable() {
             const response = await axios.get(`${apiURL}/api/admin/students/all`)
             return response.data
         } else {
-            const response = await axios.get(`${apiURL}/api/admin/students`)
+            const response = await axios.get(`${apiURL}/api/admin/students/${params.group}`)
+            return response.data
         }
-        return response.data
     }
 
     const {data: students, isLoading, error} = useQuery({
@@ -36,19 +36,19 @@ export default function StudentsTable() {
     }
 
     const columns = [
-        { id: 'name', label: 'Nama', minWidth: 260},
-        { id: 'nim', label: 'NIM'},
-        { id: 'email', label: 'Email'},
+        { id: 'name', label: 'Nama', minWidth: 100},
+        // { id: 'nim', label: 'NIM'},
+        // { id: 'email', label: 'Email'},
         { id: 'faculty', label: 'Fakultas'},
         { id: 'studyProgram', label: 'Program Studi'},
-        { id: 'origin', label: 'Asal Daerah'},
+        // { id: 'origin', label: 'Asal Daerah'},
         { id: 'pdob', label: 'Tempat, Tanggal Lahir', minWidth: 210},
-        { id: 'lineID', label: 'ID Line'},
+        // { id: 'lineID', label: 'ID Line'},
         { id: 'instagram', label: 'Instagram'},
         { id: 'phoneNumber', label: 'Nomor Telepon'},
         { id: 'hobby', label: 'Hobi'},
-        { id: 'foodAlergies', label: 'Alergi Makanan'},
-        { id: 'sickness', label: 'Riwayat Penyakit'},
+        // { id: 'foodAlergies', label: 'Alergi Makanan'},
+        // { id: 'sickness', label: 'Riwayat Penyakit'},
         { id: 'motto', label: 'Motto Hidup'},
     ];
 
