@@ -118,7 +118,7 @@ function Home() {
             </Box>
             <Box sx={{ mt: 16, display: { xs: "none", md: "block" } }}>
               <img
-                src="wide1.png"
+                src="ormaba25/wide1.png"
                 alt=""
                 style={{ width: "55vw", height: "auto" }}
               />
@@ -132,7 +132,7 @@ function Home() {
               }}
             >
               <img
-                src="wide1.png"
+                src="ormaba25/wide1.png"
                 alt=""
                 style={{ width: "95vw", height: "auto" }}
               />
@@ -179,7 +179,7 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 1 }}>
-                      <img src="/wing.png" height={"50px"} />
+                      <img src="ormaba25/wing.png" height={"37px"} />
                     </Box>
                     <Typography
                       variant="h3"
@@ -200,7 +200,7 @@ function Home() {
                       is ORMABA?
                     </Typography>
                     <Box sx={{ transform: "scaleX(-1)", ml: 1, mr: 4 }}>
-                      <img src="/wing.png" height={"50px"} />
+                      <img src="ormaba25/wing.png" height={"37px"} />
                     </Box>
                   </Paper>
                   <span>
@@ -247,7 +247,7 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 1, ml: 4 }}>
-                      <img src="/wing.png" height={"50px"} />
+                      <img src="ormaba25/wing.png" height={"35px"} />
                     </Box>
                     <Typography
                       variant="h3"
@@ -268,7 +268,7 @@ function Home() {
                       of ORMABA
                     </Typography>
                     <Box sx={{ ml: 1, transform: "scaleX(-1)" }}>
-                      <img src="/wing.png" height={"50px"} />
+                      <img src="ormaba25/wing.png" height={"35px"} />
                     </Box>
                   </Paper>
                 </Box>
@@ -305,7 +305,7 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 1 }}>
-                      <img src="/wing.png" style={{ width: "2em" }} />
+                      <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
                     <Typography
                       variant="h5"
@@ -327,7 +327,7 @@ function Home() {
                     </Typography>
                     <Box sx={{ ml: 1 }}>
                       <img
-                        src="/wing.png"
+                        src="ormaba25/wing.png"
                         style={{ width: "2em", transform: "scaleX(-1)" }}
                       />
                     </Box>
@@ -359,7 +359,7 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 1 }}>
-                      <img src="/wing.png" style={{ width: "2em" }} />
+                      <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
                     <Typography
                       variant="h5"
@@ -368,7 +368,7 @@ function Home() {
                         display: "inline",
                         color: "secondary.light",
                         fontStyle: "italic",
-                        fontSize: '20px',
+                        fontSize: "20px",
                         mr: 1,
                       }}
                     >
@@ -376,13 +376,17 @@ function Home() {
                     </Typography>
                     <Typography
                       variant="h5"
-                      sx={{ textAlign: "left", display: "inline", fontSize: '20px' }}
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        fontSize: "20px",
+                      }}
                     >
                       of ORMABA
                     </Typography>
                     <Box sx={{ ml: 1 }}>
                       <img
-                        src="/wing.png"
+                        src="ormaba25/wing.png"
                         style={{ width: "2em", transform: "scaleX(-1)" }}
                       />
                     </Box>
@@ -408,9 +412,10 @@ function Home() {
                     justifyContent: "center",
                     position: "relative",
                     left: "-139px",
+                    top: "-30px",
                   }}
                 >
-                  <img src="/cloud.png" alt="" height="169px" />
+                  <img src="ormaba25/cloud.png" alt="" height="169px" />
                 </Box>
                 <Box
                   sx={{
@@ -419,15 +424,16 @@ function Home() {
                     transform: "scaleX(-1)",
                     position: "relative",
                     right: "-139px",
+                    top: "-30px",
                   }}
                 >
-                  <img src="/cloud.png" alt="" height="169px" />
+                  <img src="ormaba25/cloud.png" alt="" height="169px" />
                 </Box>
               </Box>
               <Box sx={{ mt: 0, display: "flex", justifyContent: "center" }}>
                 <Paper
                   elevation={8}
-                  sx={{ bgcolor: "transparent", px: 4, py: 2, width: "45vw" }}
+                  sx={{ bgcolor: "transparent", px: 5, py: 2, width: "50vw" }}
                 >
                   <Box
                     sx={{
@@ -437,13 +443,13 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 3 }}>
-                      <img src="/wing.png" height={"60px"} />
+                      <img src="ormaba25/wing.png" height={"40px"}  />
                     </Box>
                     <Typography variant="h3" sx={{ textAlign: "center" }}>
                       Rangkaian Kegiatan
                     </Typography>
                     <Box sx={{ transform: "scaleX(-1)", ml: 3 }}>
-                      <img src="/wing.png" height={"60px"} />
+                      <img src="ormaba25/wing.png" height={"40px"} />
                     </Box>
                   </Box>
                 </Paper>
@@ -462,7 +468,7 @@ function Home() {
                     }}
                   >
                     <img
-                      src="/da1.jpeg"
+                      src="ormaba25/da1.JPG"
                       alt=""
                       height="200px"
                       style={{ borderRadius: "10%" }}
@@ -551,7 +557,11 @@ function Home() {
 
             {/* mobile version */}
             <Box
-              sx={{ display: {xs:"flex", md:"none"}, justifyContent: "space-between", mt: 8 }}
+              sx={{
+                display: { xs: "flex", md: "none" },
+                justifyContent: "space-between",
+                mt: 8,
+              }}
             >
               <Box
                 sx={{
@@ -561,7 +571,7 @@ function Home() {
                   left: "-20px",
                 }}
               >
-                <img src="/cloud.png" alt="" width="120em" />
+                <img src="ormaba25/cloud.png" alt="" width="120em" />
               </Box>
               <Box
                 sx={{
@@ -572,7 +582,7 @@ function Home() {
                   right: "-20px",
                 }}
               >
-                <img src="/cloud.png" alt="" width="120em" />
+                <img src="ormaba25/cloud.png" alt="" width="120em" />
               </Box>
             </Box>
             <Box sx={{ display: { xs: "inherit", md: "none" } }}>
@@ -589,17 +599,21 @@ function Home() {
                     }}
                   >
                     <Box sx={{ ml: 2 }}>
-                      <img src="/wing.png" style={{ width: "2em" }} />
+                      <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
                     <Typography
                       variant="h5"
-                      sx={{ textAlign: "center", width: "20em", fontSize: '20px' }}
+                      sx={{
+                        textAlign: "center",
+                        width: "20em",
+                        fontSize: "20px",
+                      }}
                     >
                       Rangkaian Kegiatan
                     </Typography>
                     <Box sx={{ mr: 2 }}>
                       <img
-                        src="/wing.png"
+                        src="ormaba25/wing.png"
                         style={{ width: "2em", transform: "scaleX(-1)" }}
                       />
                     </Box>
@@ -717,7 +731,7 @@ function Home() {
                         Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
                         skill diri sebagai cakupan nilai kepemimpinan, dan
                         bonding angkatan sebagai cakupan dari
-                        nilai kekeluargaan.
+                        nilai kekeluargaan.
                       </Typography>
                     </Box>
                   </Box>
@@ -729,7 +743,7 @@ function Home() {
           <section id="faq-section">
             <Box
               sx={{
-                display: {xs: "flex", md: "none"},
+                display: { xs: "flex", md: "none" },
                 justifyContent: "space-between",
                 mt: 8,
                 mb: -12,
@@ -743,7 +757,7 @@ function Home() {
                   left: "-0px",
                 }}
               >
-                <img src="/cloud.png" alt="" width="120em" />
+                <img src="ormaba25/cloud.png" alt="" width="120em" />
               </Box>
               <Box
                 sx={{
@@ -754,7 +768,7 @@ function Home() {
                   right: "-0px",
                 }}
               >
-                <img src="/cloud.png" alt="" width="120em" />
+                <img src="ormaba25/cloud.png" alt="" width="120em" />
               </Box>
             </Box>
             <Box
@@ -772,7 +786,7 @@ function Home() {
                   left: "-139px",
                 }}
               >
-                <img src="/cloud.png" alt="" height="169px" />
+                <img src="ormaba25/cloud.png" alt="" height="169px" />
               </Box>
               <Box
                 sx={{
@@ -783,7 +797,7 @@ function Home() {
                   right: "-139px",
                 }}
               >
-                <img src="/cloud.png" alt="" height="169px" />
+                <img src="ormaba25/cloud.png" alt="" height="169px" />
               </Box>
             </Box>
             <Box
@@ -814,10 +828,10 @@ function Home() {
                   }}
                 >
                   <Box sx={{ mr: 3, display: { md: "flex", xs: "none" } }}>
-                    <img src="/wing.png" height={"60px"} />
+                    <img src="ormaba25/wing.png" height={"30px"} />
                   </Box>
                   <Box sx={{ mr: 2, display: { md: "none", xs: "flex" } }}>
-                    <img src="/wing.png" height={"40em"} />
+                    <img src="ormaba25/wing.png" height={"20em"} />
                   </Box>
 
                   <Typography
@@ -834,7 +848,7 @@ function Home() {
                       display: { md: "flex", xs: "none" },
                     }}
                   >
-                    <img src="/wing.png" height={"60px"} />
+                    <img src="ormaba25/wing.png" height={"30px"} />
                   </Box>
                   <Box
                     sx={{
@@ -843,7 +857,7 @@ function Home() {
                       display: { md: "none", xs: "flex" },
                     }}
                   >
-                    <img src="/wing.png" height={"40em"} />
+                    <img src="ormaba25/wing.png" height={"20em"} />
                   </Box>
                 </Box>
               </Paper>
@@ -866,7 +880,14 @@ function Home() {
           </section>
 
           <section id="gallery-section">
-            <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <Box
                 sx={{
                   display: { md: "flex", xs: "none" },
@@ -874,7 +895,7 @@ function Home() {
                   mt: 16,
                 }}
               >
-                <img src="/wide2.png" alt="" />
+                <img src="ormaba25/wide2.png" alt="" />
               </Box>
               <Box
                 sx={{
@@ -890,7 +911,7 @@ function Home() {
                     left: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="100px" />
+                  <img src="ormaba25/line.png" alt="" height="100px" />
                 </Box>
                 <Box
                   sx={{
@@ -901,7 +922,7 @@ function Home() {
                     right: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="100px" />
+                  <img src="ormaba25/line.png" alt="" height="100px" />
                 </Box>
               </Box>
               <Box
@@ -911,7 +932,7 @@ function Home() {
                   mt: 8,
                 }}
               >
-                <img src="/wide2.png" alt="" style={{ width: "20em" }} />
+                <img src="ormaba25/wide2.png" alt="" style={{ width: "20em" }} />
               </Box>
               <Box
                 sx={{
@@ -927,7 +948,7 @@ function Home() {
                     left: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="25em" />
+                  <img src="ormaba25/line.png" alt="" height="25em" />
                 </Box>
                 <Box
                   sx={{
@@ -938,7 +959,7 @@ function Home() {
                     right: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="25em" />
+                  <img src="ormaba25/line.png" alt="" height="25em" />
                 </Box>
               </Box>
               <Box
@@ -966,7 +987,7 @@ function Home() {
                     left: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="100px" />
+                  <img src="ormaba25/line.png" alt="" height="100px" />
                 </Box>
                 <Box
                   sx={{
@@ -977,7 +998,7 @@ function Home() {
                     right: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="100px" />
+                  <img src="ormaba25/line.png" alt="" height="100px" />
                 </Box>
               </Box>
               <Box
@@ -989,7 +1010,7 @@ function Home() {
                 }}
               >
                 <img
-                  src="/wide1.png"
+                  src="ormaba25/wide1.png"
                   alt=""
                   style={{ width: "55vw", height: "auto" }}
                 />
@@ -1010,7 +1031,7 @@ function Home() {
                     left: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="25em" />
+                  <img src="ormaba25/line.png" alt="" height="25em" />
                 </Box>
                 <Box
                   sx={{
@@ -1021,7 +1042,7 @@ function Home() {
                     right: "-34vw",
                   }}
                 >
-                  <img src="/line.png" alt="" height="25em" />
+                  <img src="ormaba25/line.png" alt="" height="25em" />
                 </Box>
               </Box>
             </Box>
@@ -1035,7 +1056,7 @@ function Home() {
               }}
             >
               <img
-                src="wide1.png"
+                src="ormaba25/wide1.png"
                 alt=""
                 style={{ width: "95vw", height: "auto" }}
               />
@@ -1113,7 +1134,7 @@ function Home() {
               >
                 <hr style={{ display: "inline-flex", width: "90vw" }}></hr>
                 <Typography variant="body2">
-                  Copyright © 2024 | By DDTM ORMABA UNIKAHIDHA
+                  Copyright © 2025 | By DDTM ORMABA UNIKAHIDHA
                 </Typography>
               </Box>
             </Box>

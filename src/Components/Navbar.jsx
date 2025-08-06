@@ -46,7 +46,7 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to='/' >
-            <Box component='img' src="/logosmall.png" sx={{ display: { xs: 'none', md: 'flex' }, height: '3em'}} />
+            <Box component='img' src="/ormaba25/Merak Ormaba.png" sx={{ display: { xs: 'none', md: 'flex' }, height: '3em'}} />
           </Link>
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

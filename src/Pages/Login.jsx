@@ -128,7 +128,7 @@ function Login() {
                 transform: "scaleY(-1)",
               }}
             >
-              <img src="/wide2.png" alt="" height="90vw" />
+              <img src="ormaba25/wide2.png" alt="" height="90vw" />
             </Box>
             <Box
               sx={{
@@ -139,15 +139,15 @@ function Login() {
                 transform: "scaleY(-1)",
               }}
             >
-              <img src="/wide2.png" alt="" height="38vw" />
+              <img src="ormaba25/wide2.png" alt="" height="38vw" />
             </Box>
             <Box sx={{ display: "flex" }}>
               <Box sx={{ mr: 4, display: "flex" }}>
-                <img src="/wing.png" height={"50px"} />
+                <img src="ormaba25/wing.png" height={"50px"} />
               </Box>
               <Typography variant="h3">Login</Typography>
               <Box sx={{ ml: 4, display: "flex", transform: "scaleX(-1)" }}>
-                <img src="/wing.png" height={"50px"} />
+                <img src="ormaba25/wing.png" height={"50px"} />
               </Box>
             </Box>
             <TextField
@@ -211,7 +211,7 @@ function Login() {
                 pt: 4,
               }}
             >
-              <img src="/wide2.png" alt="" height="90vw" />
+              <img src="ormaba25/wide2.png" alt="" height="90vw" />
             </Box>
             <Box
               sx={{
@@ -221,7 +221,7 @@ function Login() {
                 pt: 4,
               }}
             >
-              <img src="/wide2.png" alt="" height="38vw" />
+              <img src="ormaba25/wide2.png" alt="" height="38vw" />
             </Box>
           </Box>
         </Container>
