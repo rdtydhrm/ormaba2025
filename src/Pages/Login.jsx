@@ -23,7 +23,7 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
-import background from "/background7.jpg";
+import background from "/ormaba25/background1.png";
 
 function Login() {
   const [nim, setNim] = useState("");
@@ -89,7 +89,7 @@ function Login() {
             left: 0,
             right: 0,
             bottom: 0,
-            backdropFilter: "blur(20px)",
+            backdropFilter: "blur(30px)",
             WebkitBackdropFilter: "blur(20px)",
             zIndex: -1,
           }}
@@ -141,13 +141,13 @@ function Login() {
             >
               <img src="ormaba25/wide2.png" alt="" height="38vw" />
             </Box>
-            <Box sx={{ display: "flex" }}>
-              <Box sx={{ mr: 4, display: "flex" }}>
-                <img src="ormaba25/wing.png" height={"50px"} />
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box sx={{ mr: { xs: 2, md: 4 }, display: "flex", alignItems: "center" }}>
+                <Box component="img" src="ormaba25/wing.png" sx={{ height: { xs: "28px", md: "50px" } }} />
               </Box>
-              <Typography variant="h3">Login</Typography>
-              <Box sx={{ ml: 4, display: "flex", transform: "scaleX(-1)" }}>
-                <img src="ormaba25/wing.png" height={"50px"} />
+              <Typography variant="h3" sx={{ lineHeight: { xs: 1, md: 1.2 } }}>Login</Typography>
+              <Box sx={{ ml: { xs: 2, md: 4 }, display: "flex", transform: "scaleX(-1)", alignItems: "center" }}>
+                <Box component="img" src="ormaba25/wing.png" sx={{ height: { xs: "28px", md: "50px" } }} />
               </Box>
             </Box>
             <TextField

@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from "react";
@@ -90,16 +90,15 @@ function Navbar() {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 20 }}>
             {pages.map((page) => (
-              <NavLink to={page.link} style={{textDecoration: 'none'}}>
+              <NavLink key={page.name} to={page.link} style={{textDecoration: 'none'}}>
                 {({ isActive }) => (
-                <Button
-                    key={page.name}
+                  <Button
                     onClick={handleCloseNavMenu}
                     variant={isActive ? "contained" : "text"}
                     sx={{ my: 2, display: 'block', width: '169px', fontWeight: 'bold'}}
-                >
+                  >
                     {page.name}
-                </Button>
+                  </Button>
                 )}
               </NavLink>
             ))}

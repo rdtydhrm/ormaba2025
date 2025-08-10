@@ -6,7 +6,7 @@ export default function MobileLogo() {
         <>
           <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <Link to='/' style={{height: '2em'}}>
-              <Box component='img' src="/logosmall.png" sx={{mr: 1, ml: 2, height: '2em'}} />
+              <Box component='img' src="/ormaba25/Merak Ormaba.png" sx={{mr: 1, ml: 2, height: '2em'}} />
             </Link>
             <Link to='/' style={{textDecoration: 'none'}}>
               <Typography

@@ -25,7 +25,7 @@ export default function ErrorBoundary() {
             left: 0,
             zIndex: 1,
         }}>
-            <Typography variant="h1" sx={{color: 'white'}}>oops</Typography>
+            <Typography variant="h1" sx={{color: 'white'}}>oopsie</Typography>
             <Typography variant="h4" sx={{color: 'white'}}>balik ke beranda ya :D</Typography>
         </Box>
     )

@@ -13,7 +13,7 @@ export default function AnnouncementDetail() {
   const navigate = useNavigate();
 
   const getAnnouncements = async () => {
-    const response = await axios.get(`${apiURL}/api/announcements`);
+    const response = await axios.get(`${apiURL}/api/announcements`, { withCredentials: false });
     return response.data;
   };
 
