@@ -51,19 +51,19 @@ function Home() {
           overflow: "hidden",
         }}
       >
-                 <Box
-           sx={{
-             position: "absolute",
-             top: 0,
-             left: 0,
-             right: 0,
-             bottom: 0,
-             backdropFilter: "blur(30px)",
-             WebkitBackdropFilter: "blur(20px)",
-                           backgroundColor: "rgba(0, 0, 0, 0)",
-             zIndex: -1,
-           }}
-         />
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backdropFilter: "blur(30px)",
+            WebkitBackdropFilter: "blur(20px)",
+            backgroundColor: "rgba(0, 0, 0, 0)",
+            zIndex: -1,
+          }}
+        />
         <Navbar />
         <video
           autoPlay
@@ -100,36 +100,36 @@ function Home() {
                 height: "100vh",
               }}
             >
-                             <Typography
-                 variant="h2"
-                 sx={{ 
-                   textAlign: "center", 
-                   pb: 2, 
-                   fontWeight: "bold",
-                   color: "#ffffff",
-                   textShadow: "2px 2px 4px rgba(0,0,0,0.8)"
-                 }}
-               >
-                 O R M A B A
-               </Typography>
-                                                                                         <Button
-                  variant="outlined"
-                  size="medium"
-                  sx={{ 
-                    color: "#ffffff", 
-                    fontWeight: "bold",
-                    borderColor: "#ffffff",
-                    "&:hover": {
-                      borderColor: "#e0e0e0",
-                      backgroundColor: "rgba(255,255,255,0.1)"
-                    }
-                  }}
-                  onClick={() =>
-                    learnRef.current.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  learn
-                </Button>
+              <Typography
+                variant="h2"
+                sx={{
+                  textAlign: "center",
+                  pb: 2,
+                  fontWeight: "bold",
+                  color: "#ffffff",
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+                }}
+              >
+                O R M A B A
+              </Typography>
+              <Button
+                variant="outlined"
+                size="medium"
+                sx={{
+                  color: "#ffffff",
+                  fontWeight: "bold",
+                  borderColor: "#ffffff",
+                  "&:hover": {
+                    borderColor: "#e0e0e0",
+                    backgroundColor: "rgba(255,255,255,0.1)",
+                  },
+                }}
+                onClick={() =>
+                  learnRef.current.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                learn
+              </Button>
             </Box>
             <Box sx={{ mt: 16, display: { xs: "none", md: "block" } }}>
               <img
@@ -196,30 +196,30 @@ function Home() {
                     <Box sx={{ mr: 1 }}>
                       <img src="ormaba25/wing.png" height={"37px"} />
                     </Box>
-                                         <Typography
-                       variant="h3"
-                       sx={{
-                         textAlign: "left",
-                         display: "inline",
-                         color: "#ffd700",
-                         fontStyle: "italic",
-                         mr: 2,
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       What
-                     </Typography>
-                     <Typography
-                       variant="h3"
-                       sx={{ 
-                         textAlign: "left", 
-                         display: "inline",
-                         color: "#ffffff",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       is ORMABA?
-                     </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffd700",
+                        fontStyle: "italic",
+                        mr: 2,
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      What
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      is ORMABA?
+                    </Typography>
                     <Box sx={{ transform: "scaleX(-1)", ml: 1, mr: 4 }}>
                       <img src="ormaba25/wing.png" height={"37px"} />
                     </Box>
@@ -229,19 +229,21 @@ function Home() {
                   </span>
                 </Box>
 
-                                 <Typography
-                   variant="body1"
-                   sx={{ 
-                     textAlign: "justify", 
-                     mt: 5, 
-                     width: "75vw",
-                     color: "#f0f0f0",
-                     textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                   }}
-                 >
-                   {whatIsORMABA1} <b style={{color: "#ffd700"}}>Kerohanian</b>, <b style={{color: "#ffd700"}}>Kepemimpinan</b>, dan{" "}
-                   <b style={{color: "#ffd700"}}>Kekeluargaan</b>. {whatIsORMABA2}
-                 </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    textAlign: "justify",
+                    mt: 5,
+                    width: "75vw",
+                    color: "#f0f0f0",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {whatIsORMABA1} <b style={{ color: "#ffd700" }}>Kerohanian</b>
+                  , <b style={{ color: "#ffd700" }}>Kepemimpinan</b>, dan{" "}
+                  <b style={{ color: "#ffd700" }}>Kekeluargaan</b>.{" "}
+                  {whatIsORMABA2}
+                </Typography>
               </Box>
               <Box
                 sx={{
@@ -276,48 +278,48 @@ function Home() {
                     <Box sx={{ mr: 1, ml: 4 }}>
                       <img src="ormaba25/wing.png" height={"35px"} />
                     </Box>
-                                         <Typography
-                       variant="h3"
-                       sx={{
-                         textAlign: "left",
-                         display: "inline",
-                         color: "#ffd700",
-                         fontStyle: "italic",
-                         mr: 2,
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       Essence
-                     </Typography>
-                     <Typography
-                       variant="h3"
-                       sx={{ 
-                         textAlign: "left", 
-                         display: "inline",
-                         color: "#ffffff",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       of ORMABA
-                     </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffd700",
+                        fontStyle: "italic",
+                        mr: 2,
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      Essence
+                    </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      of ORMABA
+                    </Typography>
                     <Box sx={{ ml: 1, transform: "scaleX(-1)" }}>
                       <img src="ormaba25/wing.png" height={"35px"} />
                     </Box>
                   </Paper>
                 </Box>
-                                 <Typography
-                   variant="body1"
-                   sx={{ 
-                     textAlign: "justify", 
-                     mt: 5, 
-                     pb: 20, 
-                     width: "75vw",
-                     color: "#f0f0f0",
-                     textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                   }}
-                 >
-                   {essence}
-                 </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    textAlign: "justify",
+                    mt: 5,
+                    pb: 20,
+                    width: "75vw",
+                    color: "#f0f0f0",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {essence}
+                </Typography>
               </Box>
 
               {/* mobile version */}
@@ -347,30 +349,30 @@ function Home() {
                     <Box sx={{ mr: 1 }}>
                       <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
-                                         <Typography
-                       variant="h5"
-                       sx={{
-                         textAlign: "left",
-                         display: "inline",
-                         color: "#ffd700",
-                         fontStyle: "italic",
-                         mr: 1,
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       What
-                     </Typography>
-                     <Typography
-                       variant="h5"
-                       sx={{ 
-                         textAlign: "left", 
-                         display: "inline",
-                         color: "#ffffff",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       is ORMABA?
-                     </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffd700",
+                        fontStyle: "italic",
+                        mr: 1,
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      What
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      is ORMABA?
+                    </Typography>
                     <Box sx={{ ml: 1 }}>
                       <img
                         src="ormaba25/wing.png"
@@ -379,19 +381,19 @@ function Home() {
                     </Box>
                   </Box>
                 </Paper>
-                                 <Typography
-                   variant="body1"
-                   sx={{ 
-                     textAlign: "justify", 
-                     mt: 5, 
-                     pb: 5, 
-                     width: "75vw",
-                     color: "#f0f0f0",
-                     textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                   }}
-                 >
-                   {whatIsORMABAshort}
-                 </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    textAlign: "justify",
+                    mt: 5,
+                    pb: 5,
+                    width: "75vw",
+                    color: "#f0f0f0",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {whatIsORMABAshort}
+                </Typography>
               </Box>
               <Box
                 sx={{
@@ -414,32 +416,32 @@ function Home() {
                     <Box sx={{ mr: 1 }}>
                       <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
-                                         <Typography
-                       variant="h5"
-                       sx={{
-                         textAlign: "left",
-                         display: "inline",
-                         color: "#ffd700",
-                         fontStyle: "italic",
-                         fontSize: "20px",
-                         mr: 1,
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       Essence
-                     </Typography>
-                     <Typography
-                       variant="h5"
-                       sx={{
-                         textAlign: "left",
-                         display: "inline",
-                         fontSize: "20px",
-                         color: "#ffffff",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       of ORMABA
-                     </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        color: "#ffd700",
+                        fontStyle: "italic",
+                        fontSize: "20px",
+                        mr: 1,
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      Essence
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: "left",
+                        display: "inline",
+                        fontSize: "20px",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      of ORMABA
+                    </Typography>
                     <Box sx={{ ml: 1 }}>
                       <img
                         src="ormaba25/wing.png"
@@ -448,19 +450,19 @@ function Home() {
                     </Box>
                   </Box>
                 </Paper>
-                                 <Typography
-                   variant="body1"
-                   sx={{ 
-                     textAlign: "justify", 
-                     mt: 5, 
-                     pb: 5, 
-                     width: "75vw",
-                     color: "#f0f0f0",
-                     textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                   }}
-                 >
-                   {essenceShort}
-                 </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    textAlign: "justify",
+                    mt: 5,
+                    pb: 5,
+                    width: "75vw",
+                    color: "#f0f0f0",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  {essenceShort}
+                </Typography>
               </Box>
             </Box>
           </section>
@@ -506,15 +508,18 @@ function Home() {
                     }}
                   >
                     <Box sx={{ mr: 3 }}>
-                      <img src="ormaba25/wing.png" height={"40px"}  />
+                      <img src="ormaba25/wing.png" height={"40px"} />
                     </Box>
-                                         <Typography variant="h3" sx={{ 
-                       textAlign: "center",
-                       color: "#ffffff",
-                       textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                     }}>
-                       Rangkaian Kegiatan
-                     </Typography>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        textAlign: "center",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      Rangkaian Kegiatan
+                    </Typography>
                     <Box sx={{ transform: "scaleX(-1)", ml: 3 }}>
                       <img src="ormaba25/wing.png" height={"40px"} />
                     </Box>
@@ -549,29 +554,32 @@ function Home() {
                     }}
                   >
                     <Box>
-                                             <Typography
-                         variant="h3"
-                         sx={{ 
-                           color: "#ffd700", 
-                           mb: 2,
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                         }}
-                       >
-                         <b>
-                           <i>Dharma Asrama 1</i>
-                         </b>
-                       </Typography>
-                     </Box>
-                     <Box>
-                       <Typography variant="h6" sx={{ 
-                         textAlign: "left",
-                         color: "#f0f0f0",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                       }}>
-                         Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
-                         UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
-                         kerohanian.
-                       </Typography>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: "#ffd700",
+                          mb: 2,
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                        }}
+                      >
+                        <b>
+                          <i>Dharma Asrama 1</i>
+                        </b>
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "left",
+                          color: "#f0f0f0",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                        }}
+                      >
+                        Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
+                        UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
+                        kerohanian.
+                      </Typography>
                     </Box>
                   </Box>
                 </Paper>
@@ -589,31 +597,34 @@ function Home() {
                     }}
                   >
                     <Box>
-                                             <Typography
-                         variant="h3"
-                         sx={{
-                           color: "#ffd700",
-                           mb: 2,
-                           textAlign: "right",
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                         }}
-                       >
-                         <b>
-                           <i>Dharma Asrama 2</i>
-                         </b>
-                       </Typography>
-                     </Box>
-                     <Box>
-                       <Typography variant="h6" sx={{ 
-                         textAlign: "right",
-                         color: "#f0f0f0",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                       }}>
-                         Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
-                         skill diri sebagai cakupan nilai kepemimpinan, dan
-                         bonding angkatan sebagai cakupan dari
-                         nilai kekeluargaan.
-                       </Typography>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: "#ffd700",
+                          mb: 2,
+                          textAlign: "right",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                        }}
+                      >
+                        <b>
+                          <i>Dharma Asrama 2</i>
+                        </b>
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          textAlign: "right",
+                          color: "#f0f0f0",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                        }}
+                      >
+                        Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
+                        skill diri sebagai cakupan nilai kepemimpinan, dan
+                        bonding angkatan sebagai cakupan dari nilai
+                        kekeluargaan.
+                      </Typography>
                     </Box>
                   </Box>
                   <Box
@@ -681,18 +692,18 @@ function Home() {
                     <Box sx={{ ml: 2 }}>
                       <img src="ormaba25/wing.png" style={{ width: "2em" }} />
                     </Box>
-                                         <Typography
-                       variant="h5"
-                       sx={{
-                         textAlign: "center",
-                         width: "20em",
-                         fontSize: "20px",
-                         color: "#ffffff",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }}
-                     >
-                       Rangkaian Kegiatan
-                     </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        textAlign: "center",
+                        width: "20em",
+                        fontSize: "20px",
+                        color: "#ffffff",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      }}
+                    >
+                      Rangkaian Kegiatan
+                    </Typography>
                     <Box sx={{ mr: 2 }}>
                       <img
                         src="ormaba25/wing.png"
@@ -736,32 +747,32 @@ function Home() {
                     }}
                   >
                     <Box>
-                                             <Typography
-                         variant="h6"
-                         sx={{
-                           color: "#ffd700",
-                           mb: 4,
-                           textAlign: "center",
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                         }}
-                       >
-                         <b>Dharma Asrama 1</b>
-                       </Typography>
-                     </Box>
-                     <Box>
-                       <Typography
-                         variant="body2"
-                         sx={{ 
-                           textAlign: "center", 
-                           mb: 2,
-                           color: "#f0f0f0",
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                         }}
-                       >
-                         Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
-                         UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
-                         kerohanian.
-                       </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: "#ffd700",
+                          mb: 4,
+                          textAlign: "center",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                        }}
+                      >
+                        <b>Dharma Asrama 1</b>
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          textAlign: "center",
+                          mb: 2,
+                          color: "#f0f0f0",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                        }}
+                      >
+                        Kegiatan Dharma Asrama 1 akan berfokus pada pengenalan
+                        UNIKAHIDHA dan kegiatan-kegiatan yang memperdalam nilai
+                        kerohanian.
+                      </Typography>
                     </Box>
                   </Box>
                 </Paper>
@@ -800,33 +811,33 @@ function Home() {
                     }}
                   >
                     <Box>
-                                             <Typography
-                         variant="h6"
-                         sx={{
-                           color: "#ffd700",
-                           mb: 4,
-                           textAlign: "center",
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                         }}
-                       >
-                         <b>Dharma Asrama 2</b>
-                       </Typography>
-                     </Box>
-                     <Box>
-                       <Typography
-                         variant="body2"
-                         sx={{ 
-                           textAlign: "center", 
-                           mb: 2,
-                           color: "#f0f0f0",
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                         }}
-                       >
-                         Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
-                         skill diri sebagai cakupan nilai kepemimpinan, dan
-                         bonding angkatan sebagai cakupan dari
-                         nilai kekeluargaan.
-                       </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: "#ffd700",
+                          mb: 4,
+                          textAlign: "center",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                        }}
+                      >
+                        <b>Dharma Asrama 2</b>
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          textAlign: "center",
+                          mb: 2,
+                          color: "#f0f0f0",
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                        }}
+                      >
+                        Kegiatan Dharma Asrama 2 akan berfokus pada pengembangan
+                        skill diri sebagai cakupan nilai kepemimpinan, dan
+                        bonding angkatan sebagai cakupan dari nilai
+                        kekeluargaan.
+                      </Typography>
                     </Box>
                   </Box>
                 </Paper>
@@ -928,17 +939,17 @@ function Home() {
                     <img src="ormaba25/wing.png" height={"20em"} />
                   </Box>
 
-                                     <Typography
-                     variant="h3"
-                     sx={{ 
-                       textAlign: "center", 
-                       width: "2em",
-                       color: "#ffffff",
-                       textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                     }}
-                   >
-                     FAQ
-                   </Typography>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      textAlign: "center",
+                      width: "2em",
+                      color: "#ffffff",
+                      textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                    }}
+                  >
+                    FAQ
+                  </Typography>
 
                   <Box
                     sx={{
@@ -963,27 +974,33 @@ function Home() {
             </Box>
             <Box>
               {questions.map((question, index) => (
-                <Accordion key={index} elevation={8} sx={{ bgcolor: "transparent" }}>
-                                     <AccordionSummary
-                     expandIcon={<ExpandMoreIcon sx={{ color: "#ffd700" }} />}
-                     aria-controls={`panel${index}-content`}
-                     id={`panel${index}-header`}
-                     sx={{ 
-                       color: "#ffd700",
-                       "& .MuiAccordionSummary-content": {
-                         color: "#ffd700",
-                         textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                       }
-                     }}
-                   >
-                     <b>{question}</b>
-                   </AccordionSummary>
-                   <AccordionDetails sx={{ 
-                     color: "#f0f0f0",
-                     textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                   }}>
-                     {answers[index]}
-                   </AccordionDetails>
+                <Accordion
+                  key={index}
+                  elevation={8}
+                  sx={{ bgcolor: "transparent" }}
+                >
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: "#ffd700" }} />}
+                    aria-controls={`panel${index}-content`}
+                    id={`panel${index}-header`}
+                    sx={{
+                      color: "#ffd700",
+                      "& .MuiAccordionSummary-content": {
+                        color: "#ffd700",
+                        textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                      },
+                    }}
+                  >
+                    <b>{question}</b>
+                  </AccordionSummary>
+                  <AccordionDetails
+                    sx={{
+                      color: "#f0f0f0",
+                      textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    {answers[index]}
+                  </AccordionDetails>
                 </Accordion>
               ))}
             </Box>
@@ -1042,7 +1059,11 @@ function Home() {
                   mt: 8,
                 }}
               >
-                <img src="ormaba25/wide2.png" alt="" style={{ width: "20em" }} />
+                <img
+                  src="ormaba25/wide2.png"
+                  alt=""
+                  style={{ width: "20em" }}
+                />
               </Box>
               <Box
                 sx={{
@@ -1216,16 +1237,16 @@ function Home() {
                     }}
                   >
                     <Box>
-                                             <Typography
-                         variant="h5"
-                         sx={{ 
-                           color: "#ffd700", 
-                           pr: 1,
-                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)"
-                         }}
-                       >
-                         <b>INSTAGRAM</b>
-                       </Typography>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          color: "#ffd700",
+                          pr: 1,
+                          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                        }}
+                      >
+                        <b>INSTAGRAM</b>
+                      </Typography>
                     </Box>
                   </Box>
                 </Link>
@@ -1247,12 +1268,15 @@ function Home() {
                 }}
               >
                 <hr style={{ display: "inline-flex", width: "90vw" }}></hr>
-                                 <Typography variant="body2" sx={{
-                   color: "#f0f0f0",
-                   textShadow: "1px 1px 2px rgba(0,0,0,0.6)"
-                 }}>
-                   Copyright © 2025 | By DDTM ORMABA UNIKAHIDHA
-                 </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#f0f0f0",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
+                  }}
+                >
+                  Copyright © 2025 | By DDTM ORMABA UNIKAHIDHA
+                </Typography>
               </Box>
             </Box>
           </section>
