@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
 import AnnouItem from "../Components/AnnouItem";
-import background from "/background7.jpg"
+import background from "/ormaba25/background2.png"
 import { ScrollRestoration, useNavigate } from "react-router-dom";
 
 function Announcements() {

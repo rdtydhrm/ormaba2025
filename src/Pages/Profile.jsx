@@ -15,7 +15,7 @@ import CenteredLoader from "../Components/CenteredLoader";
 import { useNavigate, useParams } from "react-router-dom";
 import apiURL from "../APIURL";
 import { useEffect, useState } from "react";
-import background from "/background7.jpg";
+import background from "/ormaba25/background2.png";
 import GradientBackground from "../Components/GradientBackground";
 import { purple } from "@mui/material/colors";
 import getMentor from "../mentor";
