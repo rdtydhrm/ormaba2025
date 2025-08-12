@@ -4,7 +4,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import CenteredLoader from "../Components/CenteredLoader";
 import apiURL from "../APIURL";
-import background from "/background7.jpg";
+import background from "/ormaba25/background2.png";
 import { ScrollRestoration, useNavigate, useParams } from "react-router-dom";
 import CampaignIcon from "@mui/icons-material/Campaign";
 
