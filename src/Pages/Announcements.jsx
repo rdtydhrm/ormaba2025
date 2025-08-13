@@ -51,7 +51,7 @@ function Announcements() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                backdropFilter: 'blur(20px)',
+                backdropFilter: 'blur(30px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 zIndex: -1
             }}/>

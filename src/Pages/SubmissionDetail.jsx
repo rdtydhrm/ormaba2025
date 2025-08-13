@@ -13,7 +13,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import background from "/background7.jpg";
+import background from "/ormaba25/background2.png";
 import { useEffect, useState } from "react";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 
