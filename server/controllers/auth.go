@@ -130,11 +130,11 @@ func AuthUBNoEmail(username, password string) (*StudentDetails, error) {
 	// parse student details
 	nim := getBetween(`<saml:Attribute FriendlyName="nim" Name="nim" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse)
 	fullName := getBetween(`<saml:Attribute FriendlyName="fullName" Name="fullName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse)
-	// email := getBetween(`<saml:Attribute FriendlyName="email" Name="email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse)
+	email := getBetween(`<saml:Attribute FriendlyName="email" Name="email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse)
 	fakultas := fmt.Sprintf("Fakultas %s", getBetween(`<saml:Attribute FriendlyName="fakultas" Name="fakultas" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse))
 	programStudi := getBetween(`<saml:Attribute FriendlyName="prodi" Name="prodi" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"><saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">`, "</saml", decodedSamlResponse)
 
-	return &StudentDetails{nim, fullName, "missing email from ub", fakultas, programStudi}, nil
+	return &StudentDetails{nim, fullName, email, fakultas, programStudi}, nil
 }
 
 func getBetween(start, end, text string) string {
