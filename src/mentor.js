@@ -1,59 +1,29 @@
 export default function getMentor(group) {
-    // "Adipati", "Bimantara", "Cakrabhuwana", "Devendra", "Mahesvara", "Nishkala", "Osha", "Prabhu"
+    // "Sakhya", "Bandhana", "Kutumba", "Sambandha", "Sangha", "Maitri", "Saumya", "Karuna"
     switch (group) {
-        case "Adipati":
+        case "Sakhya":
             return mentor1
-        case "Bimantara":
+        case "Bandhana":
             return mentor2
-        case "Cakrabhuwana":
+        case "Kutumba":
             return mentor3
-        case "Devendra":
+        case "Sambandha":
             return mentor4
-        case "Mahesvara":
+        case "Sangha":
             return mentor5
-        case "Nishkala":
+        case "Maitri":
             return mentor6
-        case "Osha":
+        case "Saumya":
             return mentor7
-        case "Prabhu":
+        case "Karuna":
             return mentor8
         default:
             return "Kosong"
     }
 }
 
-const mentor7 = {
-    nama: 'I Gusti Ayu Aiswara Prameisya',
-    fakultas: 'Fakultas Vokasi',
-    jurusan: 'Keuangan dan Perbankan',
-    nomor: '083134560608',
-    instagram: '@ayu.swra',
-    image: '/mentor7.jpg',
-    groupLink: 'https://chat.whatsapp.com/GpPS9OSfsjhCo7iHUY3yUB',
-}
-
-const mentor4 = {
-    nama: 'Gusti Ayu Putu Madhu Sudhani',
-    fakultas: 'Fakultas Ilmu Administrasi',
-    jurusan: 'Administrasi Publik',
-    nomor: '081399965115',
-    instagram: '@putz.sh',
-    image: '/mentor4.jpg',
-    groupLink: 'https://chat.whatsapp.com/LHy6aafFuOuDDwFbARFMYH',
-}
-
-const mentor3 = {
-    nama: 'Dea Laurentina',
-    fakultas: 'Fakultas Pertanian',
-    jurusan: 'Agribisnis',
-    nomor: '085258161555',
-    instagram: '@dealaurrennt_',
-    image: '/mentor3.jpg',
-    groupLink: 'https://chat.whatsapp.com/HupTUONIVVeHrrdKfyQrsb',
-}
-
 const mentor1 = {
-    nama: 'Ida Ayu Putu Wulan Maharani',
+    nama: 'I Gusti Agung Mirah Maharani',
     fakultas: 'Fakultas Ilmu Sosial dan Ilmu Politik',
     jurusan: 'Ilmu Komunikasi',
     nomor: '081999112478',
@@ -62,8 +32,39 @@ const mentor1 = {
     groupLink: 'https://chat.whatsapp.com/IpqbNH6aCNz3njnHpqP8Z8',
 }
 
+const mentor2 = {
+    nama: 'I Gede Tio Pradipta Jasapada',
+    fakultas: 'Fakultas Pertanian',
+    jurusan: 'Agroteknologi',
+    nomor: '085287237377',
+    instagram: '@kardiantamber',
+    image: '/mentor2.jpg',
+    groupLink: 'https://chat.whatsapp.com/FIZ6aBO00Q08uGjKMPW2Vt',
+}
+
+const mentor3 = {
+    nama: 'Wayan Ratih Paramita Sutama Putri',
+    fakultas: 'Fakultas Pertanian',
+    jurusan: 'Agribisnis',
+    nomor: '085258161555',
+    instagram: '@dealaurrennt_',
+    image: '/mentor3.jpg',
+    groupLink: 'https://chat.whatsapp.com/HupTUONIVVeHrrdKfyQrsb',
+}
+
+const mentor4 = {
+    nama: 'Putu Ananda Premadi Sari Putra',
+    fakultas: 'Fakultas Ilmu Administrasi',
+    jurusan: 'Administrasi Publik',
+    nomor: '081399965115',
+    instagram: '@putz.sh',
+    image: '/mentor4.jpg',
+    groupLink: 'https://chat.whatsapp.com/LHy6aafFuOuDDwFbARFMYH',
+}
+
+
 const mentor5 = {
-    nama: 'Ni Luh Sari Nadi',
+    nama: 'Komang Cendrano Brahmanda',
     fakultas: 'Fakultas Vokasi',
     jurusan: 'Manajemen Perhotelan',
     nomor: '08873570269',
@@ -73,7 +74,7 @@ const mentor5 = {
 }
 
 const mentor6 = {
-    nama: 'Putu Sri Adhi Darsana',
+    nama: 'Putu Nadia Indraswari',
     fakultas: 'Fakultas Teknik',
     jurusan: 'Teknik Sipil',
     nomor: '082113167442',
@@ -82,8 +83,18 @@ const mentor6 = {
     groupLink: 'https://chat.whatsapp.com/IhhxBr4LUtGGJfLHYgoD40',
 }
 
+const mentor7 = {
+    nama: 'Ni Putu Radha Pramesvari',
+    fakultas: 'Fakultas Vokasi',
+    jurusan: 'Keuangan dan Perbankan',
+    nomor: '083134560608',
+    instagram: '@ayu.swra',
+    image: '/mentor7.jpg',
+    groupLink: 'https://chat.whatsapp.com/GpPS9OSfsjhCo7iHUY3yUB',
+}
+
 const mentor8 = {
-    nama: 'I Gede Bagus Kusumayudha Aryantha W.',
+    nama: 'Sthiti Prabawati Pranaiswari',
     fakultas: 'Fakultas Teknik',
     jurusan: 'Teknik Pengairan',
     nomor: '087861685666',
@@ -92,13 +103,4 @@ const mentor8 = {
     groupLink: 'https://chat.whatsapp.com/EGLWnjf3b7RHEgaIhHzB6r',
 }
 
-const mentor2 = {
-    nama: 'Kardiantono',
-    fakultas: 'Fakultas Pertanian',
-    jurusan: 'Agroteknologi',
-    nomor: '085287237377',
-    instagram: '@kardiantamber',
-    image: '/mentor2.jpg',
-    groupLink: 'https://chat.whatsapp.com/FIZ6aBO00Q08uGjKMPW2Vt',
-}
 
