@@ -25,82 +25,82 @@ export default function getMentor(group) {
 const mentor1 = {
     nama: 'I Gusti Agung Mirah Maharani',
     fakultas: 'Fakultas Ilmu Sosial dan Ilmu Politik',
-    jurusan: '....',
-    nomor: '.....',
-    instagram: '@...',
+    jurusan: 'Psikologi',
+    nomor: '082236823000',
+    instagram: '@mhrn.mrh',
     image: '/ormaba25/mentor1.jpg',
-    groupLink: 'https://chat.whatsapp.com/Ip',
+    groupLink: 'https://chat.whatsapp.com/DN67KxpJwi93KMvGz2LX2y',
 }
 
 const mentor2 = {
     nama: 'I Gede Tio Pradipta Jasapada',
-    fakultas: 'Fakultas Pertanian',
-    jurusan: 'Agroteknologi',
-    nomor: '085287237377',
-    instagram: '@kardiantamber',
-    image: '/mentor2.jpg',
-    groupLink: 'https://chat.whatsapp.com/FIZ6aBO00Q08uGjKMPW2Vt',
+    fakultas: 'Fakultas Ilmu Komputer',
+    jurusan: 'Teknik Komputer',
+    nomor: '081236092590',
+    instagram: '@tiopradipta',
+    image: '/ormaba25/mentor2.jpg',
+    groupLink: 'https://chat.whatsapp.com/HY3FLBmGI52C8ZWpn1CtBf',
 }
 
 const mentor3 = {
     nama: 'Wayan Ratih Paramita Sutama Putri',
-    fakultas: 'Fakultas Pertanian',
-    jurusan: 'Agribisnis',
-    nomor: '085258161555',
-    instagram: '@dealaurrennt_',
-    image: '/mentor3.jpg',
-    groupLink: 'https://chat.whatsapp.com/HupTUONIVVeHrrdKfyQrsb',
+    fakultas: 'Fakultas Ilmu Budaya',
+    jurusan: 'Sastra Cina',
+    nomor: '081238892972',
+    instagram: '@tiramita_',
+    image: '/ormaba25/mentor3.jpg',
+    groupLink: 'https://chat.whatsapp.com/LqTcHObuaNtHCw5VnqwI24',
 }
 
 const mentor4 = {
     nama: 'Putu Ananda Premadi Sari Putra',
-    fakultas: 'Fakultas Ilmu Administrasi',
-    jurusan: 'Administrasi Publik',
-    nomor: '081399965115',
-    instagram: '@putz.sh',
-    image: '/mentor4.jpg',
-    groupLink: 'https://chat.whatsapp.com/LHy6aafFuOuDDwFbARFMYH',
+    fakultas: 'Fakultas Ilmu Komputer',
+    jurusan: 'Sistem Informasi',
+    nomor: '085733295213',
+    instagram: 'darkxotic2020',
+    image: '/ormaba25/mentor4.jpg',
+    groupLink: 'https://chat.whatsapp.com/L75i8FceZcfJjrbI0VaFUb',
 }
 
 
 const mentor5 = {
     nama: 'Komang Cendrano Brahmanda',
-    fakultas: 'Fakultas Vokasi',
-    jurusan: 'Manajemen Perhotelan',
-    nomor: '08873570269',
-    instagram: '@sariiinadiii_',
-    image: '/mentor5.jpg',
-    groupLink: 'https://chat.whatsapp.com/GTPRsalu8s4H3lE6lIN3pb',
+    fakultas: 'Fakultas Hukum',
+    jurusan: 'Ilmu Hukum',
+    nomor: '082232532940',
+    instagram: '@komangbrahmanda',
+    image: '/ormaba25/mentor5.jpg',
+    groupLink: 'https://chat.whatsapp.com/HHwQOyPI6KrG3dHhgZhv7F',
 }
 
 const mentor6 = {
     nama: 'Putu Nadia Indraswari',
-    fakultas: 'Fakultas Teknik',
-    jurusan: 'Teknik Sipil',
-    nomor: '082113167442',
-    instagram: '@adhi_darsana19',
-    image: '/mentor6.jpg',
-    groupLink: 'https://chat.whatsapp.com/IhhxBr4LUtGGJfLHYgoD40',
+    fakultas: 'Fakultas Teknologi Pertanian',
+    jurusan: 'Bioteknologi',
+    nomor: '082236121731',
+    instagram: '@nadiaindra19',
+    image: '/ormaba25/mentor6.jpg',
+    groupLink: 'https://chat.whatsapp.com/F7QjSTflyyQK8PpPo7NEnK',
 }
 
 const mentor7 = {
     nama: 'Ni Putu Radha Pramesvari',
-    fakultas: 'Fakultas Vokasi',
-    jurusan: 'Keuangan dan Perbankan',
-    nomor: '083134560608',
-    instagram: '@ayu.swra',
-    image: '/mentor7.jpg',
-    groupLink: 'https://chat.whatsapp.com/GpPS9OSfsjhCo7iHUY3yUB',
+    fakultas: 'Fakultas Ilmu Budaya',
+    jurusan: 'Sastra Inggris',
+    nomor: '081237834249',
+    instagram: '@radhaprmsvrii',
+    image: '/ormaba25/mentor7.jpg',
+    groupLink: 'https://chat.whatsapp.com/D9Me1LRNN951V55OAxfcv5',
 }
 
 const mentor8 = {
     nama: 'Sthiti Prabawati Pranaiswari',
-    fakultas: 'Fakultas Teknik',
-    jurusan: 'Teknik Pengairan',
-    nomor: '087861685666',
-    instagram: '@bagus_kusumayudha',
-    image: '/mentor8.jpg',
-    groupLink: 'https://chat.whatsapp.com/EGLWnjf3b7RHEgaIhHzB6r',
+    fakultas: 'Fakultas Ilmu Administrasi',
+    jurusan: 'Pariwisata',
+    nomor: '085865944695',
+    instagram: '@titiiswr',
+    image: '/ormaba25/mentor8.jpg',
+    groupLink: 'https://chat.whatsapp.com/KXGltvQOcqp2RSRmU5NqZ7',
 }
 
 
