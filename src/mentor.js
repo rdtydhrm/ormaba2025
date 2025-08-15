@@ -28,7 +28,7 @@ const mentor1 = {
     jurusan: '....',
     nomor: '.....',
     instagram: '@...',
-    image: '/ormaba25/mentor1.heif',
+    image: '/ormaba25/mentor1.jpg',
     groupLink: 'https://chat.whatsapp.com/Ip',
 }
 
