@@ -23,7 +23,7 @@ import { useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import apiURL from "../APIURL";
-import background from "/ormaba25/background1.png";
+import background from "/ormaba25/background2.png";
 
 function Login() {
   const [nim, setNim] = useState("");
