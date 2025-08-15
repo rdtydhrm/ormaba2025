@@ -79,7 +79,7 @@ function Home() {
             left: 0,
           }}
         >
-          <source src="/ormaba5.mp4" type="video/mp4" />
+          <source src="/ormaba25/ormabavid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <Container

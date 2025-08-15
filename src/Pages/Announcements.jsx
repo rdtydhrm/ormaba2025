@@ -53,6 +53,7 @@ function Announcements() {
                 bottom: 0,
                 backdropFilter: 'blur(30px)',
                 WebkitBackdropFilter: 'blur(20px)',
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
                 zIndex: -1
             }}/>
             <Navbar />
