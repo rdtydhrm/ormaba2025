@@ -25,11 +25,11 @@ export default function getMentor(group) {
 const mentor1 = {
     nama: 'I Gusti Agung Mirah Maharani',
     fakultas: 'Fakultas Ilmu Sosial dan Ilmu Politik',
-    jurusan: 'Ilmu Komunikasi',
-    nomor: '081999112478',
-    instagram: '@dayuwulanm',
-    image: '/mentor1.jpg',
-    groupLink: 'https://chat.whatsapp.com/IpqbNH6aCNz3njnHpqP8Z8',
+    jurusan: '....',
+    nomor: '.....',
+    instagram: '@...',
+    image: '/ormaba25/mentor1.heif',
+    groupLink: 'https://chat.whatsapp.com/Ip',
 }
 
 const mentor2 = {
