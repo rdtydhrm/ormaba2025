@@ -57,7 +57,7 @@ const mentor4 = {
     fakultas: 'Fakultas Ilmu Komputer',
     jurusan: 'Sistem Informasi',
     nomor: '085733295213',
-    instagram: 'darkxotic2020',
+    instagram: 'putua_universitas.brawijaya',
     image: '/ormaba25/mentor4.jpg',
     groupLink: 'https://chat.whatsapp.com/L75i8FceZcfJjrbI0VaFUb',
 }
