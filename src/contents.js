@@ -1,4 +1,4 @@
-export const ormabaGroups = ["Sakhya", "Bandhana", "Kutumbha", "Sambandha", "Sangha", "Maitri", "Saumya", "Karuna"]
+export const ormabaGroups = ["Sakhya", "Bandhana", "Kutumba", "Sambandha", "Sangha", "Maitri", "Saumya", "Karuna"]
 
 export const whatIsORMABAshort = "ORMABA adalah kegiatan yang membentuk karakter mahasiswa baru dengan menanamkan nilai-nilai moral, spiritualitas, jiwa kepemimpinan, dan rasa kekeluargaan untuk menciptakan suasana positif dan produktif."
 
