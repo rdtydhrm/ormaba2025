@@ -106,7 +106,7 @@ export default function StudentsTable() {
   const rows = [];
   if (params.group === "all") {
     students
-      ?.filter((student) => student.NIM.startsWith("24"))
+      ?.filter((student) => student.NIM.startsWith("25"))
       .map(
         ({
           FullName,
@@ -147,7 +147,7 @@ export default function StudentsTable() {
     students
       ?.filter(
         (student) =>
-          student.Group === params.group && student.NIM.startsWith("24")
+          student.Group === params.group && student.NIM.startsWith("25")
       )
       .map(
         ({
