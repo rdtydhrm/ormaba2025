@@ -13,10 +13,10 @@ export default function SubmissionItem({submission}) {
                 <Paper elevation={12} sx={{bgcolor: 'transparent', maxWidth: {md: '40vw'}, display: 'flex', flexDirection: 'column', width: "75vw", mb: 6}}>
                     <Box sx={{display: 'flex'}}>
                         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mx: 2 }}>
-                            <AssignmentIcon fontSize="large" sx={{color: 'secondary.light'}}/>
+                            <AssignmentIcon fontSize="large" sx={{color: 'primary.main'}}/>
                         </Box>
                         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'start', py: 2}}>
-                            <Typography variant="h5" sx={{color: 'secondary.light', fontSize: {xs: '1.5em', md: '2em'}}}><b>{submission.task.title}</b></Typography>
+                            <Typography variant="h5" sx={{color: 'primary.main', fontSize: {xs: '1.5em', md: '2em'}}}><b>{submission.task.title}</b></Typography>
                             <Typography variant="subtitle1" ><i>Deadline: {formattedDate}</i></Typography>
                             <Typography variant="subtitle1" ><i>Status: <Box component={'span'} sx={{color: `${statusColor}`}}><b>{submission.status}</b></Box></i></Typography>
                         </Box>

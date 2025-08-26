@@ -161,7 +161,7 @@ export default function SubmissionDetail() {
                 >
                   <AssignmentIcon
                     fontSize="large"
-                    sx={{ color: "secondary.light" }}
+                    sx={{ color: "primary.main" }}
                   />
                 </Box>
                 <Box
@@ -176,7 +176,7 @@ export default function SubmissionDetail() {
                   <Typography
                     variant="h4"
                     sx={{
-                      color: "secondary.light",
+                      color: "primary.main",
                       fontSize: { xs: "1.5em", md: "2em" },
                     }}
                   >
